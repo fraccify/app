@@ -632,7 +632,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                     return `
                                         <details class="calle-box" id="calle-${nombre}" data-codigo="${calle.codigo}">
                                             <summary class="calle-title">${nombre}</summary>
-                                            <input type="text" id="busqueda-domicilio-${nombre}" placeholder="Buscar domicilio..." oninput="buscarDomicilio('${nombre}')">
+                                            <input class="busqueda" type="text" id="busqueda-domicilio-${nombre}" placeholder="Buscar domicilio..." oninput="buscarDomicilio('${nombre}')">
                                             <div class="calle-registros" id="${nombre}-registros">
                                                 <!-- Aquí se mostrarán los registros de la calle ${nombre} -->
                                             </div>
@@ -845,6 +845,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                       alert("Error al actualizar los datos: " + valor);
                                   });
                                 };
+
+
 
 
                                 

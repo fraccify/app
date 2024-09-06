@@ -871,6 +871,41 @@
     <section id="divlistaresidentes" style="display: none;" class="contenedorresidentes">
         <div class="tablacompleta" id="tablaresidentes">
         </div>
+        <script>
+                            function buscarDomicilio(registrosId) {
+                                  var input = event.target; // Obtiene el elemento input que desencadenó el evento
+                                  var divId = input.parentElement.querySelector(".calle-registros").id; // Obtiene el ID del div dentro del mismo detalle
+                                  console.log(divId);
+                                  var term = input.value.trim().toLowerCase();
+                                
+                                  var registros = document.querySelectorAll(
+                                    "#" + divId + " table tbody tr td details summary"
+                                  );
+                                  console.log(registros);
+                                  registros.forEach(function (registro) {
+                                    var contenido = registro.innerHTML.toLowerCase();
+                                    if (contenido.includes(term)) {
+                                      // Muestra el registro y todos sus padres hasta el elemento tr
+                                      var parent = registro.parentNode; // <details>
+                                      while (parent && parent.tagName !== "TR") {
+                                        parent = parent.parentNode;
+                                      }
+                                      if (parent) {
+                                        parent.style.display = "table-row";
+                                      }
+                                    } else {
+                                      // Oculta el registro y todos sus padres hasta el elemento tr
+                                      var parent = registro.parentNode; // <details>
+                                      while (parent && parent.tagName !== "TR") {
+                                        parent = parent.parentNode;
+                                      }
+                                      if (parent) {
+                                        parent.style.display = "none";
+                                      }
+                                    }
+                                  });
+                                }
+        </script>
     </section>
 
 </body>
