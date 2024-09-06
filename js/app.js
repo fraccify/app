@@ -79,6 +79,8 @@ const confirmarreserca = document.getElementById("confirmarreserca");
 const divmisreservas = document.getElementById("divmisreservas");
 const divinformes = document.getElementById("informes");
 const divlistaresidentes = document.getElementById("divlistaresidentes");
+const contenedoradminvotos = document.getElementById("contenedoradminvotos");
+
 
 
 
@@ -357,14 +359,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 document.getElementById("descargarinformes").addEventListener("click", informes);
                                 document.getElementById("downloadinforme").addEventListener("click", fungenerarinforme);
                                 document.getElementById("mostrarregistroResidentes").addEventListener("click", mostrarresidentes);
-
-
-                                
-
-
-
-
-                                
+                                document.getElementById("agregarvotacion").addEventListener("click", agregarvotacion);
 
 
                               
@@ -401,6 +396,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                   homeSection.style.display = "block"
                                   divinformes.style.display = "none"
                                   divlistaresidentes.style.display = "none"
+                                  contenedoradminvotos.style.display = "none";
+
                                 }
 
                                 //menu 1//
@@ -413,6 +410,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                     homeSection.style.display = "none";
                                     divinformes.style.display = "none";
                                     divlistaresidentes.style.display = "none";
+                                    contenedoradminvotos.style.display = "none";
+
 
 
 
@@ -435,6 +434,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                     homeSection.style.display = "none"
                                     divinformes.style.display = "none"
                                     divlistaresidentes.style.display = "none"
+                                    contenedoradminvotos.style.display = "none";
+
 
                                 }
 
@@ -450,6 +451,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divpagos.style.display = "none";
                                   divinformes.style.display = "none"
                                   divlistaresidentes.style.display = "none"
+                                  contenedoradminvotos.style.display = "none";
+
 
 
                               
@@ -624,6 +627,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                   homeSection.style.display = "none"
                                   divinformes.style.display = "none"
                                   divlistaresidentes.style.display = "block"
+                                  contenedoradminvotos.style.display = "none";
+
 
 
                                   const detailsHTML = selectedCondominio.calles.map(calle => {
@@ -863,6 +868,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                   homeSection.style.display = "none"
                                   divinformes.style.display = "block"
                                   divlistaresidentes.style.display = "none"
+                                  contenedoradminvotos.style.display = "none";
+
 
                                 }
 
@@ -1925,6 +1932,141 @@ document.addEventListener("DOMContentLoaded", function() {
                                         throw error;
                                     }
                                 }
+
+                                document.getElementById("calle-morosos").addEventListener("click", function() {
+                                  if (this.open) { // Si necesitas verificar una condición de "abierto", esto sería solo para un <details>
+                                      obtenerdomconmora();
+                                  } else {
+                                      obtenerdomconmora(); // Si usas un click sin <details>, podrías evitar la condición
+                                  }
+                                });
+
+                                function obtenerdomconmora() {
+                                  console.log("Obteniendo registros de morosos...");
+                                  const url = `https://sheet.best/api/sheets/${sheetID}/tabs/propietarios${sheetIDprivada}`;
+                                  fetch(url)    
+                                      .then((response) => response.json())
+                                      .then((data) => {
+                                          // Filtrar y agregar los registros con estado "Moroso" (sin importar la fecha)
+                                          const registrosMorosos = data.filter((registro) => registro.status.startsWith("Moroso"));
+                                          agregarRegistrosMorosos("morosos-registros", registrosMorosos);
+                                      })
+                                      .catch((error) => {
+                                          console.error(error);
+                                      });
+                                }
+                                  // Función para agregar registros de morosos
+                                  function agregarRegistrosMorosos(contenedorId, registros) {
+                                      const contenedor = document.getElementById(contenedorId);
+                                      // Vaciar el contenedor antes de agregar nuevos registros
+                                      contenedor.innerHTML = '';
+                                      registros.forEach(registro => {
+                                          const registroHTML = `
+                                              <div id="div${registro.dom}" class="registro-item-mora">
+                                                  <p><strong>Domicilio:</strong> ${atob(registro.dom)}</p>
+                                                  <p><strong>Adeudo Total:</strong> ${registro.adeudo}</p>
+                                              </div>
+                                          `;
+                                          contenedor.insertAdjacentHTML('beforeend', registroHTML);
+                                      });
+                                  }
+
+
+                                  function agregarvotacion() {
+
+                                        divvotaciones.style.display = "none";
+                                        paymentHistory2024.style.display = "none";
+                                        divingresos.style.display = "none";
+                                        divamenidades.style.display = "none";
+                                        divpagos.style.display = "none";
+                                        homeSection.style.display = "none"
+                                        divinformes.style.display = "none"
+                                        divlistaresidentes.style.display = "none"
+                                        contenedoradminvotos.style.display = "block";
+                                
+
+
+                                  
+                                        const tablapreguntasadmin = document.getElementById("tablapreguntasadmin");
+                                  
+                                        const url = `https://sheet.best/api/sheets/${sheetID}/tabs/avotar${sheetIDprivada}`;
+                                  
+                                        fetch(url)
+                                            .then((response) => response.json())
+                                            .then((data) => {
+                                                // Limpiar el contenido del div antes de agregar nuevas tablas
+                                                tablapreguntasadmin.innerHTML = '';
+                                  
+                                                // Crear una tabla para contener todas las preguntas
+                                                let table = document.createElement('table');
+                                                table.className = 'tablaporcada';
+                                  
+                                                data.forEach((fila, index) => {
+                                                    let trPregunta = document.createElement('tr');
+                                                    let tdPregunta = document.createElement('td');
+                                                    tdPregunta.colSpan = 2;
+                                                    tdPregunta.textContent = fila.pregunta;
+                                  
+                                                    // Aplicar una clase diferente para filas alternadas
+                                                    if (index % 2 === 0) {
+                                                        trPregunta.className = 'fila-par';
+                                                    } else {
+                                                        trPregunta.className = 'fila-impar';
+                                                    }
+                                  
+                                                    trPregunta.appendChild(tdPregunta);
+                                                    table.appendChild(trPregunta);
+                                                });
+                                  
+                                                // Agregar la tabla al contenedor
+                                                tablapreguntasadmin.appendChild(table);
+                                            })
+                                            .catch((error) => {
+                                                console.error('Error al obtener datos:', error);
+                                            });
+                                    
+                                  }
+
+                                  document.getElementById('btnAgregarPregunta').addEventListener('click', () => {
+                                    const nuevaPregunta = prompt('Ingrese la nueva pregunta:');
+                                    
+                                    
+                                        agregarPregunta(nuevaPregunta);
+                                    
+                                  });
+
+                                  function agregarPregunta(pregunta) {
+                                    
+                                    const url = `https://sheet.best/api/sheets/${sheetID}/tabs/avotar${sheetIDprivada}`;
+                                  
+                                    const datos = {
+                                        pregunta: pregunta
+                                    };
+                                  
+                                    const opciones = {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                        },
+                                        body: JSON.stringify(datos),
+                                    };
+                                  
+                                    fetch(url, opciones)
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            alert('Pregunta agregada exitosamente');
+                                            // Puedes actualizar la vista aquí si es necesario
+                                            agregarvotacion(); // Opcional: para actualizar la lista de preguntas
+                                        })
+                                        .catch(error => {
+                                            console.error('Error al agregar la pregunta:', error);
+                                        });
+                                    
+                                  }
+
+
+
+
                             } else {
                                 alert("Contraseña incorrecta.");
                             }

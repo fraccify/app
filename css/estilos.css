@@ -614,7 +614,7 @@ font-size: 12px;
     width: 80%;
     border: none;
     border-radius: 5px;
-    margin: 0 0px 0 0px;
+    margin: 0 0px 0 10px;
     margin-bottom: 5px;
     background: #f3f3f3eb;
     color: #013e6a;
@@ -684,11 +684,11 @@ font-size: 12px;
   }
   
   .registro-item-mora {
-    border: 1px solid #b00000; /* Marco de 1px de grosor y color gris claro */
-    background-color: #b000001e;
-    padding: 10px; /* Espaciado interior de 10px */
+    border: 1px solid rgb(230, 153, 102); /* Marco de 1px de grosor y color gris claro */
+    background-color: rgba(230, 153, 102, 0.169);    
+    padding: 5px; /* Espaciado interior de 10px */
     font-size: 12px; /* Tamaño de fuente de 12px */
-    margin-bottom: 10px; /* Margen inferior de 10px */
+    margin-bottom: 5px; /* Margen inferior de 10px */
     border-radius: 8px; /* Esquinas ligeramente ovaladas */
   }
   
@@ -1333,17 +1333,19 @@ font-size: 12px;
   .calle-boxmorosos summary {
     cursor: pointer;
     outline: none;
-    background: rgba(255, 0, 0, 0.232);
-    width: 95%;
-    color: white;
+    border: 2px solid rgb(243, 146, 82); /* Marco de 1px de grosor y color gris claro */
+    background-color: rgba(230, 153, 102, 0.25);
+    color: black;
     border-radius: 8px;
     display: flex;
     font-size: 12px;
     align-items: center;
     padding: 5px;
-    margin-bottom: 10px;
-    color: red;
+    margin-bottom: 0px;
     font-weight: bold;
+
+    width: 95%;
+    content: "\002B" !important;
   }
   
   .btnadmin {
@@ -2000,4 +2002,75 @@ input:checked + .slider:before {
   height: 25px;
   margin: 5px 0px 0px 20px;
   padding: 0 0 0 10px;
+}
+
+#tablapreguntasadmin {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0; /* Añade un margen para separar la tabla */
+  border-radius: 8px;
+}
+
+#tablapreguntasadmin th, 
+#tablapreguntasadmin td {
+  border: 2px solid var(--secundario); /* Bordes con el color secundario */
+  padding: 12px 15px;
+  text-align: justify; /* Justifica el texto */
+  background-color: var(--fondo-claro); /* Fondo claro personalizado */
+  color: var(--secundario); /* Color de texto */
+  border-radius: 8px;
+}
+
+.add-residente-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--secundario); /* Color de fondo */
+  border: none; /* Elimina el borde */
+  border-radius: 50%;
+  width: 85px; /* Ajusta el ancho */
+  height: 85px; /* Ajusta la altura */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.492);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.add-residente-btn svg {
+  width: 30px; /* Ajusta el tamaño del ícono */
+  height: 30px;
+  fill: #fff; /* Cambia el color del icono */
+}
+
+#compartirQrButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primario); /* Color de fondo */
+  border: none; /* Elimina el borde */
+  border-radius: 50%; /* Hace que el botón sea circular */
+  width: 85px; /* Ancho */
+  height: 85px; /* Altura */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.492);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  padding: 0; /* Asegúrate de que no haya padding */
+  min-width: 5px;
+
+}
+
+#compartirQrButton svg {
+  width: 40px; /* Ajusta el tamaño del ícono */
+  height: 40px;
+  fill: #fff; /* Color del ícono */
+}
+
+
+#compartirQrButton:hover {
+  background-color: var(--secundario); /* Cambio de color al pasar el cursor */
 }
