@@ -1490,7 +1490,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                     desactivarBoton(); // Desactivar el botón al inicio de la función
                     
                                     confirmacion.style.display = "none";
-                                    divqr.style.display = "block";
                                     datoscorrectosvisitas.style.display = "block";
                                     divnuevoregistro.style.display = "block";
                                     const domicilio = domicilioSpan.textContent;
@@ -1600,11 +1599,14 @@ document.addEventListener("DOMContentLoaded", function() {
                     
                                         // Agregar el código QR al contenedor
                                         contenedorQR.appendChild(qrElementClone);
+                                        divqr.style.display = "block";
+
                     
                                         // Llamar a las funciones para borrar elementos y regresar
                                         //borrarElementos();
                                         //regresar();
                                       })
+                              
                                       .catch((error) => {
                                         console.error(
                                           "Error al enviar los datos a la hoja de cálculo",
