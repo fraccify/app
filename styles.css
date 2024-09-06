@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(37, 150, 190);
+    color: white;
+}
+
+header .logo {
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: rgb(37, 150, 190);
+    color: white;
+}
+
+.hero .text {
+    max-width: 50%;
+}
+
+.hero .text h1 {
+    font-size: 48px;
+}
+
+.hero .text h2 {
+    margin-top: 10px;
+    font-size: 32px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.cta, .secondary-cta {
+    padding: 10px 20px;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.cta {
+    background-color: #00c853;
+    color: white;
+}
+
+.secondary-cta {
+    background-color: white;
+    color: #004d40;
+    border: 2px solid #004d40;
+}
+
+.image-slider {
+    position: relative;
+    width: 300px;
+    height: 400px;
+}
+
+.image-slider img {
+    width: 75%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.image-slider img.active {
+    opacity: 1;
+}

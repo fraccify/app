@@ -1,0 +1,1984 @@
+:root {
+    --primario: rgb(37, 150, 190);
+    --secundario: rgb(25, 102, 130);
+    --terciario: rgb(173, 221, 240);
+    
+  }
+  
+body {
+background: #fff;
+font-family: "Quicksand", sans-serif;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding-top: 60px; /* Ajusta este valor al alto de tu header */
+color: rgb(50, 50, 50);
+}
+
+.datosresidente {
+    list-style-type: disc; /* Viñetas estilo disco */
+    padding-left: 20px; /* Espacio desde el borde izquierdo */
+    text-align: left; /* Alineado a la izquierda */
+    padding: 10px;
+    justify-content: center; /* Centra horizontalmente */
+}
+
+header.header_1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+    background-color: #fff; /* Color de fondo, ajusta según tu diseño */
+}
+
+.icon-text {
+    display: flex;
+    align-items: center; /* Alinea el SVG y el texto verticalmente */
+}
+
+.icon-text svg {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+    vertical-align: middle; /* Alinea el ícono con el texto */
+    color: rgb(25, 102, 130);
+}
+
+
+.card {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+.columna-img {
+    width: 25%;
+}
+
+
+.columna-img img {
+    max-width: 120px;
+    height: auto;
+}
+
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px; /* Ajusta según el tamaño de tu header */
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+.nav-menu li a {
+    display: flex;
+    color: rgb(25, 102, 130);
+    font-size: 12px;
+    text-decoration: none;
+    font-family: "Quicksand", sans-serif;
+    align-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.nav-menu li a svg {
+    fill: var(--secundario); /* Change this to your desired color */
+}
+
+.status {
+    color: rgb(25, 102, 130);
+
+    font-weight: bold;
+}
+
+.nav-menu.show {
+    width: 60%;
+    display: flex;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    border-radius: 8px;       /* Bordes redondeados */
+}
+
+.mobilemenu {
+    display: block;
+    cursor: pointer;
+}
+
+.mobilemenu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+.nav-menu li a:hover {
+    color: rgb(37, 150, 190); /* Color al pasar el mouse */
+}
+
+.limenu {
+    position: relative;
+    text-align: center; /* Centra el contenido dentro del div */
+    padding: 10px 0; /* Espacio arriba y abajo */
+    border-radius: 8px;       /* Bordes redondeados */
+}
+
+.limenu::before,
+.limenu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: transparent; /* Asegura que el fondo sea transparente */
+}
+
+.limenu::before {
+    top: 0;
+}
+
+.limenu::after {
+    bottom: 0;
+}
+
+.limenu img {
+    fill: rgb(109, 38, 38); /* Cambia el color del SVG a rojo */
+}
+
+
+* {
+padding: 0px;
+margin: 5px;
+box-sizing: border-box;
+}
+
+.contenedor {
+    width: 300px;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    min-height: 10vh;
+    display: grid;
+    margin-right: 30px; /* Agregar margen */
+    margin-left: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.contenedorresidentes {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  min-height: 10vh;
+  display: grid;
+  margin-right: 30px; /* Agregar margen */
+  margin-left: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+  
+.rowheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.columna-izquierda {
+padding: 5px;
+min-height: 10vh;
+}
+.row {
+display: flex;
+/*justify-content: space-between;*/
+justify-content: flex-start;
+/*align-items: flex-start;*/
+align-items: center;
+font-size: 12px;
+}
+  
+  .row1 {
+    display: flex;
+    /*justify-content: space-between;*/
+    justify-content: flex-start;
+    /*align-items: flex-start;*/
+    align-items: center;
+  }
+  
+  .row h1,
+  .row p,
+  .row span {
+    margin: 0 auto;
+  }
+  
+  .titulo {
+    color: rgb(37, 150, 190);
+  }
+  .columna-izquierda2 {
+    align-items: center;
+  }
+  
+  .columna-izquierda4 {
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+  }
+  .columna-izquierda4 img {
+    max-width: 110%; /* Asegura que la imagen no sobrepase su contenedor */
+    height: auto;
+  }
+  
+  .columna-izquierda2,
+  .columna-derecha2 {
+    width: 40%; /* Ajusta el ancho según tus necesidades */
+  }
+  .columna-izquierda2 img {
+    max-width: 150%; /* Asegura que la imagen no sobrepase su contenedor */
+    height: auto;
+  }
+  
+  .contenedor-input {
+    position: relative;
+    margin-bottom: 0px;
+  }
+  
+  .header {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    color: rgb(25, 102, 130)
+  }
+  
+  .header p {
+    color: #000;
+  }
+  
+  label {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #000;
+    font-size: 14px;
+  }
+  
+  .input {
+    padding: 0px 0px 0px 10px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    width: 88%;
+    border: none;
+    border-radius: 5px;
+    margin: 0 20px 0 45px;
+    margin-bottom: 5px;
+    background: #f3f3f3eb;
+    color: #013e6a;
+    font-family: "Quicksand", sans-serif;
+    border: 2px solid transparent;
+    transition: 0.3s ease all;
+  }
+
+  .mespago{
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 5px 0px;
+    width: 100%;
+    height: 22px;
+  }
+
+  .inputpago {
+    padding: 0px 0px 0px 0px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    width: 88%;
+    border: none;
+    border-radius: 5px;
+    margin: 0 0px 0 5px;
+    margin-bottom: 5px;
+    background: #f3f3f3eb;
+    color: #013e6a;
+    font-family: "Quicksand", sans-serif;
+    border: 2px solid transparent;
+    transition: 0.3s ease all;
+  }
+
+
+  
+  .datos{
+    color: black;
+    font-weight: bold;
+  }
+  
+  .datosvyp {
+    color: rgb(65, 113, 226);
+    font-weight: bold;
+  }
+  
+  input:focus {
+    outline: none;
+    border: rgba(23, 158, 221, 0.3);
+  }
+  
+  .contenedor-input svg {
+    position: absolute;
+    color: var(--secundario);
+    top: 17px;
+    left: 17px;
+  }
+  
+  button {
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    border-radius: 8px;
+    margin-top: 10px;
+    background: #013e6a00;
+    height: 50px;
+    color: #013e6a;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid #013e6a;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    outline: none;
+    width: 231px;
+    border-radius: 20px;
+  }
+  
+  button:hover {
+    background: rgb(37, 150, 190);
+    border: rgb(37, 150, 190);
+    color: #fff;
+  }
+  
+  input:hover {
+    background: rgb(37, 150, 190);
+    border: rgb(37, 150, 190);
+    color: #fff;
+  }
+  
+  select:hover {
+    background: rgb(37, 150, 190);
+    border: rgb(37, 150, 190);
+    color: #fff;
+  }
+  
+  #divamenidades {
+    width: 350px;
+    max-width: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    min-height: 10vh;
+    display: grid;
+    margin: 0px; /* Agregar margen */
+  }
+  
+  button svg {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .columna-derecha img {
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .columna-derecha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contenedor2 {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    min-height: 10vh;
+    margin: 20px;
+  }
+  
+  .form-select {
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 12px 16px;
+    cursor: pointer;
+  }
+  
+  #status {
+    color: rgb(25, 102, 130); /* Color del texto */
+    font-weight: bold; /* Para hacer el texto más llamativo */
+  }
+  
+  #adeudo {
+    color: rgb(25, 102, 130); /* Color del texto */
+    font-weight: bold; /* Para hacer el texto más llamativo */
+  }
+  
+  #iniciodatos {
+    font-size: 12px;
+  }
+  
+  /* Estilos para el contenedor de botones */
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    align-content: center;
+  }
+  
+  /* Estilos para los botones */
+  .btn {
+    width: 200px; /* Maintains the desired width */
+    height: 40px; /* Maintains the desired height */
+    min-width: 150px; /* Maintains the minimum width */
+    margin: 2px; /* Maintains the margin */
+    padding: 10px 20px; /* Maintains the padding for button comfort */
+    text-align: start; /* Aligns the text to the left */
+    border-radius: 5px; /* Maintains the border radius */
+    font-size: 13px; /* Reduces the font size to 12px */
+    font-weight: 500; /* Maintains the font weight */
+    transition: all 0.3s ease; /* Maintains the transition effect */
+    outline: none; /* Maintains the removal of outline */
+    border-radius: 20px;
+  }
+  
+  .textbtn {
+    text-align: left; /* Aligns the text to the left */
+    font-size: 12px; /* Reduces the font size to 12px */
+  }
+  
+  table {
+    margin: 0;
+    border-collapse: separate;
+    text-align: left;
+    padding: 0px 0px;
+  }
+  
+  td {
+    padding: 5px;
+    font-size: 12px;
+  }
+  
+  .contenedor-divs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contenedor-divs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: 1fr;
+  }
+  
+  .div-vertical {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .div-vertical:nth-child(1) {
+    top: 0;
+  }
+  
+  .div-vertical:nth-child(2) {
+    top: 100px;
+  }
+  
+  .div-vertical:nth-child(3) {
+    top: 200px;
+  }
+  
+  .formulario2 {
+    display: flex; /* Activate flexbox for the form */
+    flex-direction: column; /* Stack elements vertically */
+    border: 35px;
+  }
+  
+  .contenedor-input,
+  .contenedor-fecha {
+    margin-bottom: 5px; /* Optional spacing between elements */
+  }
+  
+  .contenedorx1-input {
+    width: calc(100vw - 40px); /* Ajusta el ancho según tu diseño */
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 2px solid #013e6a; /* Azul claro */
+  }
+  
+  #tipo-visita {
+    font-size: 16px; /* Ajusta el tamaño de letra */
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    font-family: "Quicksand", sans-serif; /* Agrega la fuente Quicksand */
+  }
+  
+  /* Estilos para el contenedor personalizado del selector */
+  .custom-select {
+    position: relative;
+  }
+  
+  .custom-select .select-selected {
+    /* Estilos para el selector personalizado */
+    padding: 10px 15px; /* Ajusta el espaciado interno */
+    background-color: var(--primario); /* Color de fondo */
+    color: var(--secundario); /* Color del texto */
+    border: 2px solid var(--primario); /* Borde */
+    border-radius: 5px; /* Borde redondeado */
+    transition: background-color 0.3s ease; /* Transición suave */
+  }
+  
+  .custom-select .select-selected:hover {
+    /* Estilos al pasar el mouse sobre el selector personalizado */
+    background-color: var(--secundario); /* Cambia el color de fondo */
+    color: var(--primario); /* Cambia el color del texto */
+  }
+  
+  .custom-select .select-items {
+    /* Estilos para el contenedor de opciones */
+    position: absolute;
+    background-color: var(--primario); /* Color de fondo */
+    color: var(--secundario); /* Color del texto */
+    border: 2px solid var(--primario); /* Borde */
+    border-top: none; /* Elimina el borde superior */
+    border-radius: 0 0 5px 5px; /* Borde redondeado solo en la parte inferior */
+    z-index: 1; /* Asegura que las opciones aparezcan sobre otros elementos */
+    width: 90%; /* Ancho completo del contenedor */
+    display: none; /* Inicialmente oculto */
+    cursor: pointer; /* Cursor de puntero al pasar sobre las opciones */
+  }
+  
+  .custom-select .select-items div {
+    /* Estilos para las opciones */
+    padding: 10px 15px; /* Ajusta el espaciado interno */
+    transition: background-color 0.3s ease; /* Transición suave */
+  }
+  
+  .custom-select .select-items div:hover {
+    /* Estilos al pasar el mouse sobre las opciones */
+    background-color: var(--secundario); /* Cambia el color de fondo */
+    color: var(--primario); /* Cambia el color del texto */
+  }
+  
+  /* Estilos para el elemento select */
+  select {
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    width: 88%;
+    border: none;
+    border-radius: 5px;
+    margin: 0 20px 0 45px;
+    margin-bottom: 5px;
+    background: #f3f3f3eb;
+    color: #013e6a;
+    font-family: "Quicksand", sans-serif;
+    border: 2px solid transparent;
+    transition: 0.3s ease all;
+  }
+
+  .select2 {
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    margin: 0 0px 0 0px;
+    margin-bottom: 5px;
+    background: #f3f3f3eb;
+    color: #013e6a;
+    font-family: "Quicksand", sans-serif;
+    border: 2px solid transparent;
+    transition: 0.3s ease all;
+  }
+
+  .input2 {
+    padding: 0px 0px 0px 10px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    width: 88%;
+    border: none;
+    border-radius: 5px;
+    margin: 0 0px 0 5px;
+    margin-bottom: 5px;
+    background: #f3f3f3eb;
+    color: #013e6a;
+    font-family: "Quicksand", sans-serif;
+    border: 2px solid transparent;
+    transition: 0.3s ease all;
+}
+
+  .sheetID{
+    width: 100%;
+
+  }
+  
+  /* Estilos al enfocar el elemento select */
+  select:focus {
+    /* Borde */
+    /* Elimina el estilo de selección nativo */
+    outline: none;
+  }
+  
+  #qrElement {
+    padding: 10px;
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  #tiutlo2 {
+    padding: 10px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #divcalendario iframe {
+    width: 300px;
+    height: 1000px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    font-size: 1px;
+    text-align: center;
+  }
+  
+  .registro-item {
+    color: var(--secundario);
+    border: 1px solid var(--secundario); /* Marco de 1px de grosor y color gris claro */
+    padding: 5px; /* Espaciado interior de 10px */
+    font-size: 12px; /* Tamaño de fuente de 12px */
+    margin-bottom: 5px; /* Margen inferior de 10px */
+    border-radius: 8px; /* Esquinas ligeramente ovaladas */
+    background-color: #f3f3f3eb;
+  }
+  
+  .registro-item-mora {
+    border: 1px solid #b00000; /* Marco de 1px de grosor y color gris claro */
+    background-color: #b000001e;
+    padding: 10px; /* Espaciado interior de 10px */
+    font-size: 12px; /* Tamaño de fuente de 12px */
+    margin-bottom: 10px; /* Margen inferior de 10px */
+    border-radius: 8px; /* Esquinas ligeramente ovaladas */
+  }
+  
+  .btn2 {
+    width: 200px; /* Maintains the desired width */
+    height: 70px; /* Maintains the desired height */
+    min-width: 150px; /* Maintains the minimum width */
+    margin: 2px; /* Maintains the margin */
+    padding: 10px 20px; /* Maintains the padding for button comfort */
+    text-align: start; /* Aligns the text to the left */
+    border-radius: 5px; /* Maintains the border radius */
+    font-size: 13px; /* Reduces the font size to 12px */
+    font-weight: 500; /* Maintains the font weight */
+    transition: all 0.3s ease; /* Maintains the transition effect */
+    outline: none; /* Maintains the removal of outline */
+  }
+  
+
+  #loader {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding-top: 20%;
+  }
+  
+  #loader img {
+    width: 100px;
+  }
+  
+  .buttonrecibos {
+    width: 90px;
+    white-space: nowrap;
+    font-family: "Quicksand", sans-serif;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-top: 2px;
+    height: 16px;
+    color: #013e6a;
+    background: #013e6a00;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid #013e6a;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    outline: none;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+  }
+  
+  .buttonrecibos:hover {
+    background: rgb(37, 150, 190);
+    border: 1px solid white; /* Corregido */
+  }
+  
+  .table-custom td {
+    border: 0px solid #ffffff00;
+    text-align: center; /* Esto alineará el contenido horizontalmente */
+    vertical-align: bottom; /* Esto alineará el contenido verticalmente hacia abajo */
+    padding: 8px; /* Ajusta el padding según sea necesario */
+  }
+  
+  .contenedorhome {
+    width: 370px;
+    max-width: 370px;
+    max-height: 90%;
+    border-radius: 10px 10px 10px 10px;
+    position: center;
+    overflow: hidden;
+    left: 50%; /* Establece el 50% del ancho del viewport */
+    background: #fff;
+    min-height: 10vh;
+    display: grid;
+    margin: 10px; /* Agregar margen */
+    /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);*/
+    overflow: hidden;
+    bottom: 0;
+  }
+  
+  #adminPanel {
+    width: 30px;
+    max-width: 370px;
+    max-height: 90%;
+    border-radius: 10px;
+    background: linear-gradient(
+      to bottom,
+      rgb(255, 255, 255) 55%,
+      #013e6a
+    ); /* Degradado de arriba hacia abajo */
+    border-radius: 10px 10px 10px 10px;
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Establece el 50% del ancho del viewport */
+    transform: translateX(-50%); /* Centra el panel horizontalmente */
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  }
+  
+  .contenedorformulariovisita {
+    color: rgba(0, 0, 0, 0.428);
+    padding: 0px 0px;
+  }
+  
+  .estatus {
+    width: 60px;
+    height: 18px;
+    line-height: 14px;
+    font-size: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 0px 0 0;
+    margin-bottom: 0px;
+    background: #f4f8f7;
+    color: #013e6a;
+  }
+  
+  /* Estilo base para la tabla */
+  #tablapropietarios {
+    width: 370px;
+    max-width: 370px;
+    max-height: 90%;
+    border-radius: 10px 10px 10px 10px;
+    position: center;
+    overflow: hidden;
+    left: 50%; /* Establece el 50% del ancho del viewport */
+    background: #fff;
+    min-height: 10vh;
+    display: grid;
+    margin: 10px; /* Agregar margen */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    bottom: 0;
+  }
+  
+  .formulario4 {
+    width: 280px;
+    display: flex; /* Activate flexbox for the form */
+    flex-direction: column; /* Stack elements vertically */
+    border: 35px;
+  }
+  
+  .tablapropietarios th,
+  .tablapropietarios td {
+    padding: 8px; /* Espaciado interno */
+  }
+  
+  /* Estilo para la fila de detalle */
+  .detalle {
+    display: none; /* Ocultar por defecto */
+  }
+  
+  /* Estilo para las filas de detalle cuando están abiertas */
+  .detalle.abierto {
+    display: table-row; /* Mostrar como fila de tabla */
+  }
+  
+  /* Estilos para las filas de las tablas más pequeñas */
+  
+  /* Estilos para las celdas */
+  th,
+  td {
+    text-align: left;
+    font-weight: normal; /* Asegúrate de que la fuente no sea negrita */
+    color: black;
+  }
+  
+  .calle-box .tablaporcada {
+    width: 100%;
+    font-size: 10px;
+    color: black;
+    background-color: rgba(25, 102, 130, 0.477);
+    content: "\002B" !important;
+    border-radius: 8px;
+  }
+  
+  .calle-box summary::before {
+    content: "\002B" !important; /* Código Unicode para el signo de más (+) */
+    display: inline-block;
+    margin-right: 0.5em; /* Espacio entre el icono y el texto */
+    color: #013e6a; /* Color del icono */
+  }
+  
+  .calle-box details[open] > summary::before {
+    content: "\2212" !important; /* Código Unicode para el signo de menos (-) */
+    color: #013e6a; /* Color del icono cuando el detalle está abierto */
+  }
+  
+  .calle-box .fila-roja {
+    width: 100%;
+    font-size: 10px;
+    color: black;
+    background-color: rgba(230, 153, 102, 0.513);
+    content: "\002B" !important;
+    border-radius: 8px;
+  }
+  
+  .fila-roja2 {
+    color: red;
+    width: 275px;
+    font-weight: bold; /* Agregar negrita */
+    content: "\f06a"; /* Código Unicode del icono de alerta */
+    border-radius: 5px;
+  }
+  
+  .pago {
+    height: 20px;
+    line-height: 0px;
+    font-size: 14px;
+    border-radius: 0px;
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 0px;
+    background: rgba(25, 102, 130, 0.187);;
+    border-radius: 8px;
+    color: var(--primario);
+    width: 95%;
+    border: none;
+    padding: 0px 0px 0px 15px;
+    }
+
+   .infodelresidente th, td {
+      text-align: left;
+      font-weight: normal;
+      color: var(--secundario)
+  }
+  
+  
+  .datostext {
+    height: 20px;
+    line-height: 0px;
+    font-size: 14px;
+    border-radius: 0px;
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 0px;
+    background: rgba(25, 102, 130, 0.187);;
+    border-radius: 8px;
+    color: var(--primario);
+    width: 95%;
+    border: none;
+    padding: 0px 0px 0px 15px;
+  }
+
+  .perfil-select{
+    height: 20px;
+    line-height: 0px;
+    font-size: 14px;
+    border-radius: 0px;
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 0px;
+    background: rgba(25, 102, 130, 0.187);;
+    border-radius: 8px;
+    color: var(--primario);
+    width: 95%;
+    border: none;
+    padding: 0px 0px 0px 15px;
+    margin: 0 0 0 5px;
+  }
+  
+  .identificadormora {
+    height: 20px;
+    line-height: 0px;
+    font-size: 12px;
+    border-radius: 0px;
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 0px;
+    background: #013e6a22;
+    color: #000000;
+    width: 100%;
+    border: none;
+  }
+  
+  .calle-registros {
+    padding: 15px 25px 0px 0px;
+    width: 100%;
+    position: center;
+    overflow: hidden;
+    left: 50%; /* Establece el 50% del ancho del viewport */
+    background: #fff;
+    display: grid;
+    margin: 0px; /* Agregar margen */
+    overflow: hidden;
+    bottom: 0;
+    border: none;
+  }
+  
+  .calle-registros tr:nth-child(even) {
+    background-color: rgba(53, 98, 130, 0);
+  }
+  
+  .calle-registros tr:nth-child(odd) {
+    background-color: rgba(53, 98, 130, 0);
+  }
+  
+  .tablacompleta {
+    width: 100%;
+    position: center;
+    overflow: hidden;
+    left: 10%; /* Establece el 50% del ancho del viewport */
+    background: #fff;
+    min-height: 10vh;
+    display: grid;
+    padding: 0px 0px 0px 2px;
+    margin: 25px 0px 0px 0px;
+
+    overflow: hidden;
+    bottom: 0;
+  }
+  
+  /* Estilo para el icono de abrir */
+  summary::before {
+    content: "\002B" !important; /* Código Unicode para el signo de más (+) */
+    display: inline-block;
+    margin-right: 0.9em; /* Espacio entre el icono y el texto */
+    color: rgb(37, 150, 190);
+  }
+  
+  /* Estilo para el icono de cerrar */
+  details[open] > summary::before {
+    content: "\2212" !important; /* Código Unicode para el signo de menos (-) */
+    color: rgb(37, 150, 190);
+  }
+  
+  summary {
+    list-style: none;
+  }
+  
+  /* Restablece el margen izquierdo para el contenido del resumen */
+  summary::before {
+    margin-left: 0;
+  }
+  
+  #adminPanel2 {
+    width: 370px;
+    max-width: 370px;
+    height: 700px;
+    max-height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgb(255, 255, 255) 85%,
+      #013e6a
+    ); /* Degradado de arriba hacia abajo */
+    border-radius: 10px 10px 10px 10px;
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Establece el 50% del ancho del viewport */
+    transform: translateX(-50%); /* Centra el panel horizontalmente */
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  
+    color: #fff;
+  }
+  
+  #adminPanel3 {
+    width: 370px;
+    max-width: 370px;
+    height: 700px;
+    max-height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgb(255, 255, 255) 85%,
+      #013e6a
+    ); /* Degradado de arriba hacia abajo */
+    border-radius: 10px 10px 10px 10px;
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Establece el 50% del ancho del viewport */
+    transform: translateX(-50%); /* Centra el panel horizontalmente */
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  }
+  
+  #encabezadoadmin {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .boton-eliminar {
+    background-color: transparent;
+    color: red;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+    margin-top: 0px; /* Ajusta el margen superior según sea necesario */
+    height: 15px;
+  }
+  
+  .boton-eliminar:hover {
+    background-color: transparent;
+    color: red;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+    margin-top: 0px; /* Ajusta el margen superior según sea necesario */
+    height: 15px;
+  }
+  
+  .boton-eliminar:hover {
+    text-decoration: none;
+  }
+  
+  .avisodeprivacidad {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    font-family: "Quicksand", sans-serif;
+  }
+  
+  .tituloavdp {
+    margin-top: 0;
+    text-align: center;
+    color: #0271cd;
+  }
+  
+  .contenedoradmin {
+    width: 320px;
+    max-width: 95%;
+    max-height: 90%;
+    border-radius: 20px 20px 20px 20px;
+    position: center;
+    overflow: hidden;
+    left: 50%; /* Establece el 50% del ancho del viewport */
+    background: #fff;
+    min-height: 10vh;
+    display: grid;
+    margin: 10px; /* Agregar margen */
+    overflow: hidden;
+    bottom: 0;
+    margin: 1;
+  
+    /* Añadido para ocupar más espacio en la pantalla */
+    width: 95%; /* O ajusta a la anchura deseada */
+    height: 95%; /* O ajusta a la altura deseada */
+    max-width: 95%; /* Para asegurarse de que no sobrepase el contenedor */
+    max-height: 95%; /* Para asegurarse de que no sobrepase el contenedor */
+    box-sizing: border-box; /* Para incluir padding y border en el tamaño total */
+  }
+  
+  .tituloavisos {
+    color: #0271cd;
+  }
+  
+  .encabezado {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .encabezado img {
+    max-width: 40%; /* Asegura que la imagen no sobrepase su contenedor */
+    height: auto;
+  }
+  
+  /* Estilo base para el summary dentro de un .calle-boxss */
+  .calle-boxss summary {
+    cursor: pointer;
+    outline: none; /* Elimina el contorno predeterminado en algunos navegadores */
+    background-color: #013e6a;
+    width: 95%;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+  }
+  
+  .calle-box summary {
+    cursor: pointer;
+    outline: none; /* Elimina el contorno predeterminado en algunos navegadores */
+    background-color: var(--secundario);
+    width: 95%;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 0px; /* Agrega margen inferior de 10px entre los elementos */
+    font-size: 11;
+  }
+  
+  .tablaporcada2 {
+    width: 100%;
+    color: white;
+    background-color: var(--secundario);
+  }
+
+  .infodelresidenteconmora{
+    width: 100%;
+    background-color:  rgba(202, 208, 210, 0.297);
+    border-radius: 8px;
+    margin: 5px;
+  }
+
+  .infodelresidente{
+    width: 100%;
+    background-color:  rgba(202, 208, 210, 0.297);
+    border-radius: 8px;
+    margin: 5px;
+  }
+  
+  .registro-itemss {
+    color: black;
+    border: 1px solid #013e6a; /* Marco de 1px de grosor y color gris claro */
+    padding: 5px; /* Espaciado interior de 10px */
+    font-size: 12px; /* Tamaño de fuente de 12px */
+    margin-bottom: 10px; /* Margen inferior de 10px */
+    border-radius: 8px; /* Esquinas ligeramente ovaladas */
+    width: 350px;
+  }
+  
+  .calle-registrosss {
+    width: ;
+    position: center;
+    overflow: hidden;
+    left: 40%; /* Establece el 50% del ancho del viewport */
+    background: #fff;
+    overflow: hidden;
+    bottom: 0;
+    border: none;
+    padding: 10px;
+    font-size: 12px;
+  }
+  
+  .header2 {
+    margin-bottom: 40px;
+    text-align: center; /* Centra el texto horizontalmente */
+  }
+  
+  #busqueda-domicilio {
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease-in-out;
+    font-size: 12px;
+  }
+  
+  #busqueda-domicilio:focus {
+    outline: none;
+    border-color: #007bff; /* Cambia el color del borde al enfocar el campo */
+  }
+  
+  .seguridad {
+    width: 280px;
+    max-width: 95%;
+    max-height: 90%;
+    border-radius: 10px 10px 10px 10px;
+    position: center;
+    overflow: hidden;
+    left: 50%; /* Establece el 50% del ancho del viewport */
+    background: #fff;
+    min-height: 10vh;
+    display: grid;
+    margin: 10px; /* Agregar margen */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    bottom: 0;
+  }
+  
+  .row2 {
+    width: 380px;
+    display: flex;
+    justify-content: space-between;
+    justify-content: flex-start;
+    /* align-items: flex-start; */
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  .columna-izquierda3 {
+    text-align: center; /* Centra horizontalmente el contenido */
+  }
+  
+  .columna-izquierda3 img {
+    max-width: 36%; /* Tamaño máximo para la imagen */
+    margin-left: auto; /* Auto-margen a la izquierda */
+    margin-right: auto; /* Auto-margen a la derecha */
+  }
+  
+  .header3 {
+    text-align: center; /* Centra el texto horizontalmente */
+  }
+  
+  #divpagos {
+    width: 300px;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 10vh;
+    display: grid;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-bottom: 10px; /* Agrega un margen inferior entre contenedores */
+    font-size: 12px;
+  }
+  
+  .columna-logoseguridad,
+  .columna-derecha2 {
+    width: 40%; /* Ajusta el ancho según tus necesidades */
+  }
+  .columna-logoseguridad img {
+    max-width: 80%; /* Asegura que la imagen no sobrepase su contenedor */
+    height: auto;
+  }
+  #seguridad {
+    width: 300px;
+  }
+  
+  .tituloseguridad {
+    font-size: 14px;
+    color: var(--secundario);
+  }
+  
+  .calle-boxmorosos summary {
+    cursor: pointer;
+    outline: none;
+    background: rgba(255, 0, 0, 0.232);
+    width: 95%;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 10px;
+    color: red;
+    font-weight: bold;
+  }
+  
+  .btnadmin {
+    width: 160px; /* Maintains the desired width */
+    height: 40px; /* Maintains the desired height */
+    min-width: 150px; /* Maintains the minimum width */
+    margin: 2px; /* Maintains the margin */
+    padding: 10px 20px; /* Maintains the padding for button comfort */
+    text-align: start; /* Aligns the text to the left */
+    border-radius: 5px; /* Maintains the border radius */
+    font-size: 12px; /* Reduces the font size to 12px */
+    font-weight: 500; /* Maintains the font weight */
+    transition: all 0.3s ease; /* Maintains the transition effect */
+    outline: none; /* Maintains the removal of outline */
+    border-radius: 20px;
+  }
+  
+  .conetnedordetails {
+    color: var(--secundario);
+    align-items: left; /* Centra los elementos horizontalmente */
+  }
+
+.contenedorpagos {
+    width: 105%;
+    padding: 20px;
+    border-radius: 8px;
+}
+.dropdown {
+    margin-bottom: 20px;
+    border: 1px solid var(--primario); /* Borde del color primario */
+    border-radius: 8px;
+}
+.dropdown-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 35px;
+    font-size: 12px;
+    width: 97%;
+    border: none;
+    border-radius: 8px;
+    background: #f3f3f3eb;
+    color: var(--secundario);
+    font-family: "Quicksand", sans-serif;
+    border: 2px solid var(--secundario);
+    transition: 0.3s ease all;
+}
+
+  
+  .contenedorformularioreserva {
+    width: 90%;
+    align-items: left;
+    padding: 1px 1px;
+    margin-bottom: 1px;
+  }
+  
+
+  
+  .table-custom {
+    width: 100%;
+    color: var(--secundario);
+    border-collapse: collapse;
+    margin: 0px 0;
+    font-size: 1px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden; /* Para asegurar que el border-radius funcione */
+    border: 1px solid var(--secundario);
+  }
+
+  .table-custom th,
+  .table-custom td {
+    padding: 2px 5px;
+    border: 1px solid #ddd;
+    vertical-align: middle; /* Centra verticalmente */
+    color: var(--secundario);
+
+  }
+  .table-custom thead th {
+    background-color: #009879;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  .table-custom tbody tr:nth-child(even) {
+    background-color: rgba(173, 221, 240, 0.023);
+  }
+  
+  .table-custom tbody tr:nth-child(odd) {
+    background-color: rgba(26, 175, 230, 0.223); /* Color de fondo para filas impares */
+  }
+
+  .infodelresidente tbody tr:nth-child(odd) {
+    background-color: rgba(81, 112, 124, 0.093); /* Color de fondo para filas impares */
+  }
+
+  .infodelresidenteconmora tbody tr:nth-child(odd) {
+    background-color: rgba(230, 153, 102, 0.513); /* Color de fondo para filas impares */
+  }
+
+
+  
+  .table-custom tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  .table-custom-highlight tbody tr:hover {
+    background: rgb(37, 150, 190);
+    border: rgb(37, 150, 190);
+  }
+  
+  .table-custom th,
+  .table-custom td :hover {
+    color: white;
+  }
+  
+  .divreservar {
+    padding: 0px 0px;
+  }
+  
+  .btnreservar {
+    padding: 10px 10px;
+  }
+  
+  #btnenviaringreso {
+    padding: 0px 35px;
+  }
+  
+  #divingresos {
+    width: 100%;
+    color: rgb(37, 150, 190);
+    padding: 10px 10px 10px 10px; /* Padding en el orden: top, right, bottom, left */
+  }
+  
+  .formulario4 {
+    width: 280px;
+    display: flex; /* Activate flexbox for the form */
+    flex-direction: column; /* Stack elements vertically */
+    border: 35px;
+  }
+  
+  #fechavisita{
+    width: 270px;
+  
+  }
+  
+  .table-table-borderless {
+    margin: 0;
+    border-collapse: collapse; /* Usar 'collapse' en lugar de 'separate' para reducir el espacio entre celdas */
+    text-align: left;
+    padding: 0; /* Eliminar el padding */
+    border-spacing: 0; /* Asegurarse de que no haya espacio entre celdas */
+  }
+  
+  .table-table-borderless td,
+  .table-table-borderless th {
+    padding: 0; /* Eliminar el padding de las celdas */
+    margin: 0; /* Eliminar el margen de las celdas */
+  }
+  .svgreservacion{
+    padding: -5px;
+  }
+
+  .inputfechareserva{
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px 0 5px;
+    margin-bottom: 0px;
+    background: #f3f3f3eb;
+    color: #013e6a;
+    font-family: "Quicksand", sans-serif;
+    border: 2px solid transparent;
+    transition: 0.3s ease all;
+    margin: 0 20px 0 45px;
+  }
+  
+  .inputfecha {
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    width: 310px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px 0 5px;
+    margin-bottom: 0px;
+    background: #f3f3f3eb;
+    color: #013e6a;
+    font-family: "Quicksand", sans-serif;
+    border: 2px solid transparent;
+    transition: 0.3s ease all;
+    margin: 0 20px 0 45px;
+  }
+
+
+  
+  
+  .botonescamara {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-items: center;
+    font-size: 12px;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: column;
+  }
+  
+  .contenedorcamaraybotones {
+    display: flex;
+    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-items: center;
+    font-size: 12px;
+    flex-direction: column;
+  }
+  
+  .img-fluid {
+    width: 350px;
+  }
+  
+  
+  .contenedorhomeverde {
+    width: 370px;
+    max-width: 370px;
+    max-height: 90%;
+    border-radius: 10px 10px 10px 10px;
+    position: center;
+    overflow: hidden;
+    margin: 10px;
+    left: 50%; /* Establece el 50% del ancho del viewport */
+    background: rgba(0, 200, 0, 0.445);
+    min-height: 10vh;
+    display: grid;
+    margin: 10px; /* Agregar margen */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    bottom: 10px;
+    justify-content: center;
+  }
+  
+  .datosverde{
+    padding: 20px 20px 20px 20px;
+    justify-content: center;
+    margin: 10px; 
+    min-height: 10vh;
+  }
+  
+  
+  .contenedorhomerojo {
+    width: 370px;
+    height: 370px;
+    max-width: 370px;
+    max-height: 90%;
+    border-radius: 10px 10px 10px 10px;
+    position: center;
+    overflow: hidden;
+    margin: 10px;
+    left: 50%; /* Establece el 50% del ancho del viewport */
+    background:red;
+    min-height: 10vh;
+    display: grid;
+    margin: 10px; /* Agregar margen */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    bottom: 10px;
+    justify-content: center;
+  }
+  .datosrojo{
+    padding: 20px 20px 20px 20px;
+    justify-content: center;
+    margin: 10px; 
+    min-height: 10vh;
+  }
+  
+  #btn-reload{
+    background-color: rgba(255, 255, 255, 0.22);
+  }
+  
+  #namevisita{
+    height: 50px;
+      line-height: 50px;
+      font-size: 14px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      padding: 0 20px 0px 10px;
+      margin-bottom: 0px;
+      background: #f3f3f3eb;
+      color: #013e6a;
+      font-family: "Quicksand", sans-serif;
+      border: 2px solid transparent;
+      transition: 0.3s ease all;
+  }
+  
+  .camaraqr {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-items: center;
+    font-size: 12px;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: column;
+  }
+  
+  
+  .contenedorhomeazul {
+    width: 370px;
+    max-width: 370px;
+    max-height: 90%;
+    border-radius: 10px 10px 10px 10px;
+    position: center;
+    overflow: hidden;
+    margin: 10px;
+    left: 50%; /* Establece el 50% del ancho del viewport */
+    background:green;
+    min-height: 10vh;
+    display: grid;
+    margin: 10px; /* Agregar margen */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    bottom: 10px;
+    justify-content: center;
+    padding: 20px 20px 20px 20px;
+  
+  }
+  
+  .columna-izquierda5 {
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+  }
+  .columna-izquierda5 img {
+    max-width: 100%; /* Asegura que la imagen no sobrepase su contenedor */
+  }
+  
+  .row5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  .form-group{
+    display: flex;
+    padding: 0px;
+    align-items: center;
+    font-size: 12px;
+  }
+
+.aviso-privacidad{
+    display: flex;
+    padding: 0px;
+    align-items: center;
+
+}
+.aviso-privacidadtext{
+    width: 100%;
+    margin: 0px 0px 0px 24px; /* superior derecho inferior izquierdo */
+    text-align: justify;
+    font-size: 12px;
+}
+
+  .header5 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .columna-izquierda6 {
+    width: 20%; /* Ajusta el ancho según tus necesidades */
+  }
+  .columna-izquierda6 img {
+    max-width: 100%; /* Asegura que la imagen no sobrepase su contenedor */
+  }
+
+  .columna-izquierda7 {
+    width: 30%; /* Ajusta el ancho según tus necesidades */
+  }
+  .columna-izquierda7 img {
+    max-width: 100%; /* Asegura que la imagen no sobrepase su contenedor */
+  }
+  
+  
+  .contenedorescalle{
+    margin: 10px;
+  }
+  
+  #divvotaciones{
+    font-size: 10px;
+    text-align: justify;
+  
+  }
+  .votacion-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.votacion-table tr {
+    background-color: #fff;
+    border-bottom: 1px solid var(--primario);
+}
+
+/* Estilo para las celdas de la tabla */
+.votacion-table td {
+    padding: 10px;
+    text-align: justify; /* Justifica el texto */
+    border-right: 1px solid var(--primario);
+    color: #333; /* Color de texto para mejorar la legibilidad sobre el fondo blanco */
+
+}
+
+/* Estilo para las celdas de la última columna */
+.votacion-table td:last-child {
+    border-right: none;
+}
+
+/* Estilo para el encabezado de la tabla */
+.votacion-table th {
+    background-color: var(--primario);
+    color: #fff;
+    padding: 10px;
+}
+
+  /* Estilos para inputs de radio personalizados */
+  .votacion-table input[type="radio"] {
+    /* Ocultamos el input radio original */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc; /* Color del fondo apagado */
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.votacion-table input[type="radio"]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: white; /* Color del botón de la palanca */
+    transform: translateY(-50%);
+    transition: left 0.3s ease;
+}
+
+.votacion-table input[type="radio"]:checked {
+    background-color: var(--primario); /* Color del fondo activado */
+}
+
+.votacion-table input[type="radio"]:checked::before {
+    left: 22px; /* Mueve el botón hacia la derecha cuando está seleccionado */
+}
+
+  
+  /* Estilo para labels */
+  .votacion-table label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  /* Estilo para labels cuando el input está deshabilitado */
+  .votacion-table input[type="radio"]:disabled + label {
+    color: #aaa;
+    cursor: not-allowed;
+  }
+  
+  .logoadmin {
+    width: 150px; /* Establece el ancho a 200 píxeles */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+  
+  
+  .columna-izquierda5 {
+    align-items: center;
+  }
+  
+  .columna-izquierda5,
+  .columna-derecha2 {
+    width: 150px; /* Ajusta el ancho según tus necesidades */
+    align-items: center;
+  
+  }
+  .columna-izquierda5 img {
+    max-width: 100%; /* Asegura que la imagen no sobrepase su contenedor */
+    align-items: center;
+  }
+  
+  .agregarpregunta{
+    align-items: center;
+  }
+  
+  
+  .fila-par {
+    background-color: #f2f2f2; /* Color de fondo para filas pares */
+  }
+  
+  .fila-impar {
+    background-color: rgba(37, 149, 190, 0.447);
+  }
+  
+  .mercadopago-button {
+    width: 90%; /* Maintains the desired width */
+    height: 40px; /* Maintains the desired height */
+    min-width: 150px; /* Maintains the minimum width */
+    margin: 2px; /* Maintains the margin */
+    padding: 10px 20px; /* Maintains the padding for button comfort */
+    text-align: start; /* Aligns the text to the left */
+    border-radius: 5px; /* Maintains the border radius */
+    font-size: 13px; /* Reduces the font size to 12px */
+    font-weight: 500; /* Maintains the font weight */
+    transition: all 0.3s ease; /* Maintains the transition effect */
+    outline: none; /* Maintains the removal of outline */
+    border-radius: 20px;
+  }
+  
+  .terminar-registro{
+    height: 70px;
+    width: 100%; /* Mantiene el ancho deseado */
+    border-radius: 5px; /* Mantiene el border radius correcto */
+    background: #ff00004d;
+    border: 1px solid red; /* Asegura que el borde sea visible */
+    text-align: center;
+    font-size: 14px; /* Tamaño de fuente ajustado */
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+  
+  
+  .header2 {
+    margin-bottom: 10px;
+    text-align: left;
+    width: 60%; /* Ajusta el ancho según tus necesidades */
+  
+  
+  }
+  
+  .columna-izquierda9 {
+    width: 40%; /* Ajusta el ancho según tus necesidades */
+  }
+  
+  
+  /* Estilo del contenedor del switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+  }
+  
+  /* Ocultar el checkbox original */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Estilo del slider */
+  .slider {
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+  }
+  
+  /* Estilo del slider cuando está redondeado */
+  .slider.round {
+    border-radius: 25px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  /* Estilo del punto móvil dentro del switch */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 2.5px;
+    background-color: rgb(255, 255, 255);
+    transition: .4s;
+  }
+  
+  /* Cambia el color del switch cuando está seleccionado */
+  input:checked + .slider {
+    background-color: rgb(37, 150, 190);
+  }
+  
+  /* Mueve el punto móvil cuando está seleccionado */
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+
+.contenedor-input2 {
+  color: var(--secundario);
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el texto, el ícono y el select */
+}
+
+.contenedor-input2 svg {
+  width: 20px; /* Ajusta el tamaño según tu diseño */
+  height: 20px; /* Ajusta el tamaño según tu diseño */
+  color: var(--primario); /* Puedes cambiar el color aquí */
+}
+
+.contenedor-input2 p {
+  margin: 0;
+  font-size: 14px; /* Ajusta el tamaño del texto según tu preferencia */
+}
+
+.contenedor-input2 select {
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
