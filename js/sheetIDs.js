@@ -19,7 +19,9 @@ export const sheetIDs = {
             { nombre: "EROS", codigo: "IkVST1" },
             { nombre: "HIERRO", codigo: "IkhJRVJSTy" },
             { nombre: "IBIZA", codigo: "IklCSVpBI" },
-            { nombre: "MAGDALENA", codigo: "Ik1BR0RBTEVOQ" }
+            { nombre: "MAGDALENA", codigo: "Ik1BR0RBTEVOQ" },
+            { nombre: "CASETA DE SEGURIDAD", codigo: "IkNBU0VUQSBERSBTRUd" },
+
         ]    
     },
     "Guadalajara Country Club": {
@@ -41,7 +43,8 @@ export const sheetIDs = {
             { nombre: "EROS", codigo: "IkVST1" },
             { nombre: "HIERRO", codigo: "IkhJRVJSTy" },
             { nombre: "IBIZA", codigo: "IklCSVpBI" },
-            { nombre: "MAGDALENA", codigo: "Ik1BR0RBTEVOQ" }
+            { nombre: "MAGDALENA", codigo: "Ik1BR0RBTEVOQ" },
+            { nombre: "CASETA DE SEGURIDAD", codigo: "IkNBU0VUQSBERSBTRUd" },
         ] 
         // O cualquier otra cadena si es necesario
     },
@@ -65,6 +68,8 @@ export const sheetIDs = {
             { nombre: "Magnolias", codigo: "Ik1hZ25" },
             { nombre: "Tulipanes", codigo: "IlR1bGl" },
             { nombre: "Violetas", codigo: "IlZpb2x" },
+            { nombre: "CASETA DE SEGURIDAD", codigo: "IkNBU0VUQSBERSBTRUd" },
+
         ] // Agregar las calles aquí
 
     }

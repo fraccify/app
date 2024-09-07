@@ -221,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if(casetaprivada === "" ) {
           btncaseta2.style.display = "none";
         }
+
         
         
 
@@ -312,6 +313,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                     divliadmin.style.display = "block";
                                 } else if (perfil.trim() === "Seguridad") {
                                     divlimenu.style.display = "none";
+                                    divliadmin.style.display = "none";
+                                    divliaseguridad.style.display = "block";
                                 }
 
                                 //////Registrar inicio de sesión////////
@@ -2261,6 +2264,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                                 document.getElementById("new-calle").value = "";
                                                 document.getElementById("new-num").value = "";
                                                 document.getElementById("new-cel").value = "";
+
+                                                setTimeout(mostrarresidentes, 5000);
                                   
 
                                               })
