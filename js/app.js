@@ -80,6 +80,22 @@ const divmisreservas = document.getElementById("divmisreservas");
 const divinformes = document.getElementById("informes");
 const divlistaresidentes = document.getElementById("divlistaresidentes");
 const contenedoradminvotos = document.getElementById("contenedoradminvotos");
+const botonuploadcontainer = document.getElementById("uploadcontainer");
+const divagregarunresidente = document.getElementById("divagregarunresidente");
+const btnagregarunresidente = document.getElementById("btnagregarunresidente");
+const pagomercadopago = document.getElementById("pagomercadopago");
+
+const btncaseta1 = document.getElementById("btncaseta1");
+const btncaseta2 = document.getElementById("btncaseta2");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -174,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const sheetID = selectedCondominio.sheetID;
         const sheetIDprivada = selectedCondominio.sheetIDprivada;
         const sheetIDubicacion = selectedCondominio.sheetIDubicacion;
+        const sheetIDCalender = selectedCondominio.sheetIDCalender;
 
         const banco = selectedCondominio.banco;
         const titular = selectedCondominio.titular;
@@ -181,7 +198,31 @@ document.addEventListener("DOMContentLoaded", function() {
         const clabe = selectedCondominio.clabe;
         const monto = selectedCondominio.monto;
         const preferenceID = selectedCondominio.preferenceID;
+        const casetaprincipal = selectedCondominio.casetaprincipal;
+        const casetaprivada = selectedCondominio.casetaprivada;
         const calles = selectedCondominio.calles;
+
+        if(sheetIDCalender === ""){
+          divbotonreservar.style.display = "none";
+        }
+        if(preferenceID === "" ) {
+          pagomercadopago.style.display = "none";
+        }
+        if(banco === "" ) {
+          divbotonhistorico.style.display = "none";
+          divbotonpago.style.display = "none"
+        }
+        if(sheetIDubicacion === "" ) {
+          divbotonvisitas.style.display = "none";
+        }
+        if(casetaprincipal === "" ) {
+          btncaseta1.style.display = "none";
+        }
+        if(casetaprivada === "" ) {
+          btncaseta2.style.display = "none";
+        }
+        
+        
 
 
         document.getElementById('banco').textContent = 'Banco: ' + banco;
@@ -360,6 +401,16 @@ document.addEventListener("DOMContentLoaded", function() {
                                 document.getElementById("downloadinforme").addEventListener("click", fungenerarinforme);
                                 document.getElementById("mostrarregistroResidentes").addEventListener("click", mostrarresidentes);
                                 document.getElementById("agregarvotacion").addEventListener("click", agregarvotacion);
+                                document.getElementById("btnagregarunresidente").addEventListener("click", mostradivparaagregarresidente);
+                                document.getElementById("grabarnweregistro").addEventListener("click", agregarresidente);
+
+
+
+
+
+                              
+
+
 
 
                               
@@ -372,18 +423,24 @@ document.addEventListener("DOMContentLoaded", function() {
                                     var boton = document.getElementById("btnparaconfirmarreserca");
                                     var boton2 = document.getElementById("generarvisitayqr");
                                     var boton3 = document.getElementById("enviarpago");
+                                    var boton4 = document.getElementById("grabarnweregistro");
+
                                     boton.disabled = true;
                                     boton2.disabled = true;
                                     boton3.disabled = true;
+                                    boton4.disabled = true;
                                 }
                     
                                 function activarBoton() {
                                     var boton = document.getElementById("btnparaconfirmarreserca");
                                     var boton2 = document.getElementById("generarvisitayqr");
                                     var boton3 = document.getElementById("enviarpago");
+                                    var boton4 = document.getElementById("grabarnweregistro");
+
                                     boton.disabled = false;
                                     boton2.disabled = false;
                                     boton3.disabled = false;
+                                    boton4.disabled = false;
                                 }
                                 
                                 ///home///
@@ -397,6 +454,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divinformes.style.display = "none"
                                   divlistaresidentes.style.display = "none"
                                   contenedoradminvotos.style.display = "none";
+                                  divagregarunresidente.style.display = "none";
 
                                 }
 
@@ -435,6 +493,9 @@ document.addEventListener("DOMContentLoaded", function() {
                                     divinformes.style.display = "none"
                                     divlistaresidentes.style.display = "none"
                                     contenedoradminvotos.style.display = "none";
+                                    botonuploadcontainer.style.display = "block";
+                                    divagregarunresidente.style.display = "none";
+
 
 
                                 }
@@ -452,6 +513,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divinformes.style.display = "none"
                                   divlistaresidentes.style.display = "none"
                                   contenedoradminvotos.style.display = "none";
+                                  divagregarunresidente.style.display = "none";
+
 
 
 
@@ -511,6 +574,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                   homeSection.style.display = "none"
                                   divinformes.style.display = "none"
                                   divlistaresidentes.style.display = "none"
+                                  divagregarunresidente.style.display = "none";
+
 
 
                                       
@@ -571,20 +636,24 @@ document.addEventListener("DOMContentLoaded", function() {
                                     homeSection.style.display = "none"
                                     divinformes.style.display = "none"
                                     divlistaresidentes.style.display = "none"
+                                    divagregarunresidente.style.display = "none";
+
 
 
                                     const contenedorCalendario = document.getElementById("contenedorCalendario");
                                     const calendarioIframe = document.createElement("iframe");
-                    
+                                    
                                     calendarioIframe.setAttribute(
                                       "src",
                                       `${sheetIDCalender}`
                                     );
-                                    calendarioIframe.setAttribute("style", "border: 0");
-                                    calendarioIframe.setAttribute("width", "800");
-                                    calendarioIframe.setAttribute("height", "600");
+                                    calendarioIframe.setAttribute("style", "border: 0; width: 100%; height: 100%;");
                                     calendarioIframe.setAttribute("frameborder", "0");
                                     calendarioIframe.setAttribute("scrolling", "no");
+                                    
+                                    contenedorCalendario.style.width = "100%";  // Hacer que el contenedor ocupe todo el ancho
+                                    contenedorCalendario.style.height = "800px";  // Fijar altura del contenedor
+                                    
                                     contenedorCalendario.appendChild(calendarioIframe);
                                 }
 
@@ -628,6 +697,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divinformes.style.display = "none"
                                   divlistaresidentes.style.display = "block"
                                   contenedoradminvotos.style.display = "none";
+                                  divagregarunresidente.style.display = "none";
+
 
 
 
@@ -869,6 +940,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divinformes.style.display = "block"
                                   divlistaresidentes.style.display = "none"
                                   contenedoradminvotos.style.display = "none";
+                                  divagregarunresidente.style.display = "none";
+
 
 
                                 }
@@ -2066,8 +2139,152 @@ document.addEventListener("DOMContentLoaded", function() {
                                     
                                   }
 
+                                  function mostradivparaagregarresidente () {
+                                    divagregarunresidente.style.display = "block";
+                                    divvotaciones.style.display = "none";
+                                    paymentHistory2024.style.display = "none";
+                                    divingresos.style.display = "none";
+                                    divamenidades.style.display = "none";
+                                    divpagos.style.display = "none";
+                                    homeSection.style.display = "none"
+                                    divinformes.style.display = "none"
+                                    divlistaresidentes.style.display = "none"
+                                    contenedoradminvotos.style.display = "none";
 
 
+                                    // Supongamos que selectedCondominio y su propiedad 'calles' ya están disponibles
+                                    const calles = selectedCondominio.calles;  // Obtén el arreglo de calles
+
+                                    // Referencia al select de calles en el HTML
+                                    const calleSelect = document.getElementById('new-calle');
+
+                                    // Limpia cualquier opción existente
+                                    calleSelect.innerHTML = '<option value="">Selecciona calle</option>';
+
+                                    // Verifica que 'calles' no esté vacío o undefined
+                                    if (calles && Array.isArray(calles)) {
+                                        // Recorre el arreglo de calles y crea una opción por cada una
+                                        calles.forEach(calle => {
+                                            const option = document.createElement('option');
+                                            option.value = calle.nombre;  // Establece el código como valor de la opción
+                                            option.textContent = calle.nombre;  // Establece el nombre como texto visible de la opción
+                                            calleSelect.appendChild(option);  // Agrega la opción al select
+                                        });
+                                    } else {
+                                        console.error('No se encontraron calles en los datos del condominio.');
+                                    }
+                                  }
+
+                                  function agregarresidente() {
+
+                                    var boton3 = document.getElementById("enviarpago");
+
+                                    if (boton3.disabled) {
+                                    return; // Evitar ejecutar la función si ya está en curso
+                                    }
+
+                                    const newcalle = document.getElementById("new-calle").value;
+                                    const newnum = document.getElementById("new-num").value;
+                                    const newname = document.getElementById("new-name").value;
+                                    const newusarname = document.getElementById("new-username").value;
+                                    const newcontrasena = document.getElementById("new-contrasena").value;
+                                    const newcel = document.getElementById("new-cel").value;
+                                    const newrol = document.getElementById("new-rol").value;
+              
+  
+                                    if (
+                                      !newname ||
+                                      !newusarname ||
+                                      !newcontrasena ||
+                                      !newcalle ||
+                                      !newnum ||
+                                      !newcel ||
+                                      !newrol
+                                    ) {
+                                      alert("Por favor, complete todos los campos.");
+                                      return; // Salir de la función si algún campo está vacío
+                                    }
+
+
+
+
+                                      function cifrarCorreo(valor) {
+                                        var texto = JSON.stringify(valor);
+                                        var bytes = new TextEncoder().encode(texto);
+                                        var cifrado = btoa(String.fromCharCode.apply(null, bytes));
+                                        return cifrado;
+                                      }
+                                  
+                                      const newdom = newcalle + " " + newnum;
+                                      const newclientecif = cifrarCorreo(newname);
+                                      const domcif = cifrarCorreo(newdom);
+                                      const correocif = cifrarCorreo(newusarname);
+                                      const passwordcif = cifrarCorreo(newcontrasena);
+                                  
+                                      const urlVerificacion = `https://sheet.best/api/sheets/${sheetID}/tabs/propietarios${sheetIDprivada}/dom/${domcif}`;
+                                      console.log(urlVerificacion);
+                                  
+                                      fetch(urlVerificacion)
+                                        .then((response) => response.json())
+                                        .then((data) => {
+                                          console.log(data);
+                                          console.log(data.length);
+                                  
+                                          if (data.length < 1) {
+                                            const datos = {
+                                              Cliente: newclientecif,
+                                              dom: domcif,
+                                              correo: correocif,
+                                              password: passwordcif,
+                                              cel: newcel,
+                                              status: "Al Corriente",
+                                              perfil: newrol,
+                                            };
+                                  
+                                            const url = `https://sheet.best/api/sheets/${sheetID}/tabs/propietarios${sheetIDprivada}`;
+                                            const opciones = {
+                                              method: "POST",
+                                              headers: {
+                                                "Content-Type": "application/json",
+                                              },
+                                              body: JSON.stringify(datos),
+                                            };
+                                  
+                                            fetch(url, opciones)
+                                              .then((response) => response.json())
+                                              .then((data) => {
+                                                alert("Datos grabados correctamente");
+                                  
+                                                document.getElementById("new-name").value = "";
+                                                document.getElementById("new-username").value = "";
+                                                document.getElementById("new-contrasena").value = "";
+                                                document.getElementById("new-calle").value = "";
+                                                document.getElementById("new-num").value = "";
+                                                document.getElementById("new-cel").value = "";
+                                  
+
+                                              })
+                                  
+                                              .catch((error) => {
+                                                console.error(
+                                                  "Error al enviar los datos a la hoja de cálculo",
+                                                  error
+                                                );
+                                              });
+                                          } else {
+                                            alert(
+                                              "Sin disponibilidad para registrar " +
+                                                newdom +
+                                                " ya tiene un registro previo."
+                                            );
+
+                                          }
+                                        })
+                                        .catch((error) => {
+                                          console.error("Error al verificar disponibilidad", error);
+                                        });
+
+                                  }
 
                             } else {
                                 alert("Contraseña incorrecta.");
@@ -2236,6 +2453,8 @@ function procesarPDF(datos) {
             conceptoPago || "No se encontró concepto";
           document.getElementById("clavederastreo").innerText =
             clavederastreo || "No se encontró concepto";
+            botonuploadcontainer.style.display = "none";
+
   
           if (!monto || !fecha || !beneficiario || !conceptoPago) {
             alert("Comprobante no valido");
@@ -2245,6 +2464,7 @@ function procesarPDF(datos) {
             document.getElementById("conceptodelpago").value = "";
             document.getElementById("clavederastreo").value = "";
             divpagocargado.style.display = "none";
+
           }
         });
       });
@@ -2390,6 +2610,8 @@ function procesarImagen(datos) {
             fecha3 || "No se encontró fecha";
           document.getElementById("conceptodelpago").innerText =
             conceptoPago3 || "No se encontró concepto";
+            botonuploadcontainer.style.display = "none";
+
   
           if (!fecha3) {
             alert("Comprobante no valido");
@@ -2399,6 +2621,7 @@ function procesarImagen(datos) {
             document.getElementById("conceptodelpago").value = "";
             document.getElementById("clavederastreo").value = "";
             divpagocargado.style.display = "none";
+
           }
         }
       }
