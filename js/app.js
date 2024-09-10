@@ -1164,10 +1164,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                   canvasElement.hidden = true;
                                   btnScanQR.hidden = false;
 
-                                  if(domiciliosinComillas === "Seguridad 2"){
-                                    console.log("Seguridad 2 sin permiso para lista de accesos, solo lectura")
-                                    visitaspendientesdeldia.style.display = "none";
-                                  } else {
+
                                     visitaspendientesdeldia.style.display = "block";
 
 
@@ -1235,8 +1232,12 @@ document.addEventListener("DOMContentLoaded", function() {
                                       registros.forEach(registro => {
                                         const registroId = `div${registro.idunico}`;
                                         const elementoExistente = document.getElementById(registroId);
+                                        const actualizar = domiciliosinComillas === "Seguridad 2" ? "ingresoc1" : "ingresoc2";
+
+
+
                                   
-                                        if (registro.ingresoc2) {
+                                        if (registro[actualizar]) {
                                           // Si el registro tiene ingresoc2 y el elemento existe, remuévelo
                                           if (elementoExistente) {
                                             elementoExistente.remove();
@@ -1327,6 +1328,10 @@ document.addEventListener("DOMContentLoaded", function() {
                                     }
                                 
                                     const urldata = `https://sheet.best/api/sheets/${sheetID}/tabs/visitas${sheetIDprivada}`;
+                                    const actualizar = domiciliosinComillas === "Seguridad 2" ? "ingresoc1" : "ingresoc2";
+
+
+
                                     try {
                                       const response = await fetch(urldata);
                                       const data = await response.json();
@@ -1334,7 +1339,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                       const index = data.findIndex((fila) => fila.idunico === registroId);
                                       if (index !== -1) {
                                         const datosActualizados = {
-                                          ingresoc2: fechaActual
+                                          [actualizar]: fechaActual
                                         };
                                 
                                         const url = `https://sheet.best/api/sheets/${sheetID}/tabs/visitas${sheetIDprivada}/${index}`;
@@ -1364,7 +1369,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                   // Llamar a las funciones una vez al cargar la página para cargar los registros iniciales
                                   obtenerYAgregarRegistros2();
 
-                                  }
+                              
                                 }
 
 
