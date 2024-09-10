@@ -386,7 +386,7 @@ font-size: 12px;
   }
   
   button svg {
-    margin-left: 10px;
+    margin-left: 5px;
     width: 20px;
     height: 20px;
   }
@@ -971,7 +971,7 @@ font-size: 12px;
   }
   
   .calle-registros {
-    padding: 15px 25px 0px 0px;
+    /*padding: 15px 25px 0px 0px;*/
     width: 100%;
     position: center;
     overflow: hidden;
@@ -1346,7 +1346,6 @@ font-size: 12px;
     font-weight: bold;
     margin: 10px;
     width: 95%;
-    content: "\002B" !important;
   }
   
   .btnadmin {
@@ -1599,6 +1598,8 @@ font-size: 12px;
     justify-content: center;
     margin: 10px; 
     min-height: 10vh;
+    font-size: 28px;
+
   }
   
   
@@ -1624,8 +1625,9 @@ font-size: 12px;
   .datosrojo{
     padding: 20px 20px 20px 20px;
     justify-content: center;
-    margin: 10px; 
+    margin: 10px;
     min-height: 10vh;
+    font-size: 30px;
   }
   
   #btn-reload{
@@ -1736,6 +1738,7 @@ font-size: 12px;
   
   .contenedorescalle{
     margin: 10px;
+    width: 100%;
   }
   
   #divvotaciones{
@@ -1880,13 +1883,19 @@ font-size: 12px;
     height: 70px;
     width: 100%; /* Mantiene el ancho deseado */
     border-radius: 5px; /* Mantiene el border radius correcto */
-    background: #ff00004d;
-    border: 1px solid red; /* Asegura que el borde sea visible */
+    background: rgba(37, 149, 190, 0.447);
+    border: 1px solid var(--secundario); /* Asegura que el borde sea visible */
     text-align: center;
     font-size: 14px; /* Tamaño de fuente ajustado */
     display: flex; /* Activa flexbox */
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
+  }
+
+  .terminar-registro svg{
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
   }
   
   
@@ -2029,7 +2038,7 @@ input:checked + .slider:before {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: var(--secundario); /* Color de fondo */
+  background-color: var(--primario);
   border: none; /* Elimina el borde */
   border-radius: 50%;
   width: 75px; /* Ajusta el ancho */
@@ -2312,7 +2321,7 @@ input:checked + .slider:before {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color:var(--secundario);
+  background-color: var(--primario);
   border: none;
   border-radius: 50%;
   width: 65px;
@@ -2343,3 +2352,279 @@ input:checked + .slider:before {
 #divagregarunresidente{
   width: 100%;
 }
+
+#encenderCamara {
+  display: unset;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  background-color: var(--primario);
+  border: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.492);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  min-width: 5px;
+  color: white;
+  flex-direction: column;
+}
+
+#encenderCamara svg {
+  width: 30px; /* Ajusta el tamaño del ícono */
+  height: 30px;
+  fill: #fff; /* Color del ícono */
+}
+
+#encenderCamara:hover {
+  background-color: var(--secundario); /* Cambio de color al pasar el cursor */
+}
+
+#cerrarCamara {
+  display: unset;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background-color: var(--primario);
+  border: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.492);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  min-width: 5px;
+  color: white;
+  flex-direction: column;
+}
+
+#cerrarCamara svg {
+  width: 30px; /* Ajusta el tamaño del ícono */
+  height: 30px;
+  fill: #fff; /* Color del ícono */
+}
+
+
+#cerrarCamara:hover {
+  background-color: var(--secundario); /* Cambio de color al pasar el cursor */
+}
+
+#btnbtndecerrarsesioncdsp{
+  display: unset;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primario);
+  border: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.492);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  min-width: 5px;
+  color: white;
+  flex-direction: column;
+}
+
+#btnbtndecerrarsesioncdsp svg {
+  width: 30px; /* Ajusta el tamaño del ícono */
+  height: 30px;
+  fill: #fff; /* Color del ícono */
+}
+
+
+#btnbtndecerrarsesioncdsp:hover {
+  background-color: var(--secundario); /* Cambio de color al pasar el cursor */
+}
+
+#calle-morosos-2{
+  width: 98%;
+}
+
+
+.botondelescanerdelqr{
+  display: unset;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primario);
+  border: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.492);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  min-width: 5px;
+  color: white;
+  flex-direction: column;
+}
+
+.botondelescanerdelqr svg {
+  width: 30px; /* Ajusta el tamaño del ícono */
+  height: 30px;
+  fill: #fff; /* Color del ícono */
+}
+
+
+.botondelescanerdelqr:hover  {
+  background-color: var(--secundario); /* Cambio de color al pasar el cursor */
+}
+
+
+.botondelescanerdelqr2{
+
+  display: unset;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primario);
+  border: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.492);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  min-width: 5px;
+  color: white;
+  flex-direction: column;
+}
+
+.botondelescanerdelqr2 svg {
+  width: 30px; /* Ajusta el tamaño del ícono */
+  height: 30px;
+  fill: #fff; /* Color del ícono */
+}
+
+
+.botondelescanerdelqr2:hover  {
+  background-color: var(--secundario); /* Cambio de color al pasar el cursor */
+}
+
+
+#encenderCamaraPrivada {
+  display: unset;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  background-color: var(--primario);
+  border: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.492);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  min-width: 5px;
+  color: white;
+  flex-direction: column;
+}
+
+#encenderCamaraPrivada svg {
+  width: 30px; /* Ajusta el tamaño del ícono */
+  height: 30px;
+  fill: #fff; /* Color del ícono */
+}
+
+#encenderCamaraPrivada:hover {
+  background-color: var(--secundario); /* Cambio de color al pasar el cursor */
+}
+
+#cerrarCamaraPrivada {
+  display: unset;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background-color: var(--primario);
+  border: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.492);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  min-width: 5px;
+  color: white;
+  flex-direction: column;
+}
+
+#cerrarCamaraPrivada svg {
+  width: 30px; /* Ajusta el tamaño del ícono */
+  height: 30px;
+  fill: #fff; /* Color del ícono */
+}
+
+
+#cerrarCamaraPrivada:hover {
+  background-color: var(--secundario); /* Cambio de color al pasar el cursor */
+}
+
+
+#btnbtndecerrarsesioncdsp2{
+  display: unset;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primario);
+  border: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.492);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  min-width: 5px;
+  color: white;
+  flex-direction: column;
+}
+
+#btnbtndecerrarsesioncdsp2 svg {
+  width: 30px; /* Ajusta el tamaño del ícono */
+  height: 30px;
+  fill: #fff; /* Color del ícono */
+}
+
+
+#btnbtndecerrarsesioncdsp2:hover {
+  background-color: var(--secundario); /* Cambio de color al pasar el cursor */
+}
+

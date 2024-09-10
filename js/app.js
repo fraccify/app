@@ -18,6 +18,9 @@ const divliaseguridad = document.getElementById("liaseguridad");
 const divliadmin = document.getElementById("liadmin");
 const divlimenu = document.getElementById("limenu");
 
+var audio = document.getElementById("audioScaner");
+
+
 
 const ene2025Span = document.getElementById("ene2025");
 const feb2025Span = document.getElementById("feb2025");
@@ -69,7 +72,7 @@ const divregreso = document.getElementById("divregreso");
 const btnenviaringreso = document.getElementById("btnenviaringreso");
 const confirmacion = document.getElementById("confirmacion");
 const formulario2 = document.getElementById("formulario2");
-const segurichat = document.getElementById("segurichat");
+const botonsegurichat = document.getElementById("botonsegurichat");
 const divqr = document.getElementById("divqr");
 const iniciodatos = document.getElementById("iniciodatos");
 const datoscorrectosvisitas = document.getElementById("datoscorrectosvisitas");
@@ -85,24 +88,51 @@ const divagregarunresidente = document.getElementById("divagregarunresidente");
 const btnagregarunresidente = document.getElementById("btnagregarunresidente");
 const pagomercadopago = document.getElementById("pagomercadopago");
 
+const divseguridadcasetaprincial = document.getElementById("divseguridadcasetaprincial");
 const btncaseta1 = document.getElementById("btncaseta1");
-const btncaseta2 = document.getElementById("btncaseta2");
+
+const visitaspendientesdeldia = document.getElementById("visitaspendientesdeldia");
 
 
 
 
 
+// Variables para los botones y canvas
+const btnEncenderCamara = document.getElementById("encenderCamara");
+const btnEncenderCamaraPrivada = document.getElementById("encenderCamaraPrivada");
+const qrCanvas = document.getElementById("qr-canvas");
+const qrCanvasPrivada = document.getElementById("qr-canvas-privada");
+const btnScanQR = document.getElementById("btn-scan-qr");
+const btnScanQRPrivada = document.getElementById("btn-scan-qr-privada");
+let videoStream = null; // Guardar la referencia al stream de video activo
+// Botones para cerrar la cámara (asegúrate de que estos IDs estén en el HTML)
+const btnCerrarCamara = document.getElementById("cerrarCamara");
+const btnCerrarCamaraPrivada = document.getElementById("cerrarCamaraPrivada");
 
 
 
 
+const divverde = document.getElementById("contenedorhomeverde");
+const divbtnqrconverdeQRCPrincial = document.getElementById("divbtnqrconverdeQRCPrincial");
+const divbtnqrqrconverdeQRCPrivada = document.getElementById("divbtnqrqrconverdeQRCPrivada");
 
 
+const divrojo = document.getElementById("contenedorhomerojo");
+const divbtnqrinvaliodQRCPrincial = document.getElementById("divbtnqrinvaliodQRCPrincial");
+const divbtnqrinvaliodQRCPrivada = document.getElementById("divbtnqrinvaliodQRCPrivada");
 
 
+const divrojoyauqr = document.getElementById("qryautilizado");
+const divbtnqryautilizadoQRCPrincial = document.getElementById("divbtnqryautilizadoQRCPrincial");
+const divbtnqryautilizadoQRCPrivada = document.getElementById("divbtnqryautilizadoQRCPrivada");
 
 
-informes
+const divqrconotrafecha = document.getElementById("qrconotrafecha");
+const divbtnqrconotrafechanewQRCPrincial = document.getElementById("divbtnqrconotrafechanewQRCPrincial");
+const divbtnqrconotrafechanewQRCPrivada = document.getElementById("divbtnqrconotrafechanewQRCPrivada");
+
+
+let scanning = false;
 
 var today = new Date().toISOString().split("T")[0];
 var loggedIn = true;
@@ -201,6 +231,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const casetaprincipal = selectedCondominio.casetaprincipal;
         const casetaprivada = selectedCondominio.casetaprivada;
         const calles = selectedCondominio.calles;
+        const segurichatnumero = selectedCondominio.segurichat;
+
 
         if(sheetIDCalender === ""){
           divbotonreservar.style.display = "none";
@@ -220,6 +252,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if(casetaprivada === "" ) {
           btncaseta2.style.display = "none";
+        }
+        if (segurichatnumero  === "") {
+          botonsegurichat.style.display = "none";
         }
 
         
@@ -406,17 +441,38 @@ document.addEventListener("DOMContentLoaded", function() {
                                 document.getElementById("agregarvotacion").addEventListener("click", agregarvotacion);
                                 document.getElementById("btnagregarunresidente").addEventListener("click", mostradivparaagregarresidente);
                                 document.getElementById("grabarnweregistro").addEventListener("click", agregarresidente);
+                                document.getElementById("segurichat").addEventListener("click", iniciarsegurichat);
+                                document.getElementById("btncaseta1").addEventListener("click", mostrardivcasetaprincipal);
+
+                                document.getElementById("btnbtndecerrarsesioncdsp").addEventListener("click", recargarpagina);
+
+
+                                document.getElementById("qrconotrafechanewQRCPrincial").addEventListener("click", mostrardivcasetaprincipal);
+
+                                document.getElementById("qrconverdeQRCPrincial").addEventListener("click", mostrardivcasetaprincipal);
+                                                                
+                                document.getElementById("qrinvaliodQRCPrincial").addEventListener("click", mostrardivcasetaprincipal);
+
+                                document.getElementById("qryautilizadoQRCPrincial").addEventListener("click", mostrardivcasetaprincipal);
 
 
 
 
 
-                              
 
 
 
 
-                              
+
+
+
+
+
+                                function recargarpagina (){
+                                  window.location.reload();
+
+                                }
+                             
 
                                 var tiempoEspera = 5 * 1000; // 5 minutos en milisegundos
                                 var timer; // variable para almacenar el temporizador
@@ -445,6 +501,10 @@ document.addEventListener("DOMContentLoaded", function() {
                                     boton3.disabled = false;
                                     boton4.disabled = false;
                                 }
+
+                                function iniciarsegurichat () {
+                                  window.location.href = `https://wa.me/${segurichatnumero}`;
+                                }
                                 
                                 ///home///
                                 function regresar() {
@@ -458,6 +518,17 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divlistaresidentes.style.display = "none"
                                   contenedoradminvotos.style.display = "none";
                                   divagregarunresidente.style.display = "none";
+                                  divseguridadcasetaprincial.style.display = "none";
+
+
+
+                                  divrojo.style.display = "none";
+                                  divrojoyauqr.style.display = "none";
+                                  divqrconotrafecha.style.display = "none";
+                                  divverde.style.display = "none";
+
+
+
 
                                 }
 
@@ -472,6 +543,15 @@ document.addEventListener("DOMContentLoaded", function() {
                                     divinformes.style.display = "none";
                                     divlistaresidentes.style.display = "none";
                                     contenedoradminvotos.style.display = "none";
+                                    divseguridadcasetaprincial.style.display = "none";
+
+
+                                    divrojo.style.display = "none";
+                                    divrojoyauqr.style.display = "none";
+                                    divqrconotrafecha.style.display = "none";
+                                    divverde.style.display = "none";
+
+
 
 
 
@@ -498,11 +578,19 @@ document.addEventListener("DOMContentLoaded", function() {
                                     contenedoradminvotos.style.display = "none";
                                     botonuploadcontainer.style.display = "block";
                                     divagregarunresidente.style.display = "none";
+                                    divseguridadcasetaprincial.style.display = "none";
+
+
+                                    divrojo.style.display = "none";
+                                    divrojoyauqr.style.display = "none";
+                                    divqrconotrafecha.style.display = "none";
+                                    divverde.style.display = "none";
+
+
 
 
 
                                 }
-
 
                                 ///menu 3///
                                 function mostradivvotos() {
@@ -517,6 +605,15 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divlistaresidentes.style.display = "none"
                                   contenedoradminvotos.style.display = "none";
                                   divagregarunresidente.style.display = "none";
+                                  divseguridadcasetaprincial.style.display = "none";
+
+
+                                  divrojo.style.display = "none";
+                                  divrojoyauqr.style.display = "none";
+                                  divqrconotrafecha.style.display = "none";
+                                  divverde.style.display = "none";
+
+
 
 
 
@@ -578,6 +675,13 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divinformes.style.display = "none"
                                   divlistaresidentes.style.display = "none"
                                   divagregarunresidente.style.display = "none";
+                                  divseguridadcasetaprincial.style.display = "none";
+
+
+                                  divrojo.style.display = "none";
+                                  divrojoyauqr.style.display = "none";
+                                  divqrconotrafecha.style.display = "none";
+
 
 
 
@@ -640,6 +744,16 @@ document.addEventListener("DOMContentLoaded", function() {
                                     divinformes.style.display = "none"
                                     divlistaresidentes.style.display = "none"
                                     divagregarunresidente.style.display = "none";
+                                    divseguridadcasetaprincial.style.display = "none";
+
+
+
+                                    divrojo.style.display = "none";
+                                    divrojoyauqr.style.display = "none";
+                                    divqrconotrafecha.style.display = "none";
+                                    divverde.style.display = "none";
+
+
 
 
 
@@ -701,9 +815,13 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divlistaresidentes.style.display = "block"
                                   contenedoradminvotos.style.display = "none";
                                   divagregarunresidente.style.display = "none";
+                                  divseguridadcasetaprincial.style.display = "none";
 
 
-
+                                  divrojo.style.display = "none";
+                                  divrojoyauqr.style.display = "none";
+                                  divqrconotrafecha.style.display = "none";
+                                  divverde.style.display = "none";
 
                                   const detailsHTML = selectedCondominio.calles.map(calle => {
                                   const nombre = calle.nombre;
@@ -828,6 +946,10 @@ document.addEventListener("DOMContentLoaded", function() {
                                         <select class="perfil-select" onchange="actualizarDato(this.value, 'perfil', '${domcodificado}')">
                                             <option value="Residente" ${fila.perfil.trim().toLowerCase() === "residente" ? "selected" : ""}>Residente</option>
                                             <option value="Administrador" ${fila.perfil.trim().toLowerCase() === "administrador" ? "selected" : ""}>Administrador</option>
+                                            <option value="Administrador" ${fila.perfil.trim().toLowerCase() === "inquilino" ? "selected" : ""}>Inquilino</option>
+                                            <option value="Administrador" ${fila.perfil.trim().toLowerCase() === "seguridad" ? "selected" : ""}>Seguridad</option>
+
+
                                         </select>
                                         </td></tr>`;
 
@@ -925,12 +1047,69 @@ document.addEventListener("DOMContentLoaded", function() {
                                   });
                                 };
 
-
-
-
-                                
+                                                                  ///mneuadmin2///
+                                function agregarvotacion() {
                                   
 
+                                  divvotaciones.style.display = "none";
+                                  paymentHistory2024.style.display = "none";
+                                  divingresos.style.display = "none";
+                                  divamenidades.style.display = "none";
+                                  divpagos.style.display = "none";
+                                  homeSection.style.display = "none"
+                                  divinformes.style.display = "none"
+                                  divlistaresidentes.style.display = "none"
+                                  contenedoradminvotos.style.display = "block";
+
+
+                                  divrojo.style.display = "none";
+                                  divrojoyauqr.style.display = "none";
+                                  divqrconotrafecha.style.display = "none";
+                                  divverde.style.display = "none";
+
+                          
+
+
+                            
+                                  const tablapreguntasadmin = document.getElementById("tablapreguntasadmin");
+                            
+                                  const url = `https://sheet.best/api/sheets/${sheetID}/tabs/avotar${sheetIDprivada}`;
+                            
+                                  fetch(url)
+                                      .then((response) => response.json())
+                                      .then((data) => {
+                                          // Limpiar el contenido del div antes de agregar nuevas tablas
+                                          tablapreguntasadmin.innerHTML = '';
+                            
+                                          // Crear una tabla para contener todas las preguntas
+                                          let table = document.createElement('table');
+                                          table.className = 'tablaporcada';
+                            
+                                          data.forEach((fila, index) => {
+                                              let trPregunta = document.createElement('tr');
+                                              let tdPregunta = document.createElement('td');
+                                              tdPregunta.colSpan = 2;
+                                              tdPregunta.textContent = fila.pregunta;
+                            
+                                              // Aplicar una clase diferente para filas alternadas
+                                              if (index % 2 === 0) {
+                                                  trPregunta.className = 'fila-par';
+                                              } else {
+                                                  trPregunta.className = 'fila-impar';
+                                              }
+                            
+                                              trPregunta.appendChild(tdPregunta);
+                                              table.appendChild(trPregunta);
+                                          });
+                            
+                                          // Agregar la tabla al contenedor
+                                          tablapreguntasadmin.appendChild(table);
+                                      })
+                                      .catch((error) => {
+                                          console.error('Error al obtener datos:', error);
+                                      });
+                              
+                                }
 
                                 ///menuadmin3//
                                 function informes () {
@@ -944,10 +1123,251 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divlistaresidentes.style.display = "none"
                                   contenedoradminvotos.style.display = "none";
                                   divagregarunresidente.style.display = "none";
+                                  divseguridadcasetaprincial.style.display = "none";
 
+
+                                  divrojo.style.display = "none";
+                                  divrojoyauqr.style.display = "none";
+                                  divqrconotrafecha.style.display = "none";
+                                  divverde.style.display = "none";
 
 
                                 }
+
+                                //menucasetaprincial///
+                                function mostrardivcasetaprincipal (){
+                                  divvotaciones.style.display = "none";
+                                  paymentHistory2024.style.display = "none";
+                                  divingresos.style.display = "none";
+                                  divamenidades.style.display = "none";
+                                  divpagos.style.display = "none";
+                                  homeSection.style.display = "none"
+                                  divinformes.style.display = "none"
+                                  divlistaresidentes.style.display = "none"
+                                  contenedoradminvotos.style.display = "none";
+                                  divagregarunresidente.style.display = "none";
+                                  divseguridadcasetaprincial.style.display = "block";
+                                  divrojo.style.display = "none";
+                                  divrojoyauqr.style.display = "none";
+                                  divqrconotrafecha.style.display = "none";
+                                  divverde.style.display = "none";
+                                  divbtnqrconverdeQRCPrincial.style.display = "block";
+                                  divbtnqrqrconverdeQRCPrivada.style.display = "none";
+                                  divbtnqrconotrafechanewQRCPrincial.style.display = "block";
+                                  divbtnqrconotrafechanewQRCPrivada.style.display = "none";
+                                  divbtnqrinvaliodQRCPrincial.style.display = "block";
+                                  divbtnqrinvaliodQRCPrivada.style.display = "none";
+                                  divbtnqryautilizadoQRCPrincial.style.display = "block";
+                                  divbtnqryautilizadoQRCPrivada.style.display = "none";
+
+                                  const canvasElement = document.getElementById("qr-canvas");
+                                  canvasElement.hidden = true;
+                                  btnScanQR.hidden = false;
+
+                                  if(domiciliosinComillas === "Seguridad 2"){
+                                    console.log("Seguridad 2 sin permiso para lista de accesos, solo lectura")
+                                    visitaspendientesdeldia.style.display = "none";
+                                  } else {
+                                    visitaspendientesdeldia.style.display = "block";
+
+
+
+                                      const detailsHTML = selectedCondominio.calles.map(calle => {
+                                        const nombre = calle.nombre;
+                                        if (!document.getElementById(`calle-${nombre}`)) {
+                                          return `
+                                              <details class="calle-box" id="calle-${nombre}-SEG" data-codigo="${calle.codigo}">
+                                                  <summary class="calle-title">${nombre}</summary>
+                                                  <input class="busqueda" type="text" id="busqueda-domicilio-${nombre}-SEG" placeholder="Buscar domicilio..." oninput="buscarDomicilio('${nombre}')">
+                                                  <div class="calle-registros" id="${nombre}-registros-SEG">
+                                                      <!-- Aquí se mostrarán los registros de la calle ${nombre} -->
+                                                  </div>
+                                              </details>
+                                          `;
+                                        }
+                                    
+                                          // Si el elemento ya existe, no generes nada nuevo
+                                          return '';
+                                        }).join('');
+                                      
+                                      document.getElementById('visitaspendientesdeldia').innerHTML += detailsHTML;
+
+                                      const idunicosAgregados = new Set();
+                                    
+                                      // Función para obtener los datos del API y agregar los registros de hoy
+                                      function obtenerYAgregarRegistros2() {
+                                        console.log("actualizando");
+                                        const url = `https://sheet.best/api/sheets/${sheetID}/tabs/visitas${sheetIDprivada}`;
+                                        fetch(url)
+                                          .then((response) => response.json())
+                                          .then((data) => {
+                                            console.log(data); // Imprime los datos obtenidos desde la API
+                                    
+                                            // Filtrar los registros para obtener solo los de hoy
+                                            const registrosHoy = data.filter((fila) => esFechaHoy(fila.fecha));
+                                    
+                                            // Obtener las calles dinámicamente desde el arreglo selectedCondominio
+                                            const calles = selectedCondominio.calles;  // Obtén el arreglo de calles
+                                    
+                                            calles.forEach(calle => {
+                                              const contenedorId = `${calle.nombre}-registros-SEG`;  // Usamos el nombre de la calle para el ID
+                                              const codigoCalle = calle.codigo;  // El código ya viene de la calle
+                                              const registrosCalle = registrosHoy.filter((registro) => registro.domicilio.startsWith(codigoCalle));
+                                    
+                                              // Agregar los registros a los contenedores correspondientes, solo si existen
+                                              agregarRegistros(contenedorId, registrosCalle);
+                                            });
+                                          })
+                                          .catch((error) => {
+                                            console.error(error);
+                                          });
+                                      }
+                                    
+                                
+                                    // Función para agregar registros a un contenedor de calle
+                                    function agregarRegistros(contenedorId, registros) {
+                                      const contenedor = document.getElementById(contenedorId);
+                                      if (!contenedor) {
+                                        console.warn(`Contenedor con id ${contenedorId} no encontrado.`);
+                                        return;
+                                      }
+                                  
+                                      registros.forEach(registro => {
+                                        const registroId = `div${registro.idunico}`;
+                                        const elementoExistente = document.getElementById(registroId);
+                                  
+                                        if (registro.ingresoc2) {
+                                          // Si el registro tiene ingresoc2 y el elemento existe, remuévelo
+                                          if (elementoExistente) {
+                                            elementoExistente.remove();
+                                          }
+                                        } else {
+                                          // Si el registro no tiene ingresoc2 y el elemento no existe, agréguelo
+                                          if (!elementoExistente) {
+                                            const registroHTML = `
+                                              <div id="${registroId}" class="registro-item">
+                                                <div class="row">
+                                                  <div class="header2">
+                                                    <p><strong>Domicilio:</strong> ${atob(registro.domicilio)}</p>
+                                                    <p><strong>Nombre:</strong> ${registro.namevisita}</p>
+                                                    <p><strong>Fecha:</strong> ${registro.fecha}</p>
+                                                    <p><strong>Tipo:</strong> ${registro.tipo}</p>
+                                                  </div>
+                                                  <div class="columna-izquierda9">
+                                                    <button class="terminar-registro" data-registro-id="${registro.idunico}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard2-data" viewBox="0 0 16 16">
+                                                        <path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5z"/>
+                                                        <path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z"/>
+                                                        <path d="M10 7a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm4-3a1 1 0 0 0-1 1v3a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1"/>
+                                                      </svg>
+
+                                                      Ingreso sin QR
+
+                                                    </button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            `;
+                                            contenedor.insertAdjacentHTML('beforeend', registroHTML);
+                                          }
+                                        }
+                                      });
+                                    }
+                                  
+                                
+                                  // Función para convertir una fecha de texto en un objeto de fecha
+                                    function obtenerFechaObj(fechaTexto) {
+                                      if (!fechaTexto) {
+                                        return null;
+                                      }
+                                      const partes = fechaTexto.split('-');
+                                      const año = parseInt(partes[0]);
+                                      const mes = parseInt(partes[1]) - 1;
+                                      const dia = parseInt(partes[2]);
+                                      return new Date(año, mes, dia);
+                                    }
+                                
+                                  // Función para verificar si una fecha es hoy
+                                    function esFechaHoy(fechaComparar) {
+                                      if (!fechaComparar) {
+                                        return false;
+                                      }
+                                      const fechaCompararObj = obtenerFechaObj(fechaComparar);
+                                      const fechaActual = new Date();
+                                      return fechaCompararObj && fechaCompararObj.toDateString() === fechaActual.toDateString();
+                                    }
+                                
+                                    // Event listener para el clic en el elemento details
+                                    const detalles = document.querySelectorAll("details");
+                                    detalles.forEach(detalle => {
+                                      detalle.addEventListener("toggle", function() {
+                                        if (this.open) {
+                                          obtenerYAgregarRegistros2();
+                                        }
+                                      });
+                                    });
+                                
+                                    // Event listener para manejar clics en botones
+                                    document.addEventListener('click', function(event) {
+                                      const target = event.target;
+                                      if (target.matches('.terminar-registro')) {
+                                        const registroId = target.getAttribute('data-registro-id');
+                                        const fechaActual = new Date().toLocaleString();
+                                        console.log(registroId)
+                                        console.log(fechaActual)
+                                        enviarFechaEntrada(registroId, fechaActual);
+                                      }
+                                    });
+                                
+                                    async function enviarFechaEntrada(registroId, fechaActual) {
+                                    const confirmar = confirm("¿Estás seguro de que quieres actualizar la fecha de entrada?");
+                                    if (!confirmar) {
+                                      console.log("Actualización cancelada por el usuario.");
+                                      return;
+                                    }
+                                
+                                    const urldata = `https://sheet.best/api/sheets/${sheetID}/tabs/visitas${sheetIDprivada}`;
+                                    try {
+                                      const response = await fetch(urldata);
+                                      const data = await response.json();
+                                
+                                      const index = data.findIndex((fila) => fila.idunico === registroId);
+                                      if (index !== -1) {
+                                        const datosActualizados = {
+                                          ingresoc2: fechaActual
+                                        };
+                                
+                                        const url = `https://sheet.best/api/sheets/${sheetID}/tabs/visitas${sheetIDprivada}/${index}`;
+                                        const updateResponse = await fetch(url, {
+                                          method: "PATCH",
+                                          mode: "cors",
+                                          headers: {
+                                            "Content-Type": "application/json"
+                                          },
+                                          body: JSON.stringify(datosActualizados)
+                                        });
+                                
+                                        const updatedData = await updateResponse.json();
+                                        console.log("Fecha de entrada actualizada correctamente:", updatedData);
+                                
+                                        setTimeout(() => {
+                                          obtenerYAgregarRegistros2();
+                                        }, 5000);
+                                      } else {
+                                        console.error("Registro no encontrado");
+                                      }
+                                    } catch (error) {
+                                      console.error("Error al obtener o actualizar los datos:", error);
+                                    }
+                                   }
+                                
+                                  // Llamar a las funciones una vez al cargar la página para cargar los registros iniciales
+                                  obtenerYAgregarRegistros2();
+
+                                  }
+                                }
+
+
 
                                 function registrarReserva() {
                                     var boton = document.getElementById("btnparaconfirmarreserca");
@@ -2011,6 +2431,36 @@ document.addEventListener("DOMContentLoaded", function() {
                                     }
                                 }
 
+
+                                document.getElementById("calle-morosos-2").addEventListener("click", function() {
+                                  if (this.open) { // Si necesitas verificar una condición de "abierto", esto sería solo para un <details>
+                                    console.log("Obteniendo registros de morosos...");
+                                    const url = `https://sheet.best/api/sheets/${sheetID}/tabs/propietarios${sheetIDprivada}`;
+                                    fetch(url)    
+                                      .then((response) => response.json())
+                                      .then((data) => {
+                                          // Filtrar y agregar los registros con estado "Moroso" (sin importar la fecha)
+                                          const registrosMorosos = data.filter((registro) => registro.status.startsWith("Moroso"));
+                                          agregarRegistrosMorosos("morosos-registros-2", registrosMorosos);
+                                      })
+                                      .catch((error) => {
+                                          console.error(error);
+                                      });
+                                  } else {
+                                    console.log("Obteniendo registros de morosos...");
+                                    const url = `https://sheet.best/api/sheets/${sheetID}/tabs/propietarios${sheetIDprivada}`;
+                                    fetch(url)    
+                                      .then((response) => response.json())
+                                      .then((data) => {
+                                          // Filtrar y agregar los registros con estado "Moroso" (sin importar la fecha)
+                                          const registrosMorosos = data.filter((registro) => registro.status.startsWith("Moroso"));
+                                          agregarRegistrosMorosos("morosos-registros-2", registrosMorosos);
+                                      })
+                                      .catch((error) => {
+                                          console.error(error);
+                                      });                                  }
+                                });
+
                                 document.getElementById("calle-morosos").addEventListener("click", function() {
                                   if (this.open) { // Si necesitas verificar una condición de "abierto", esto sería solo para un <details>
                                       obtenerdomconmora();
@@ -2034,262 +2484,420 @@ document.addEventListener("DOMContentLoaded", function() {
                                       });
                                 }
                                   // Función para agregar registros de morosos
-                                  function agregarRegistrosMorosos(contenedorId, registros) {
-                                      const contenedor = document.getElementById(contenedorId);
-                                      // Vaciar el contenedor antes de agregar nuevos registros
-                                      contenedor.innerHTML = '';
-                                      registros.forEach(registro => {
-                                          const registroHTML = `
-                                              <div id="div${registro.dom}" class="registro-item-mora">
-                                                  <p><strong>Domicilio:</strong> ${atob(registro.dom)}</p>
-                                                  <p><strong>Adeudo Total:</strong> ${registro.adeudo}</p>
-                                              </div>
-                                          `;
-                                          contenedor.insertAdjacentHTML('beforeend', registroHTML);
+                                function agregarRegistrosMorosos(contenedorId, registros) {
+                                    const contenedor = document.getElementById(contenedorId);
+                                    // Vaciar el contenedor antes de agregar nuevos registros
+                                    contenedor.innerHTML = '';
+                                    registros.forEach(registro => {
+                                        const registroHTML = `
+                                            <div id="div${registro.dom}" class="registro-item-mora">
+                                                <p><strong>Domicilio:</strong> ${atob(registro.dom)}</p>
+                                                <p><strong>Adeudo Total:</strong> ${registro.adeudo}</p>
+                                            </div>
+                                        `;
+                                        contenedor.insertAdjacentHTML('beforeend', registroHTML);
+                                    });
+                                }
+
+                                document.getElementById('btnAgregarPregunta').addEventListener('click', () => {
+                                  const nuevaPregunta = prompt('Ingrese la nueva pregunta:');
+                                  
+                                  
+                                      agregarPregunta(nuevaPregunta);
+                                  
+                                });
+
+                                function agregarPregunta(pregunta) {
+                                  
+                                  const url = `https://sheet.best/api/sheets/${sheetID}/tabs/avotar${sheetIDprivada}`;
+                                
+                                  const datos = {
+                                      pregunta: pregunta
+                                  };
+                                
+                                  const opciones = {
+                                      method: 'POST',
+                                      headers: {
+                                          'Content-Type': 'application/json',
+                                      },
+                                      body: JSON.stringify(datos),
+                                  };
+                                
+                                  fetch(url, opciones)
+                                      .then(response => response.json())
+                                      .then(data => {
+                                          alert('Pregunta agregada exitosamente');
+                                          // Puedes actualizar la vista aquí si es necesario
+                                          agregarvotacion(); // Opcional: para actualizar la lista de preguntas
+                                      })
+                                      .catch(error => {
+                                          console.error('Error al agregar la pregunta:', error);
                                       });
+                                  
+                                }
+
+                                function mostradivparaagregarresidente () {
+                                  divagregarunresidente.style.display = "block";
+                                  divvotaciones.style.display = "none";
+                                  paymentHistory2024.style.display = "none";
+                                  divingresos.style.display = "none";
+                                  divamenidades.style.display = "none";
+                                  divpagos.style.display = "none";
+                                  homeSection.style.display = "none"
+                                  divinformes.style.display = "none"
+                                  divlistaresidentes.style.display = "none"
+                                  contenedoradminvotos.style.display = "none";
+
+
+                                  // Supongamos que selectedCondominio y su propiedad 'calles' ya están disponibles
+                                  const calles = selectedCondominio.calles;  // Obtén el arreglo de calles
+
+                                  // Referencia al select de calles en el HTML
+                                  const calleSelect = document.getElementById('new-calle');
+
+                                  // Limpia cualquier opción existente
+                                  calleSelect.innerHTML = '<option value="">Selecciona calle</option>';
+
+                                  // Verifica que 'calles' no esté vacío o undefined
+                                  if (calles && Array.isArray(calles)) {
+                                      // Recorre el arreglo de calles y crea una opción por cada una
+                                      calles.forEach(calle => {
+                                          const option = document.createElement('option');
+                                          option.value = calle.nombre;  // Establece el código como valor de la opción
+                                          option.textContent = calle.nombre;  // Establece el nombre como texto visible de la opción
+                                          calleSelect.appendChild(option);  // Agrega la opción al select
+                                      });
+                                  } else {
+                                      console.error('No se encontraron calles en los datos del condominio.');
+                                  }
+                                }
+
+                                function agregarresidente() {
+
+                                  var boton3 = document.getElementById("enviarpago");
+
+                                  if (boton3.disabled) {
+                                  return; // Evitar ejecutar la función si ya está en curso
+                                  }
+
+                                  const newcalle = document.getElementById("new-calle").value;
+                                  const newnum = document.getElementById("new-num").value;
+                                  const newname = document.getElementById("new-name").value;
+                                  const newusarname = document.getElementById("new-username").value;
+                                  const newcontrasena = document.getElementById("new-contrasena").value;
+                                  const newcel = document.getElementById("new-cel").value;
+                                  const newrol = document.getElementById("new-rol").value;
+            
+
+                                  if (
+                                    !newname ||
+                                    !newusarname ||
+                                    !newcontrasena ||
+                                    !newcalle ||
+                                    !newnum ||
+                                    !newcel ||
+                                    !newrol
+                                  ) {
+                                    alert("Por favor, complete todos los campos.");
+                                    return; // Salir de la función si algún campo está vacío
                                   }
 
 
-                                  function agregarvotacion() {
 
-                                        divvotaciones.style.display = "none";
-                                        paymentHistory2024.style.display = "none";
-                                        divingresos.style.display = "none";
-                                        divamenidades.style.display = "none";
-                                        divpagos.style.display = "none";
-                                        homeSection.style.display = "none"
-                                        divinformes.style.display = "none"
-                                        divlistaresidentes.style.display = "none"
-                                        contenedoradminvotos.style.display = "block";
+
+                                    function cifrarCorreo(valor) {
+                                      var texto = JSON.stringify(valor);
+                                      var bytes = new TextEncoder().encode(texto);
+                                      var cifrado = btoa(String.fromCharCode.apply(null, bytes));
+                                      return cifrado;
+                                    }
                                 
-
-
-                                  
-                                        const tablapreguntasadmin = document.getElementById("tablapreguntasadmin");
-                                  
-                                        const url = `https://sheet.best/api/sheets/${sheetID}/tabs/avotar${sheetIDprivada}`;
-                                  
-                                        fetch(url)
+                                    const newdom = newcalle + " " + newnum;
+                                    const newclientecif = cifrarCorreo(newname);
+                                    const domcif = cifrarCorreo(newdom);
+                                    const correocif = cifrarCorreo(newusarname);
+                                    const passwordcif = cifrarCorreo(newcontrasena);
+                                
+                                    const urlVerificacion = `https://sheet.best/api/sheets/${sheetID}/tabs/propietarios${sheetIDprivada}/dom/${domcif}`;
+                                    console.log(urlVerificacion);
+                                
+                                    fetch(urlVerificacion)
+                                      .then((response) => response.json())
+                                      .then((data) => {
+                                        console.log(data);
+                                        console.log(data.length);
+                                
+                                        if (data.length < 1) {
+                                          const datos = {
+                                            Cliente: newclientecif,
+                                            dom: domcif,
+                                            correo: correocif,
+                                            password: passwordcif,
+                                            cel: newcel,
+                                            status: "Al Corriente",
+                                            perfil: newrol,
+                                          };
+                                
+                                          const url = `https://sheet.best/api/sheets/${sheetID}/tabs/propietarios${sheetIDprivada}`;
+                                          const opciones = {
+                                            method: "POST",
+                                            headers: {
+                                              "Content-Type": "application/json",
+                                            },
+                                            body: JSON.stringify(datos),
+                                          };
+                                
+                                          fetch(url, opciones)
                                             .then((response) => response.json())
                                             .then((data) => {
-                                                // Limpiar el contenido del div antes de agregar nuevas tablas
-                                                tablapreguntasadmin.innerHTML = '';
-                                  
-                                                // Crear una tabla para contener todas las preguntas
-                                                let table = document.createElement('table');
-                                                table.className = 'tablaporcada';
-                                  
-                                                data.forEach((fila, index) => {
-                                                    let trPregunta = document.createElement('tr');
-                                                    let tdPregunta = document.createElement('td');
-                                                    tdPregunta.colSpan = 2;
-                                                    tdPregunta.textContent = fila.pregunta;
-                                  
-                                                    // Aplicar una clase diferente para filas alternadas
-                                                    if (index % 2 === 0) {
-                                                        trPregunta.className = 'fila-par';
-                                                    } else {
-                                                        trPregunta.className = 'fila-impar';
-                                                    }
-                                  
-                                                    trPregunta.appendChild(tdPregunta);
-                                                    table.appendChild(trPregunta);
-                                                });
-                                  
-                                                // Agregar la tabla al contenedor
-                                                tablapreguntasadmin.appendChild(table);
+                                              alert("Datos grabados correctamente");
+                                
+                                              document.getElementById("new-name").value = "";
+                                              document.getElementById("new-username").value = "";
+                                              document.getElementById("new-contrasena").value = "";
+                                              document.getElementById("new-calle").value = "";
+                                              document.getElementById("new-num").value = "";
+                                              document.getElementById("new-cel").value = "";
+
+                                              setTimeout(mostrarresidentes, 5000);
+                                
+
                                             })
+                                
                                             .catch((error) => {
-                                                console.error('Error al obtener datos:', error);
+                                              console.error(
+                                                "Error al enviar los datos a la hoja de cálculo",
+                                                error
+                                              );
                                             });
-                                    
+                                        } else {
+                                          alert(
+                                            "Sin disponibilidad para registrar " +
+                                              newdom +
+                                              " ya tiene un registro previo."
+                                          );
+
+                                        }
+                                      })
+                                      .catch((error) => {
+                                        console.error("Error al verificar disponibilidad", error);
+                                      });
+
+                                }
+
+                                document.getElementById('encenderCamara').addEventListener('click', () => {
+
+                                  const video = document.createElement("video");
+                                  const canvasElement = document.getElementById("qr-canvas");
+                                  const canvas = canvasElement.getContext("2d");
+
+                                    navigator.mediaDevices
+                                      .getUserMedia({ video: { facingMode: "environment" } })
+                                      .then(function (stream) {
+                                        scanning = true;
+                                        btnScanQR.hidden = true;
+                                        canvasElement.hidden = false;
+                                        video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+                                        video.srcObject = stream;
+                                        video.play();
+                                        tick();
+                                        scan();
+                                      });
+
+
+                                function tick() {
+                                  canvasElement.height = video.videoHeight;
+                                  canvasElement.width = video.videoWidth;
+                                  canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+
+                                  scanning && requestAnimationFrame(tick);
+                                }
+
+                                function scan() {
+                                  try {
+                                    qrcode.decode();
+                                  } catch (e) {
+                                    setTimeout(scan, 60);
                                   }
+                                }
 
-                                  document.getElementById('btnAgregarPregunta').addEventListener('click', () => {
-                                    const nuevaPregunta = prompt('Ingrese la nueva pregunta:');
-                                    
-                                    
-                                        agregarPregunta(nuevaPregunta);
-                                    
+                                document.getElementById('cerrarCamara').addEventListener('click', () => {                                      
+                                  video.srcObject.getTracks().forEach((track) => {
+                                      track.stop();
                                   });
+                                  canvasElement.hidden = true;
+                                  btnScanQR.hidden = false;
+                                });
 
-                                  function agregarPregunta(pregunta) {
-                                    
-                                    const url = `https://sheet.best/api/sheets/${sheetID}/tabs/avotar${sheetIDprivada}`;
+                                const activarSonido = () => {
+                                  audio.play();
+                                };
+
+                                qrcode.callback = (respuesta) => {
+                                  if (respuesta) {
+                                    try {
+                                      const datosQR = JSON.parse(respuesta);
+                                      const { Casa, Nombre, Fecha, Tipo, ID } = datosQR;
+                                      console.log(
+                                        `Fecha: ${Fecha}, Nombre: ${Nombre}, Tipo: ${Tipo}, ID: ${ID}`
+                                      );
+                                
+                                      const obtenerFechaHoy = () => {
+                                        const hoy = new Date();
+                                        return new Intl.DateTimeFormat('es-ES', { timeZone: 'America/Mexico_City', year: 'numeric', month: '2-digit', day: '2-digit' }).format(hoy);
+                                      };
+                                
+                                      const formatearFecha = (fecha) => {
+                                        const partes = fecha.split('/');
+                                        return `${partes[2]}-${partes[1]}-${partes[0]}`;
+                                      };
+                                
+                                      const fechaHoy = formatearFecha(obtenerFechaHoy());
+                                      console.log("Validando fecha");
+                                      console.log(fechaHoy);
+                                      console.log(Fecha);
+                                
+                                      if (Fecha !== fechaHoy) {
+                                        divqrconotrafecha.style.display = "block";
+                                        divseguridadcasetaprincial.style.display = "none";
+                                        video.srcObject.getTracks().forEach((track) => {
+                                          track.stop();
+                                        });
+                                        canvasElement.hidden = true;
+                                        btnScanQR.hidden = false;
+                                      } else {
+                                        verificarConSheets(Casa, Fecha, Nombre, Tipo, ID);
+                                      }
+                                    } catch (error) {
+                                      console.error("Error al parsear el código QR", error);
+                                      Swal.fire("Error al leer el código QR");
+                                      video.srcObject.getTracks().forEach((track) => {
+                                        track.stop();
+                                      });
+                                      canvasElement.hidden = true;
+                                      btnScanQR.hidden = false;
+                                    }
+                                  }
+                                };
+                                
+                                const verificarConSheets = async (Casa, Nombre, Fecha, Tipo, id) => {
+                                  const url = `https://sheet.best/api/sheets/${sheetID}/tabs/visitas${sheetIDprivada}`;
+                                  console.log(domiciliosinComillas)
+                                
+                                  try {
+                                    const response = await fetch(url);
+                                    const data = await response.json();
+                                
+                                    const registroIndex = data.findIndex((registro) => registro.idunico === id);
+                                
+                                    if (registroIndex !== -1) {
+                                      const registro = data[registroIndex];
+
+                                      if(domiciliosinComillas === "Seguridad 2"){
+
+                                        if (registro.ingresoc1) {
+                                          divrojoyauqr.style.display = "block";
+                                          divseguridadcasetaprincial.style.display = "none";
+                                          activarSonido();
+  
+                                        } else {
+                                          const hoy = new Date();
+                                          const fechaHoy = hoy.toISOString().split("T")[0];
+                                          const horaHoy = hoy.toTimeString().split(" ")[0];
+                                          console.log(`Índice del registro: ${registroIndex}`);
+                                          await actualizarIngreso(sheetID, registroIndex, fechaHoy, horaHoy);
                                   
+                                          document.getElementById("dom").innerText = Casa;
+                                          document.getElementById("nom").innerText = Fecha;
+                                          document.getElementById("fecha").innerText = Nombre;
+                                          document.getElementById("tipolectura").innerText = Tipo;
+                                          document.getElementById("idUnico").innerText = id;
+                                  
+                                          divseguridadcasetaprincial.style.display = "none";
+                                          divverde.style.display = "block";
+                                  
+                                          activarSonido();
+                                        }
+                                      } else {
+
+                                        if (registro.ingresoc2) {
+                                          divrojoyauqr.style.display = "block";
+                                          divseguridadcasetaprincial.style.display = "none";
+                                          activarSonido();
+  
+                                        } else {
+                                          const hoy = new Date();
+                                          const fechaHoy = hoy.toISOString().split("T")[0];
+                                          const horaHoy = hoy.toTimeString().split(" ")[0];
+                                          console.log(`Índice del registro: ${registroIndex}`);
+                                          await actualizarIngreso(sheetID, registroIndex, fechaHoy, horaHoy);
+                                  
+                                          document.getElementById("dom").innerText = Casa;
+                                          document.getElementById("nom").innerText = Fecha;
+                                          document.getElementById("fecha").innerText = Nombre;
+                                          document.getElementById("tipolectura").innerText = Tipo;
+                                          document.getElementById("idUnico").innerText = id;
+                                  
+                                          divseguridadcasetaprincial.style.display = "none";
+                                          divverde.style.display = "block";
+                                  
+                                          activarSonido();
+                                        }
+                                      }
+
+                                    } else {
+                                      divrojo.style.display = "block";
+                                      divseguridadcasetaprincial.style.display = "none";
+                                      activarSonido();
+
+                                    }
+                                  } catch (error) {
+                                    activarSonido();
+                                    Swal.fire("Error al verificar el código QR");
+                                  }
+                                
+                                  video.srcObject.getTracks().forEach((track) => {
+                                    track.stop();
+                                  });
+                                  };
+                                  
+                                  const actualizarIngreso = async (sheetID, rowIndex, fecha, hora) => {
+                                    const url = `https://sheet.best/api/sheets/${sheetID}/tabs/visitas${sheetIDprivada}/${rowIndex}`;
+
+                                    const actualizar = domiciliosinComillas === "Seguridad 2" ? "ingresoc1" : "ingresoc2";
+
                                     const datos = {
-                                        pregunta: pregunta
+                                      [actualizar]: `${fecha} ${hora}`
                                     };
+
+                                    console.log("datos a actualizar")
+                                    console.log(actualizar)
+
+
                                   
                                     const opciones = {
-                                        method: 'POST',
-                                        headers: {
-                                            'Content-Type': 'application/json',
-                                        },
-                                        body: JSON.stringify(datos),
+                                      method: "PATCH",
+                                      headers: {
+                                        "Content-Type": "application/json",
+                                      },
+                                      body: JSON.stringify(datos),
                                     };
                                   
-                                    fetch(url, opciones)
-                                        .then(response => response.json())
-                                        .then(data => {
-                                            alert('Pregunta agregada exitosamente');
-                                            // Puedes actualizar la vista aquí si es necesario
-                                            agregarvotacion(); // Opcional: para actualizar la lista de preguntas
-                                        })
-                                        .catch(error => {
-                                            console.error('Error al agregar la pregunta:', error);
-                                        });
-                                    
-                                  }
-
-                                  function mostradivparaagregarresidente () {
-                                    divagregarunresidente.style.display = "block";
-                                    divvotaciones.style.display = "none";
-                                    paymentHistory2024.style.display = "none";
-                                    divingresos.style.display = "none";
-                                    divamenidades.style.display = "none";
-                                    divpagos.style.display = "none";
-                                    homeSection.style.display = "none"
-                                    divinformes.style.display = "none"
-                                    divlistaresidentes.style.display = "none"
-                                    contenedoradminvotos.style.display = "none";
-
-
-                                    // Supongamos que selectedCondominio y su propiedad 'calles' ya están disponibles
-                                    const calles = selectedCondominio.calles;  // Obtén el arreglo de calles
-
-                                    // Referencia al select de calles en el HTML
-                                    const calleSelect = document.getElementById('new-calle');
-
-                                    // Limpia cualquier opción existente
-                                    calleSelect.innerHTML = '<option value="">Selecciona calle</option>';
-
-                                    // Verifica que 'calles' no esté vacío o undefined
-                                    if (calles && Array.isArray(calles)) {
-                                        // Recorre el arreglo de calles y crea una opción por cada una
-                                        calles.forEach(calle => {
-                                            const option = document.createElement('option');
-                                            option.value = calle.nombre;  // Establece el código como valor de la opción
-                                            option.textContent = calle.nombre;  // Establece el nombre como texto visible de la opción
-                                            calleSelect.appendChild(option);  // Agrega la opción al select
-                                        });
-                                    } else {
-                                        console.error('No se encontraron calles en los datos del condominio.');
-                                    }
-                                  }
-
-                                  function agregarresidente() {
-
-                                    var boton3 = document.getElementById("enviarpago");
-
-                                    if (boton3.disabled) {
-                                    return; // Evitar ejecutar la función si ya está en curso
-                                    }
-
-                                    const newcalle = document.getElementById("new-calle").value;
-                                    const newnum = document.getElementById("new-num").value;
-                                    const newname = document.getElementById("new-name").value;
-                                    const newusarname = document.getElementById("new-username").value;
-                                    const newcontrasena = document.getElementById("new-contrasena").value;
-                                    const newcel = document.getElementById("new-cel").value;
-                                    const newrol = document.getElementById("new-rol").value;
-              
-  
-                                    if (
-                                      !newname ||
-                                      !newusarname ||
-                                      !newcontrasena ||
-                                      !newcalle ||
-                                      !newnum ||
-                                      !newcel ||
-                                      !newrol
-                                    ) {
-                                      alert("Por favor, complete todos los campos.");
-                                      return; // Salir de la función si algún campo está vacío
-                                    }
-
-
-
-
-                                      function cifrarCorreo(valor) {
-                                        var texto = JSON.stringify(valor);
-                                        var bytes = new TextEncoder().encode(texto);
-                                        var cifrado = btoa(String.fromCharCode.apply(null, bytes));
-                                        return cifrado;
+                                    try {
+                                      const response = await fetch(url, opciones);
+                                      if (!response.ok) {
+                                        throw new Error("Error al actualizar la hoja de cálculo");
                                       }
-                                  
-                                      const newdom = newcalle + " " + newnum;
-                                      const newclientecif = cifrarCorreo(newname);
-                                      const domcif = cifrarCorreo(newdom);
-                                      const correocif = cifrarCorreo(newusarname);
-                                      const passwordcif = cifrarCorreo(newcontrasena);
-                                  
-                                      const urlVerificacion = `https://sheet.best/api/sheets/${sheetID}/tabs/propietarios${sheetIDprivada}/dom/${domcif}`;
-                                      console.log(urlVerificacion);
-                                  
-                                      fetch(urlVerificacion)
-                                        .then((response) => response.json())
-                                        .then((data) => {
-                                          console.log(data);
-                                          console.log(data.length);
-                                  
-                                          if (data.length < 1) {
-                                            const datos = {
-                                              Cliente: newclientecif,
-                                              dom: domcif,
-                                              correo: correocif,
-                                              password: passwordcif,
-                                              cel: newcel,
-                                              status: "Al Corriente",
-                                              perfil: newrol,
-                                            };
-                                  
-                                            const url = `https://sheet.best/api/sheets/${sheetID}/tabs/propietarios${sheetIDprivada}`;
-                                            const opciones = {
-                                              method: "POST",
-                                              headers: {
-                                                "Content-Type": "application/json",
-                                              },
-                                              body: JSON.stringify(datos),
-                                            };
-                                  
-                                            fetch(url, opciones)
-                                              .then((response) => response.json())
-                                              .then((data) => {
-                                                alert("Datos grabados correctamente");
-                                  
-                                                document.getElementById("new-name").value = "";
-                                                document.getElementById("new-username").value = "";
-                                                document.getElementById("new-contrasena").value = "";
-                                                document.getElementById("new-calle").value = "";
-                                                document.getElementById("new-num").value = "";
-                                                document.getElementById("new-cel").value = "";
+                                    } catch (error) {
+                                      console.error("Error al actualizar la hoja de cálculo", error);
+                                      Swal.fire("Error al actualizar la hoja de cálculo");
+                                    }
+                                    };
+                                });
 
-                                                setTimeout(mostrarresidentes, 5000);
-                                  
+  
 
-                                              })
-                                  
-                                              .catch((error) => {
-                                                console.error(
-                                                  "Error al enviar los datos a la hoja de cálculo",
-                                                  error
-                                                );
-                                              });
-                                          } else {
-                                            alert(
-                                              "Sin disponibilidad para registrar " +
-                                                newdom +
-                                                " ya tiene un registro previo."
-                                            );
 
-                                          }
-                                        })
-                                        .catch((error) => {
-                                          console.error("Error al verificar disponibilidad", error);
-                                        });
-
-                                  }
 
                             } else {
                                 alert("Contraseña incorrecta.");

@@ -12,6 +12,7 @@ export const sheetIDs = {
         preferenceID: "1824470973-45e4405e-20d0-4500-8a97-47ce5c198d65",
         casetaprincipal: "Ok",
         casetaprivada: "Ok",
+        segurichat: "527713598364",
         calles: [
             { nombre: "ALBA", codigo: "IkFMQk" },
             { nombre: "CABALLEROS", codigo: "IkNBQkFMTEVST" },
@@ -20,7 +21,7 @@ export const sheetIDs = {
             { nombre: "HIERRO", codigo: "IkhJRVJSTy" },
             { nombre: "IBIZA", codigo: "IklCSVpBI" },
             { nombre: "MAGDALENA", codigo: "Ik1BR0RBTEVOQ" },
-            { nombre: "CASETA DE SEGURIDAD", codigo: "IkNBU0VUQSBERSBTRUd" },
+            { nombre: "Seguridad", codigo: "IlNlZ3VyaWRhZC" },
 
         ]    
     },
@@ -36,6 +37,7 @@ export const sheetIDs = {
         preferenceID: "1824470973-45e4405e-20d0-4500-8a97-47ce5c198d65",
         casetaprincipal: "Ok",
         casetaprivada: "Ok",
+        segurichat: "525582227469",
         calles: [
             { nombre: "ALBA", codigo: "IkFMQk" },
             { nombre: "CABALLEROS", codigo: "IkNBQkFMTEVST" },
@@ -44,7 +46,7 @@ export const sheetIDs = {
             { nombre: "HIERRO", codigo: "IkhJRVJSTy" },
             { nombre: "IBIZA", codigo: "IklCSVpBI" },
             { nombre: "MAGDALENA", codigo: "Ik1BR0RBTEVOQ" },
-            { nombre: "CASETA DE SEGURIDAD", codigo: "IkNBU0VUQSBERSBTRUd" },
+            { nombre: "Seguridad", codigo: "IlNlZ3VyaWRhZC" },
         ] 
         // O cualquier otra cadena si es necesario
     },
@@ -61,6 +63,7 @@ export const sheetIDs = {
         preferenceID: "",
         casetaprincipal: "",
         casetaprivada: "Ok",
+        segurichat: "527714148096",
         calles: [
             { nombre: "Almendros", codigo: "IkFsbWV" },
             { nombre: "Bugambilias", codigo: "IkJ1Z2F" },
@@ -68,7 +71,7 @@ export const sheetIDs = {
             { nombre: "Magnolias", codigo: "Ik1hZ25" },
             { nombre: "Tulipanes", codigo: "IlR1bGl" },
             { nombre: "Violetas", codigo: "IlZpb2x" },
-            { nombre: "CASETA DE SEGURIDAD", codigo: "IkNBU0VUQSBERSBTRUd" },
+            { nombre: "Seguridad", codigo: "IlNlZ3VyaWRhZC" },
 
         ] // Agregar las calles aquí
 
