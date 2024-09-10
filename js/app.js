@@ -228,10 +228,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const clabe = selectedCondominio.clabe;
         const monto = selectedCondominio.monto;
         const preferenceID = selectedCondominio.preferenceID;
-        const casetaprincipal = selectedCondominio.casetaprincipal;
-        const casetaprivada = selectedCondominio.casetaprivada;
         const calles = selectedCondominio.calles;
         const segurichatnumero = selectedCondominio.segurichat;
+        const casetaseguridad = selectedCondominio.casetaseguridad;
+
+
 
 
         if(sheetIDCalender === ""){
@@ -244,14 +245,11 @@ document.addEventListener("DOMContentLoaded", function() {
           divbotonhistorico.style.display = "none";
           divbotonpago.style.display = "none"
         }
+        if (casetaseguridad === ""){
+          divliaseguridad.style.display = "none"
+        }
         if(sheetIDubicacion === "" ) {
           divbotonvisitas.style.display = "none";
-        }
-        if(casetaprincipal === "" ) {
-          btncaseta1.style.display = "none";
-        }
-        if(casetaprivada === "" ) {
-          btncaseta2.style.display = "none";
         }
         if (segurichatnumero  === "") {
           botonsegurichat.style.display = "none";
@@ -347,9 +345,10 @@ document.addEventListener("DOMContentLoaded", function() {
                                     divliaseguridad.style.display = "block";
                                     divliadmin.style.display = "block";
                                 } else if (perfil.trim() === "Seguridad") {
+                                    console.log("Eres Seguridad")
+                                    divliaseguridad.style.display = "block";
                                     divlimenu.style.display = "none";
                                     divliadmin.style.display = "none";
-                                    divliaseguridad.style.display = "block";
                                 }
 
                                 //////Registrar inicio de sesión////////

@@ -10,8 +10,7 @@ export const sheetIDs = {
         clabe: "014308655093787392",
         monto: "$550.00 M.N.",
         preferenceID: "1824470973-45e4405e-20d0-4500-8a97-47ce5c198d65",
-        casetaprincipal: "Ok",
-        casetaprivada: "Ok",
+        casetaseguridad: "Ok",
         segurichat: "527713598364",
         calles: [
             { nombre: "ALBA", codigo: "IkFMQk" },
@@ -35,8 +34,7 @@ export const sheetIDs = {
         clabe: "12345678912345",
         monto: "$1,550.00 M.N.",
         preferenceID: "1824470973-45e4405e-20d0-4500-8a97-47ce5c198d65",
-        casetaprincipal: "Ok",
-        casetaprivada: "Ok",
+        casetaseguridad: "Ok",
         segurichat: "525582227469",
         calles: [
             { nombre: "ALBA", codigo: "IkFMQk" },
@@ -61,8 +59,7 @@ export const sheetIDs = {
         clabe: "021180066105402763",
         monto: "$250.00 M.N.",
         preferenceID: "",
-        casetaprincipal: "",
-        casetaprivada: "Ok",
+        casetaseguridad: "Ok",
         segurichat: "527714148096",
         calles: [
             { nombre: "Almendros", codigo: "IkFsbWV" },
