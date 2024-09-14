@@ -12,6 +12,7 @@ export const sheetIDs = {
         preferenceID: "1824470973-45e4405e-20d0-4500-8a97-47ce5c198d65",
         casetaseguridad: "Ok",
         segurichat: "527713598364",
+        adminIA: "Si",
         calles: [
             { nombre: "ALBA", codigo: "IkFMQk" },
             { nombre: "CABALLEROS", codigo: "IkNBQkFMTEVST" },
@@ -27,7 +28,8 @@ export const sheetIDs = {
     "Guadalajara Country Club": {
         sheetID: "20758fb4-773d-43c9-995b-dcc92cc09071",
         sheetIDprivada: "-GCL",
-
+        sheetIDubicacion: "https://maps.app.goo.gl/AcT4bmdn3JoZqSfRA",
+        sheetIDCalender: "https://calendar.google.com/calendar/embed?src=37177ba39d333f7ac9edfc4ae9571b75e2562da9e2887771191bab6db82b5aee%40group.calendar.google.com&ctz=America%2FMexico_City",
         banco: "BBVA",
         titular: "Guadalajara Country Club",
         cuenta: "12345678",
@@ -36,6 +38,7 @@ export const sheetIDs = {
         preferenceID: "1824470973-45e4405e-20d0-4500-8a97-47ce5c198d65",
         casetaseguridad: "Ok",
         segurichat: "525582227469",
+        adminIA: "Si",
         calles: [
             { nombre: "ALBA", codigo: "IkFMQk" },
             { nombre: "CABALLEROS", codigo: "IkNBQkFMTEVST" },
@@ -61,6 +64,7 @@ export const sheetIDs = {
         preferenceID: "",
         casetaseguridad: "Ok",
         segurichat: "527714148096",
+        adminIA: "Si",
         calles: [
             { nombre: "Almendros", codigo: "IkFsbWV" },
             { nombre: "Bugambilias", codigo: "IkJ1Z2F" },
