@@ -344,6 +344,12 @@ document.addEventListener("DOMContentLoaded", function() {
                                     console.log("Eres un administrador")
                                     divliaseguridad.style.display = "block";
                                     divliadmin.style.display = "block";
+                                    // Inyecta el script de Tidio solo si el usuario es administrador
+                                    const scriptTidio = document.createElement('script');
+                                    scriptTidio.src = "//code.tidio.co/iexsecfepo6a7vk4h10zzy5aafbaoqao.js";
+                                    scriptTidio.async = true;
+                                    document.body.appendChild(scriptTidio);                                   
+
                                 } else if (perfil.trim() === "Seguridad") {
                                     console.log("Eres Seguridad")
                                     divliaseguridad.style.display = "block";
@@ -471,7 +477,8 @@ document.addEventListener("DOMContentLoaded", function() {
                                   window.location.reload();
 
                                 }
-                             
+
+
 
                                 var tiempoEspera = 5 * 1000; // 5 minutos en milisegundos
                                 var timer; // variable para almacenar el temporizador
@@ -519,15 +526,15 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divagregarunresidente.style.display = "none";
                                   divseguridadcasetaprincial.style.display = "none";
 
-
+                                  if (perfil.trim() === "Administrador") {
+                                    const buttonIA = document.getElementById("tidio-chat");
+                                    buttonIA.style.display = "block"; 
+                                  }
 
                                   divrojo.style.display = "none";
                                   divrojoyauqr.style.display = "none";
                                   divqrconotrafecha.style.display = "none";
                                   divverde.style.display = "none";
-
-
-
 
                                 }
 
@@ -543,18 +550,17 @@ document.addEventListener("DOMContentLoaded", function() {
                                     divlistaresidentes.style.display = "none";
                                     contenedoradminvotos.style.display = "none";
                                     divseguridadcasetaprincial.style.display = "none";
-
-
                                     divrojo.style.display = "none";
                                     divrojoyauqr.style.display = "none";
                                     divqrconotrafecha.style.display = "none";
                                     divverde.style.display = "none";
 
+                                    if (perfil.trim() === "Administrador") {
+                                      const buttonIA = document.getElementById("tidio-chat");
+                                      buttonIA.style.display = "none"; 
+                                    }
 
-
-
-
-
+                                    
                                     const namevisitaSpan = document.getElementById("namevisita").value;
 
                                     if (!namevisitaSpan || namevisitaSpan === "") {
@@ -579,14 +585,16 @@ document.addEventListener("DOMContentLoaded", function() {
                                     divagregarunresidente.style.display = "none";
                                     divseguridadcasetaprincial.style.display = "none";
 
+                                    if (perfil.trim() === "Administrador") {
+                                      const buttonIA = document.getElementById("tidio-chat");
+                                      buttonIA.style.display = "none"; 
+                                    }
+
 
                                     divrojo.style.display = "none";
                                     divrojoyauqr.style.display = "none";
                                     divqrconotrafecha.style.display = "none";
                                     divverde.style.display = "none";
-
-
-
 
 
                                 }
@@ -605,6 +613,12 @@ document.addEventListener("DOMContentLoaded", function() {
                                   contenedoradminvotos.style.display = "none";
                                   divagregarunresidente.style.display = "none";
                                   divseguridadcasetaprincial.style.display = "none";
+
+
+                                  if (perfil.trim() === "Administrador") {
+                                    const buttonIA = document.getElementById("tidio-chat");
+                                    buttonIA.style.display = "none"; 
+                                  }
 
 
                                   divrojo.style.display = "none";
@@ -676,6 +690,11 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divagregarunresidente.style.display = "none";
                                   divseguridadcasetaprincial.style.display = "none";
 
+                                  if (perfil.trim() === "Administrador") {
+                                    const buttonIA = document.getElementById("tidio-chat");
+                                    buttonIA.style.display = "none"; 
+                                  }
+
 
                                   divrojo.style.display = "none";
                                   divrojoyauqr.style.display = "none";
@@ -744,6 +763,11 @@ document.addEventListener("DOMContentLoaded", function() {
                                     divlistaresidentes.style.display = "none"
                                     divagregarunresidente.style.display = "none";
                                     divseguridadcasetaprincial.style.display = "none";
+
+                                    if (perfil.trim() === "Administrador") {
+                                      const buttonIA = document.getElementById("tidio-chat");
+                                      buttonIA.style.display = "none"; 
+                                    }
 
 
 
@@ -815,6 +839,11 @@ document.addEventListener("DOMContentLoaded", function() {
                                   contenedoradminvotos.style.display = "none";
                                   divagregarunresidente.style.display = "none";
                                   divseguridadcasetaprincial.style.display = "none";
+
+                                  const buttonIA = document.getElementById("tidio-chat");
+                                  buttonIA.style.display = "none"; 
+                                  
+
 
 
                                   divrojo.style.display = "none";
@@ -1066,6 +1095,9 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divqrconotrafecha.style.display = "none";
                                   divverde.style.display = "none";
 
+                                  const buttonIA = document.getElementById("tidio-chat");
+                                  buttonIA.style.display = "none"; 
+
                           
 
 
@@ -1131,6 +1163,12 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divverde.style.display = "none";
 
 
+                                  const buttonIA = document.getElementById("tidio-chat");
+                                  buttonIA.style.display = "none"; 
+
+
+
+
                                 }
 
                                 //menucasetaprincial///
@@ -1158,6 +1196,9 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divbtnqrinvaliodQRCPrivada.style.display = "none";
                                   divbtnqryautilizadoQRCPrincial.style.display = "block";
                                   divbtnqryautilizadoQRCPrivada.style.display = "none";
+
+                                  const buttonIA = document.getElementById("tidio-chat");
+                                  buttonIA.style.display = "none"; 
 
                                   const canvasElement = document.getElementById("qr-canvas");
                                   canvasElement.hidden = true;
