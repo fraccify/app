@@ -178,7 +178,6 @@ function cifrarCorreo(valor) {
     return cifrado;
 }
 
-import sheetIDs from './sheetIDs.js';
 
 document.addEventListener("DOMContentLoaded", function() {
     // Obtén el formulario
@@ -213,7 +212,16 @@ document.addEventListener("DOMContentLoaded", function() {
         const contrasenaInput = document.getElementById("contrasena").value;
         const contrasenaInputCodificado = cifrarCorreo(contrasenaInput);
 
-        // Obtén el objeto correspondiente al condominio seleccionado
+
+        fetch('https://s3.us-east-2.amazonaws.com/fraccify.bucket/sheetIDs.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(sheetIDs => {
+
         const selectedCondominio = sheetIDs[condominioInput];
 
         // Accede a las propiedades dentro del objeto
@@ -232,10 +240,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const segurichatnumero = selectedCondominio.segurichat;
         const casetaseguridad = selectedCondominio.casetaseguridad;
         const adminIA = selectedCondominio.adminIA;
-
-
-
-
 
         if(sheetIDCalender === ""){
           divbotonreservar.style.display = "none";
@@ -468,25 +472,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
                                 document.getElementById("qryautilizadoQRCPrincial").addEventListener("click", mostrardivcasetaprincipal);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 function recargarpagina (){
                                   window.location.reload();
 
                                 }
-
-
 
                                 var tiempoEspera = 5 * 1000; // 5 minutos en milisegundos
                                 var timer; // variable para almacenar el temporizador
@@ -627,7 +616,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                   divagregarunresidente.style.display = "none";
                                   divseguridadcasetaprincial.style.display = "none";
 
-
                                   if (perfil.trim() === "Administrador") {
                                     if(adminIA === "Si"){
                                     const buttonIA = document.getElementById("tidio-chat");
@@ -635,18 +623,11 @@ document.addEventListener("DOMContentLoaded", function() {
                                     }
                                   }
 
-
                                   divrojo.style.display = "none";
                                   divrojoyauqr.style.display = "none";
                                   divqrconotrafecha.style.display = "none";
                                   divverde.style.display = "none";
 
-
-
-
-
-
-                              
                                   const url = `https://sheet.best/api/sheets/${sheetID}/tabs/avotar${sheetIDprivada}`;
                               
                                   fetch(url)
@@ -686,7 +667,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                               divvotaciones.appendChild(table);
                               
                                               // Verificar si ya se ha votado antes y deshabilitar los inputs de radio si es asi
-                                              verificarVoto(fila.pregunta, idSi, idNo, index);
+                                              verificarVoto(fila.pregunta, idSi, idNo, index, domiciliosinComillas)
                                           });
                                       })
                                       .catch((error) => console.error('Error al obtener datos:', error));
@@ -1239,31 +1220,27 @@ document.addEventListener("DOMContentLoaded", function() {
                                   canvasElement.hidden = true;
                                   btnScanQR.hidden = false;
 
-
-                                    visitaspendientesdeldia.style.display = "block";
-
-
+                                  visitaspendientesdeldia.style.display = "block";
 
                                       const detailsHTML = selectedCondominio.calles.map(calle => {
                                         const nombre = calle.nombre;
-                                        if (!document.getElementById(`calle-${nombre}`)) {
+                                        const existingDetails = document.getElementById(`calle-${nombre}-SEG`);
+
+                                        if (!existingDetails) {
                                           return `
                                               <details class="calle-box" id="calle-${nombre}-SEG" data-codigo="${calle.codigo}">
                                                   <summary class="calle-title">${nombre}</summary>
-                                                  <input class="busqueda" type="text" id="busqueda-domicilio-${nombre}-SEG" placeholder="Buscar domicilio..." oninput="buscarDomicilio('${nombre}')">
                                                   <div class="calle-registros" id="${nombre}-registros-SEG">
                                                       <!-- Aquí se mostrarán los registros de la calle ${nombre} -->
                                                   </div>
                                               </details>
                                           `;
-                                        }
-                                    
+                                        }                                    
                                           // Si el elemento ya existe, no generes nada nuevo
                                           return '';
                                         }).join('');
-                                      
+                                        
                                       document.getElementById('visitaspendientesdeldia').innerHTML += detailsHTML;
-
                                       const idunicosAgregados = new Set();
                                     
                                       // Función para obtener los datos del API y agregar los registros de hoy
@@ -1273,7 +1250,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                         fetch(url)
                                           .then((response) => response.json())
                                           .then((data) => {
-                                            console.log(data); // Imprime los datos obtenidos desde la API
                                     
                                             // Filtrar los registros para obtener solo los de hoy
                                             const registrosHoy = data.filter((fila) => esFechaHoy(fila.fecha));
@@ -1295,7 +1271,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                           });
                                       }
                                     
-                                
                                     // Función para agregar registros a un contenedor de calle
                                     function agregarRegistros(contenedorId, registros) {
                                       const contenedor = document.getElementById(contenedorId);
@@ -1308,9 +1283,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                         const registroId = `div${registro.idunico}`;
                                         const elementoExistente = document.getElementById(registroId);
                                         const actualizar = domiciliosinComillas === "Seguridad 2" ? "ingresoc1" : "ingresoc2";
-
-
-
                                   
                                         if (registro[actualizar]) {
                                           // Si el registro tiene ingresoc2 y el elemento existe, remuévelo
@@ -1350,7 +1322,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                       });
                                     }
                                   
-                                
                                   // Función para convertir una fecha de texto en un objeto de fecha
                                     function obtenerFechaObj(fechaTexto) {
                                       if (!fechaTexto) {
@@ -1404,8 +1375,6 @@ document.addEventListener("DOMContentLoaded", function() {
                                 
                                     const urldata = `https://sheet.best/api/sheets/${sheetID}/tabs/visitas${sheetIDprivada}`;
                                     const actualizar = domiciliosinComillas === "Seguridad 2" ? "ingresoc1" : "ingresoc2";
-
-
 
                                     try {
                                       const response = await fetch(urldata);
@@ -1983,14 +1952,15 @@ document.addEventListener("DOMContentLoaded", function() {
                                     }
                                 }
 
-                                function verificarVoto(pregunta, idSi, idNo, index) {
+                                function verificarVoto(pregunta, idSi, idNo, index, domiciliosinComillas) {
                                     const url = `https://sheet.best/api/sheets/${sheetID}/tabs/votaciones${sheetIDprivada}`;
                                 
                                     fetch(url)
                                         .then(response => response.json())
                                         .then(votaciones => {
                                             // Comprobar si ya existe un voto para la pregunta específica
-                                            const votoExistente = votaciones.find(voto => voto.pregunta === pregunta);
+                                            const votoExistente = votaciones.find(voto => voto.pregunta === pregunta && voto.domicilio === domiciliosinComillas);
+
                                 
                                             if (votoExistente) {
                                                 // Si ya existe un voto, deshabilitar los inputs de radio y marcar el voto correspondiente
@@ -2054,7 +2024,12 @@ document.addEventListener("DOMContentLoaded", function() {
                                                 console.error('Error al enviar los datos:', error);
                                             });
                                     } else {
-                                        alert("Domicilio con adeudo, no puede votar");
+                                            // Mostrar alerta si tiene adeudo
+                                            alert("Domicilio con adeudo, no puede votar");
+                                            // Deshabilitar los inputs de radio
+                                            document.getElementById(idSi).checked = false;
+                                            document.getElementById(idNo).checked = false;
+                                        
                                     }
                                 }
 
@@ -2994,7 +2969,8 @@ document.addEventListener("DOMContentLoaded", function() {
             } 
         } else {
             alert("Debe aceptar el aviso de privacidad para iniciar sesión");
-        }   
+        }
+      });   
     });
 });
 
