@@ -1,0 +1,500 @@
+/* Estilos base */
+body {
+    font-family: "Quicksand", sans-serif;
+    padding: 5%;
+    background-color: white;
+    color: white;
+}
+
+
+
+.header_1 {
+    font-family: "Quicksand", sans-serif;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobilemenu {
+    display: none; /* Ocultar por defecto */
+    cursor: pointer;
+}
+
+.mobilemenu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row; /* Por defecto, horizontal */
+    align-items: center;
+    
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-menu ul li {
+    margin: 1em 0;
+}
+
+.nav-menu ul li a {
+    color: #1f355e;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+footer {
+    background-color: white;
+    color: rgb(37, 150, 190);
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    height: 10px;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.mainmenu ul li a {
+    font-family: "Quicksand", sans-serif;
+    color: #013e6a; 
+    display: block;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none;
+    text-decoration: none;
+}
+
+.mainmenu ul li {
+    margin: 10px;
+    padding: 10px 15px;
+    list-style: none;
+}
+
+.mainmenu ul li.menu-item-has-children {
+    position: relative;
+}
+
+.columna-img {
+    width: 25%;
+}
+
+.columna-img img {
+    max-width: 40%;
+    height: auto;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    font-family: "Quicksand", sans-serif;
+    font-size: 26px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    flex-direction: row;
+    align-items: center;
+    color: #013e6a;    
+}
+
+.hero-background {
+    background-color: rgb(37 149 190 / 24%);
+    padding: 20px; /* Ajusta el padding según sea necesario */
+    width: 90%; /* Ocupa el 90% del contenedor hero */
+    display: flex; /* Alinea el contenido dentro del contenedor interno */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hero .text {
+    max-width: 50%;
+}
+
+.hero .text h1 {
+    font-size: 45px;
+}
+
+.hero .text h2 {
+    margin-top: 10px;
+    font-size: 26px;
+    color: rgb(37, 150, 190);
+}
+
+.image-slider {
+    width: 150%; /* Esto reduce la imagen al 50% de su tamaño original */
+    position: relative;
+    width: 300px;
+    height: 400px;
+
+    /* Flexbox para centrar la imagen */
+    display: flex;
+    justify-content: center;  /* Centrado horizontal */
+    align-items: center;      /* Centrado vertical */
+}
+
+
+.image-slider img {
+    width: 95%; /* Esto reduce la imagen al 50% de su tamaño original */
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    
+}
+
+.image-slider img.active {
+    opacity: 1;
+}
+
+.image-slider2 {
+    width: 150%; /* Esto reduce la imagen al 50% de su tamaño original */
+    position: relative;
+    width: 300px;
+    height: 400px;
+    /* Flexbox para centrar la imagen */
+    display: flex;
+    justify-content: center;  /* Centrado horizontal */
+    align-items: center;      /* Centrado vertical */
+    width: 23%; /* O ajusta a la anchura deseada */
+    height: 23%; /* O ajusta a la altura deseada */
+    max-width: 30%; /* Para asegurarse de que no sobrepase el contenedor */
+    max-height: 30%; /* Para asegurarse de que no sobrepase el contenedor */
+    box-sizing: border-box; /* Para incluir padding y border en el tamaño total */   
+}
+
+.image-slider2 img {
+    width: 195%; /* Esto reduce la imagen al 50% de su tamaño original */
+    height: auto;
+    position: left;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.image-slider2 img.active {
+    opacity: 1;
+}
+
+
+button {
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    border-radius: 8px;
+    margin-top: 10px;
+    background: #013e6a00;
+    height: 50px;
+    color: #013e6a;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid #013e6a;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    outline: none;
+    width: 231px;
+    border-radius: 20px;
+}
+
+button:hover {
+background: rgb(37, 150, 190);
+border: rgb(37, 150, 190);
+color: #fff;
+}
+
+input:hover {
+background: rgb(37, 150, 190);
+border: rgb(37, 150, 190);
+color: #fff;
+}
+
+select:hover {
+background: rgb(37, 150, 190);
+border: rgb(37, 150, 190);
+color: #fff;
+}
+
+.header_1 {
+    height: 65px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegúrate de que el menú esté siempre encima de otros elementos */
+    background-color: white; /* Puedes cambiar el color del fondo si es necesario */
+    box-shadow: 0px 1px 0px rgba(37, 149, 190, 0.402);; /* Añadir una sombra para dar un efecto flotante */
+}
+
+#contactSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    align-items: center;
+    color: rgb(37, 150, 190);   
+}
+.formulario{
+    width: 100%;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Más espacio entre los elementos */
+    padding: 2%;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input, select {
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px 0 45px;
+    background: #f3f3f3eb;
+    color: #013e6a;
+    border: 2px solid transparent;
+    transition: 0.3s ease all;
+  }
+  
+  input:hover, select:hover {
+    background: rgb(37, 150, 190);
+    border-color: rgb(37, 150, 190);
+    color: #fff;
+  }
+  
+  input[type="submit"] {
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+    background: transparent;
+    width: 160px; /* Ajusta el tamaño si es necesario */
+    height: 40px;
+    line-height: 40px;
+    color: #013e6a;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #013e6a;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    border-radius: 20px;
+  }
+  
+  input[type="submit"]:hover {
+    background: rgb(37, 150, 190);
+    border-color: rgb(37, 150, 190);
+    color: #fff;
+}
+  
+
+.alert-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 80%; /* Ancho de la alerta */
+    max-width: 600px; /* Máximo ancho de la alerta */
+}
+
+.alert {
+    background-color: #f8d7da;
+    color: rgb(37, 150, 190);
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Oculto por defecto */
+}
+
+.alert.success {
+    background-color: rgb(37, 150, 190);
+    color: white;
+    border-color: #c3e6cb;
+}
+
+.alert.error {
+    background-color: #f8d7da;
+    color: rgb(37, 150, 190);
+    border-color: #f5c6cb;
+}
+
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 580px) {
+
+    body {
+        font-family: "Quicksand", sans-serif;
+        padding: 5px;
+        background-color: white;
+        color: white;
+        font-size: 12px;
+
+    }
+
+
+    button{
+        width: 151px;
+        font-size: 13px;
+    }
+
+    #homeSection{
+        padding: 15% 0% 0% 0%;
+    }
+
+    #gestordeamenidadesSection{
+        display: flex;
+        align-items: center;
+    }
+
+
+    .image-slider {
+        position: relative;
+        height: 300px;
+        /* Flexbox para centrar la imagen */
+        display: flex;
+        justify-content: center;  /* Centrado horizontal */
+        align-items: center;      /* Centrado vertical */
+    }
+    
+
+    .hero {
+        font-size: 13px;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 20px;
+        flex-direction: row;
+        align-items: stretch;
+        color: #013e6a;
+    }
+
+    .hero .text h1 {
+        font-size: 15px;
+    }
+    
+    .hero .text h2 {
+        font-size: 13px;
+    }
+    
+
+    .nav-menu {
+        z-index: 10; /* Asegura que el menú siempre esté al frente */
+    }
+    .row {
+        padding: 45px;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        flex-direction: row;
+    }
+
+    .mainmenu ul {
+        display: none; /* Ocultar menú por defecto */
+        flex-direction: column;
+    }
+
+    .columna-img {
+        width: 25%;
+    }
+    
+
+    .columna-img img {
+        max-width: 120%;
+        height: auto;
+    }
+
+    .nav-menu.open ul {
+        display: flex; /* Mostrar menú al abrir */
+    }
+
+    .mobilemenu {
+        display: block; /* Mostrar el botón de menú de hamburguesa */
+    }
+
+    .nav-menu {
+        display: none; /* Ocultar menú por defecto */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        padding: 20px 0;
+    }
+
+    .nav-menu.open {
+        display: flex; /* Mostrar menú al abrir */
+    }
+
+    .nav-menu ul {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    .nav-menu ul li a {
+        color: #1f355e;
+        text-decoration: none;
+        font-size: 1.2em;
+    }
+    
+    #contactSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Quicksand", sans-serif;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 5%;
+        color: rgb(37, 150, 190);   
+    }
+
+    form {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Más espacio entre los elementos */
+        padding: 5% 10% 25% 5%;
+      }
+}
+
+
