@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fraccify | App</title>
+    <title>Fraccify | Home</title>
     <meta name="description" content="">
+    <meta name="robots" content="index, follow">
     <meta name="keywords" content="residencial, Administración de condominios, Fraccionamiento, Comunidad residencial, Gestión de fraccionamientos, Control de accesos, Seguridad residencial, Control de visitantes, Gestión de accesos, Registro de visitantes, Seguridad de accesos, Comodidad en la administración, Administradores de fraccionamientos, Residentes de condominios, Comunidades cerradas, Propietarios de viviendas">
     <meta property="og:type" content="website">
     <meta property="og:title" content="">
@@ -12,11 +13,13 @@
     <meta property="og:image" content="">
     <meta property="og:site_name" content="Fraccify">
     <link rel="stylesheet" href="css/estilos.css">
-    <header class="header_1" id="header" style="display: none;">
+</head>
+<body>
+    <header class="header_1" id="header">
         <div class="container">
-            <div class="rowheader">
+            <div class="row">
                 <div class="columna-img">
-                    <a href="javascript:void(0);" id="imghome">
+                    <a href="javascript:void(0);" onclick="showHome()">
                         <img src="Copia de Fraccify 2.png" alt="Descripción de la imagen">
                     </a>
                 </div>
@@ -28,1215 +31,180 @@
                             <span></span>
                         </a>
                         <ul class="nav-menu">
-                            <div>
-                                <li class="menu-item-has-children">
-                                    <a href="javascript:void(0);" id="regresar">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
-                                            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
-                                        </svg>
-                                        Inicio</a>
-                                </li>
-                            </div>
-                            <div id="limenu" class="limenu">
-                                <li class="menu-item-has-children">
-                                    <a href="javascript:void(0);" id="divbotonvisitas">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-add-fill" viewBox="0 0 16 16">
-                                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 1 1-1 0v-1h-1a.5.5 0 1 1 0-1h1v-1a.5.5 0 0 1 1 0"/>
-                                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
-                                            <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/>
-                                        </svg>
-                                        Registrar visitantes
-                                        </a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="javascript:void(0);" id="divbotonpago">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0"/>
-                                            <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z"/>
-                                            <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/>
-                                            <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567"/>
-                                        </svg>
-                                        Registrar mi pago
-                                    </a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="javascript:void(0);" id="mostradivvotos">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                                          </svg>
-                                        Emitir mi voto
-                                    </a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="javascript:void(0);" id="divbotonhistorico">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calculator" viewBox="0 0 16 16">
-                                            <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                                            <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
-                                        </svg>
-                                        Historico de Pagos
-                                    </a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="javascript:void(0);" id="divbotonreservar">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-plus-fill" viewBox="0 0 16 16">
-                                            <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2M8.5 8.5V10H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V11H6a.5.5 0 0 1 0-1h1.5V8.5a.5.5 0 0 1 1 0"/>
-                                        </svg>
-                                        Amenidades</a>
-                                </li>
-
-                                <li class="menu-item-has-children" id="botonsegurichat">
-                                    <a href="javascript:void(0);" id="segurichat">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                                            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-                                        </svg>
-                                        Segurichat
-                                        </a>
-                                </li>
-                            </div>
-                            <div id="liadmin" class="limenu" style="display: none;">
-                                <li class="menu-item-has-children" id="mostrarregistroResidentes">
-                                    <a href="javascript:void(0);">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-terminal-plus" viewBox="0 0 16 16">
-                                            <path d="M2 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h5.5a.5.5 0 0 1 0 1H2a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v4a.5.5 0 0 1-1 0V4a1 1 0 0 0-1-1z"/>
-                                            <path d="M3.146 5.146a.5.5 0 0 1 .708 0L5.177 6.47a.75.75 0 0 1 0 1.06L3.854 8.854a.5.5 0 1 1-.708-.708L4.293 7 3.146 5.854a.5.5 0 0 1 0-.708M5.5 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 0 0 1 0v-1h1a.5.5 0 0 0 0-1h-1v-1a.5.5 0 0 0-.5-.5"/>
-                                          </svg>
-                                          Registro Residentes
-                                    </a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="javascript:void(0);" id="agregarvotacion">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ui-checks" viewBox="0 0 16 16">
-                                            <path d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zM2 1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm0 8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm.854-3.646a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708l.646.647 1.646-1.647a.5.5 0 1 1 .708.708zm0 8a.5.5 0 0 1-.708 0l-1-1a.5.5 0 0 1 .708-.708l.646.647 1.646-1.647a.5.5 0 0 1 .708.708zM7 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
-                                          </svg>
-                                          Votaciones del condominio
-                                    </a>
-                                </li>
-                                <li class="menu-item-has-children" id="descargarinformes">
-                                    <a href="javascript:void(0);">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-download-fill" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M8 0a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 4.095 0 5.555 0 7.318 0 9.366 1.708 11 3.781 11H7.5V5.5a.5.5 0 0 1 1 0V11h4.188C14.502 11 16 9.57 16 7.773c0-1.636-1.242-2.969-2.834-3.194C12.923 1.999 10.69 0 8 0m-.354 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V11h-1v3.293l-2.146-2.147a.5.5 0 0 0-.708.708z"/>
-                                          </svg>
-                                          Descargar informes
-                                    </a>
-                                </li>
-                            </div>
-
-                            <div id="liaseguridad" class="limenu" style="display: none;">
-                                <li class="menu-item-has-children" id="btncaseta1">
-                                    <a href="javascript:void(0);">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code-scan" viewBox="0 0 16 16">
-                                            <path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5M.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5M4 4h1v1H4z"/>
-                                            <path d="M7 2H2v5h5zM3 3h3v3H3zm2 8H4v1h1z"/>
-                                            <path d="M7 9H2v5h5zm-4 1h3v3H3zm8-6h1v1h-1z"/>
-                                            <path d="M9 2h5v5H9zm1 1v3h3V3zM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8zm2 2H9V9h1zm4 2h-1v1h-2v1h3zm-4 2v-1H8v1z"/>
-                                            <path d="M12 9h2V8h-2z"/>
-                                          </svg>
-                                          Caseta de Seguridad
-                                    </a>
-                                </li>
-                            </div>
-
-                            <div class="limenu">
-                                <li class="menu-item-has-children" id="cerrarSesionItem">
-                                    <a href="javascript:void(0);" onclick="showcontactSection ()">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lock" viewBox="0 0 16 16">
-                                            <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m0 5.996V14H3s-1 0-1-1 1-4 6-4q.845.002 1.544.107a4.5 4.5 0 0 0-.803.918A11 11 0 0 0 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664zM9 13a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1"/>
-                                        </svg>
-                                        Cerrar sesión
-                                    </a>
-                                </li>
-                            <div>
-
-                            </div>
+                            <li class="menu-item-has-children">
+                                <a href="javascript:void(0);" onclick="showHome()">Inicio</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="javascript:void(0);" onclick="showcontroldeaccesos()">Control de accesos</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="javascript:void(0);" onclick="showGestorPagos()">Gestor de Pagos</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="javascript:void(0);" onclick="showGestorAmenidades()">Gestor de amenidades</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="javascript:void(0);" onclick="showcontactSection ()">Contactanos</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
-        <script>
-            function toggleMenu() {
-                const menu = document.querySelector('.nav-menu');
-                menu.classList.toggle('show');
-                menu.classList.toggle('open');
-            }
-        
-            document.querySelectorAll('.nav-menu a').forEach(anchor => {
-                anchor.addEventListener('click', () => {
-                    const menu = document.querySelector('.nav-menu');
-                    if (menu.classList.contains('show')) {
-                        toggleMenu();
-                    }
-                });
-            });
-        </script>
     </header>
-</head>
-<body>
-
-    <section id="login" class="hero">
-        <div id="homepage">
-            <div class="contenedorhome">
-                <div class="columna-izquierda">
-                    <div class="registro activo" id="registro">
-                        <div class="row1">
-                            <div class="columna-izquierda7">
-                                <img src="Fraccify2.1.png" alt="Descripción de la imagen">
-                            </div>
-                            <div class="header">
-                                <h1 style="font-size: 18px;">Inicio de sesión</h1> <h2 class="titulo">Fraccify</h2>
-                            </div>
-                        </div>
-                        <form class="formulario" id="formulario">
-                            <div class="contenedor-input">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
-                                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
-                                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
-                                  </svg>
-                                <select class="" id="condominio">
-                                    <option value="">Condominio...</option>
-                                    <option value="Privada San Sebastian - Andalucia">Privada San Sebastian - Andalucia</option>
-                                    <option value="Privada Madrid - Andalucia">Privada Madrid - Andalucia</option>																
-                                    <option value="Jardines de Tizayuca I">Jardines de Tizayuca I</option>
-                                    <option value="Guadalajara Country Club">Guadalajara Country Club</option>
-                                </select>
-                            </div>
-                            <div class="contenedor-input">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
-                                    <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5"/>
-                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                  </svg>
-                                <input class="input" type="text" id="username" name="username" placeholder="Correo electrónico" autocomplete="username">
-                            </div>
-                            <div class="contenedor-input">
-                            <input class="input" type="password" id="contrasena" name="password" placeholder="Contraseña" autocomplete="current-password">
-                                <span class="toggle-password" onclick="togglePasswordVisibility()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16" style="display: bloc;" id="ojoabierto">
-                                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
-                                        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16" style="display: none;" id="ojocerrado">
-                                        <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/>
-                                        <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
-                                        <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/>
-                                    </svg>   
-                                </span>
-                                <script>
-                                    function togglePasswordVisibility() {
-                                    const passwordInput = document.getElementById('contrasena');
-                                    const ojoAbierto = document.getElementById('ojoabierto');
-                                    const ojoCerrado = document.getElementById('ojocerrado');
-
-                                    if (passwordInput.type === 'password') {
-                                        // Cambiar a tipo 'text' para mostrar la contraseña
-                                        passwordInput.type = 'text';
-                                        // Ocultar el icono de ojo abierto y mostrar el de ojo cerrado
-                                        ojoAbierto.style.display = 'none';
-                                        ojoCerrado.style.display = 'block';
-                                    } else {
-                                        // Cambiar a tipo 'password' para ocultar la contraseña
-                                        passwordInput.type = 'password';
-                                        // Mostrar el icono de ojo abierto y ocultar el de ojo cerrado
-                                        ojoAbierto.style.display = 'block';
-                                        ojoCerrado.style.display = 'none';
-                                    }
-                                }
-                                </script>
-                            </div>
-                            <div class="form-group">
-                                <label class="switch">
-                                    <input type="checkbox" id="rememberMe" name="rememberMe">
-                                    <span class="slider round"></span>
-                                </label>
-                                <label class="aviso-privacidadtext" for="rememberMe">Recuérdame</label>
-                            </div>
-                            
-                            <div class="aviso-privacidad">
-                                <label class="switch">
-                                    <input type="checkbox" id="avisoPrivacidad" name="avisoPrivacidad">
-                                    <span class="slider round"></span>
-                                </label>
-                                <label class="aviso-privacidadtext" for="avisoPrivacidad">He leído y acepto el <a href="avisodeprivacidad.html">aviso de privacidad</a> y los <a href="terminosycondiciones.html">términos y condiciones</a></label>
-                            </div>
-                            <div class="contenedor-boton">
-                                <button id="iniciarresidente" type="submit">Iniciar sesión</button>
-                            </div>
-                        </form>                  
-                    </div>
-                </div>
+    <section id="homeSection" class="hero">
+        <div class="text">
+            <h1>Fraccify es...</h1>
+            <p>La administración en la palma de tu mano, disponible 24/7 para hacer la gestión de condominios mas sencilla, comoda y segura.</p>
+            <div class="buttons">
+                <button class="secondary-cta" onclick="showcontactSection ()">Solicita demo</button>
+                <button class="secondary-cta" onclick="window.location.href='https://app.fraccify.com'">Iniciar Sesión</button>
             </div>
+        </div>
+        <div class="image-slider">
+            <img id="homeImage" src="FraccifyCel.png" class="slide active" alt="Fraccify App Feature 1">
         </div>
     </section>
 
-    <section id="homeSection" class="hero" style="display: none;">
+
+    <section id="gestorIASection" class="hero">  
+        <div class="text">
+            <h1>La primera App para administrar condominios con IA</h1>
+            <h2>Asesoría Instantánea</h2>
+            <p>Obtén respuestas y soluciones 24/7 para todas tus necesidades administrativas.</p>
+            <p>Nuestro asistente inteligente te brindará la asesoría que necesitas para poder administar tu condominio, ¡te convertirás en un experto!</p>        
+        </div>
+        <div class="image-slider">
+            <img id="gestorIAImage" src="iafraccify.png" class="slide active" alt="Fraccify App Feature 1" style="display: none;">
+        </div>
+    </section>
+
+    <section id="controldeaccesosSection" class="hero">
+        <div class="image-slider">
+            <img id="controldeaccesosImage" src="controldeaccesosImage.png" class="slide active" alt="Fraccify App Feature 1" style="display: none;">
+        </div>
+        
+        <div class="text">
+            <h1>Control de Accesos Inteligente con QR</h1>
+            <p>Gestionar las visitas a tu comunidad es más seguro y eficiente.</p>
+            <p>Los residentes pueden generar códigos QR únicos para sus visitas, lo que facilita el acceso seguro al condominio.</p>
+            <p>Cada código QR es validado al momento de la entrada, garantizando que solo las visitas autorizadas puedan ingresar.</p>
+        </div>
+    </section>
+
+    <section id="gestorPagosSection" class="hero">
+        <div class="text">
+            <h1>Gestión de Pagos Simplificada</h1>
+            <h2>Los residentes podrán:</h2>
+            <p>Consultar su saldo, subir y descarga sus pagos con un solo clic.</p>
+            <h2>Los administradores podrán:</h2>
+            <p>Generar y descargar informes, aplicar pagos de manera inmediata, y acceder al historial completo de todos los residentes en un solo clic.</p>
+        </div>
+        <div class="image-slider">
+            <img id="gestordepagosImage" src="FraccifyPagos.png" class="slide active" alt="Fraccify App Feature 1" style="display: none;">
+        </div>
+    </section>
+
+    <section id="gestordeamenidadesSection" class="hero">
+        <div class="image-slider">
+            <img id="gestordeamenidadesImage" src="calendario.png" class="slide active" alt="Fraccify App Feature 1" style="display: none;">
+        </div>
+        
+        <div class="text">
+            <h1>Gestor de amenidades</h1>
+            <p>Las reservaciones de espacios comunes es rápida, sencilla y accesible en cualquier momento.</p>
+            <h2>Reserva 24/7:</h2>
+            <p>Los residentes pueden consultar la disponibilidad y realizar reservaciones al instante.</p>
+            <h2>Notificación en Tiempo Real:</h2>
+            <p>Si el espacio no está disponible, Fraccify te avisará de inmediato</p>
+        </div>
+    </section>
+
+
+    <section id="contactSection" class="row">
         <div>
-            <div class="card">
-                <div>
-                    <h1 class="titulo">¡Bienvenido(a)!<h1>
-                    <h2><span id="privada" class="titulo"></span></h2>   
-                </div>
-                <div class="datosresidente">
-                    <p class="icon-text">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="status" viewBox="0 0 16 16">
-                            <path d="M9.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0M6 5.5l-4.535-.442A.531.531 0 0 1 1.531 4H14.47a.531.531 0 0 1 .066 1.058L10 5.5V9l.452 6.42a.535.535 0 0 1-1.053.174L8.243 9.97c-.064-.252-.422-.252-.486 0l-1.156 5.624a.535.535 0 0 1-1.053-.174L6 9z"/>
-                          </svg>
-
-                        Residente: 
-                        <span id="propietario" class="status"></span>
-                    </p>
-                    
-                    <p class="icon-text"> 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="status" viewBox="0 0 16 16">
-                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
-                            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
-                        </svg>
-                        Domicilio: 
-                        <span id="domicilio" class="status">
-                        </span>
-                    </p>
-                    <p class="icon-text">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="status" viewBox="0 0 16 16">
-                            <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5"/>
-                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                          </svg>
-                        Usuario: <span id="correo" class="status">
-                        </span>
-                    </p>	
-                    <p class="icon-text">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="status" viewBox="0 0 16 16">
-                            <path d="M1.475 9C2.702 10.84 4.779 12.871 8 15c3.221-2.129 5.298-4.16 6.525-6H12a.5.5 0 0 1-.464-.314l-1.457-3.642-1.598 5.593a.5.5 0 0 1-.945.049L5.889 6.568l-1.473 2.21A.5.5 0 0 1 4 9z"/>
-                            <path d="M.88 8C-2.427 1.68 4.41-2 7.823 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C11.59-2 18.426 1.68 15.12 8h-2.783l-1.874-4.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8z"/>
-                          </svg>
-                          Estatus:  
-                          <span id="status" class="status">
-                          </span>
-                    </p>
-                    <p class="icon-text">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="status" viewBox="0 0 16 16">
-                            <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
-                            <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
-                          </svg>
-                          Adeudo: 
-                          <span id="adeudo" class="status">
-
-                          </span>
-                    </p>
-                    <p class="icon-text">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="status"  viewBox="0 0 16 16">
-                            <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
-                          </svg>
-                    Perfil: <span id="perfil" class="status"></span> 
-                    </p>	
-                </div>
-            </div>
+            <h1>Solicita tu demo</h1>
+            <p>Agrega tus datos y uno de nuestros especialistas se pondrá en contacto contigo.</p>
         </div>
-    </section>
-
-    <section id="paymentHistory2024" class="contenedorpagos" style="display: none;">
-        <div>
-            <h1 class="titulo">Historico de Pagos<h1>
-            <details id="2025" class="dropdown">
-                <summary class="dropdown-title">Pagos 2025</summary>					
-                <table id="tablaPagos" class="table-custom table-custom-highlight">
-                    <tr>
-                        <!-- Enero 2025 -->
-                        <tr>
-                            <td>Enero</td>
-                            <td><span id="ene2025"></span></td>
-                            <td><button id="btnreciboene2025" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Febrero 2025 -->
-                        <tr>
-                            <td>Febrero</td>
-                            <td><span id="feb2025"></span></td>
-                            <td><button id="btnrecibofeb2025" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Marzo 2025 -->
-                        <tr>
-                            <td>Marzo</td>
-                            <td><span id="mar2025"></span></td>
-                            <td><button id="btnrecibomar2025" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Abril 2025 -->
-                        <tr>
-                            <td>Abril</td>
-                            <td><span id="abr2025"></span></td>
-                            <td><button id="btnreciboabr2025" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Mayo 2025 -->
-                        <tr>
-                            <td>Mayo</td>
-                            <td><span id="may2025"></span></td>
-                            <td><button id="btnrecibomay2025" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Junio 2025 -->
-                        <tr>
-                            <td>Junio</td>
-                            <td><span id="jun2025"></span></td>
-                            <td><button id="btnrecibojun2025" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Julio 2025 -->
-                        <tr>
-                            <td>Julio</td>
-                            <td><span id="jul2025"></span></td>
-                            <td><button id="btnrecibojul2025" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Agosto 2025 -->
-                        <tr>
-                            <td>Agosto</td>
-                            <td><span id="ago2025"></span></td>
-                            <td><button id="btnreciboago2025" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Septiembre 2025 -->
-                        <tr>
-                            <td>Septiembre</td>
-                            <td><span id="sep2025"></span></td>
-                            <td><button id="btnrecibosep2025" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Octubre 2025 -->
-                        <tr>
-                            <td>Octubre</td>
-                            <td><span id="oct2025"></span></td>
-                            <td><button id="btnrecibooct2025" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Noviembre 2025 -->
-                        <tr>
-                            <td>Noviembre</td>
-                            <td><span id="nov2025"></span></td>
-                            <td><button id="btnrecibonov2025" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Diciembre 2025 -->
-                        <tr>
-                            <td>Diciembre</td>
-                            <td><span id="dic2025"></span></td>
-                            <td><button id="btnrecibodic2025" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                </table>
-            </details>
-            <details id="2024" class="dropdown">
-                <summary class="dropdown-title">Pagos 2024</summary>					
-                <table id="tablaPagos" class="table-custom table-custom-highlight">
-                    <tr>
-                        <!-- Enero 2024 -->
-                        <tr>
-                            <td>Enero</td>
-                            <td><span id="ene2024"></span></td>
-                            <td><button id="btnreciboene2024" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Febrero 2024 -->
-                        <tr>
-                            <td>Febrero</td>
-                            <td><span id="feb2024"></span></td>
-                            <td><button id="btnrecibofeb2024" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Marzo 2024 -->
-                        <tr>
-                            <td>Marzo</td>
-                            <td><span id="mar2024"></span></td>
-                            <td><button id="btnrecibomar2024" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Abril 2024 -->
-                        <tr>
-                            <td>Abril</td>
-                            <td><span id="abr2024"></span></td>
-                            <td><button id="btnreciboabr2024" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Mayo 2024 -->
-                        <tr>
-                            <td>Mayo</td>
-                            <td><span id="may2024"></span></td>
-                            <td><button id="btnrecibomay2024" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Junio 2024 -->
-                        <tr>
-                            <td>Junio</td>
-                            <td><span id="jun2024"></span></td>
-                            <td><button id="btnrecibojun2024" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Julio 2024 -->
-                        <tr>
-                            <td>Julio</td>
-                            <td><span id="jul2024"></span></td>
-                            <td><button id="btnrecibojul2024" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Agosto 2024 -->
-                        <tr>
-                            <td>Agosto</td>
-                            <td><span id="ago2024"></span></td>
-                            <td><button id="btnreciboago2024" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Septiembre 2024 -->
-                        <tr>
-                            <td>Septiembre</td>
-                            <td><span id="sep2024"></span></td>
-                            <td><button id="btnrecibosep2024" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Octubre 2024 -->
-                        <tr>
-                            <td>Octubre</td>
-                            <td><span id="oct2024"></span></td>
-                            <td><button id="btnrecibooct2024" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Noviembre 2024 -->
-                        <tr>
-                            <td>Noviembre</td>
-                            <td><span id="nov2024"></span></td>
-                            <td><button id="btnrecibonov2024" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Diciembre 2024 -->
-                        <tr>
-                            <td>Diciembre</td>
-                            <td><span id="dic2024"></span></td>
-                            <td><button id="btnrecibodic2024" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                </table>
-            </details>
-            <details id="2023" class="dropdown">
-                <summary class="dropdown-title">Pagos 2023</summary>
-                <table class="table-custom table-custom-highlight">
-                        <!-- Enero 2024 -->
-                        <tr>
-                            <td>Enero</td>
-                            <td><span id="ene2023"></span></td>
-                            <td><button id="btnreciboene2023" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Febrero 2024 -->
-                        <tr>
-                            <td>Febrero</td>
-                            <td><span id="feb2023"></span></td>
-                            <td><button id="btnrecibofeb2023" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Marzo 2024 -->
-                        <tr>
-                            <td>Marzo</td>
-                            <td><span id="mar2023"></span></td>
-                            <td><button id="btnrecibomar2023" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Abril 2024 -->
-                        <tr>
-                            <td>Abril</td>
-                            <td><span id="abr2023"></span></td>
-                            <td><button id="btnreciboabr2023" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Mayo 2024 -->
-                        <tr>
-                            <td>Mayo</td>
-                            <td><span id="may2023"></span></td>
-                            <td><button id="btnrecibomay2023" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Junio 2024 -->
-                        <tr>
-                            <td>Junio</td>
-                            <td><span id="jun2023"></span></td>
-                            <td><button id="btnrecibojun2023" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Julio 2024 -->
-                        <tr>
-                            <td>Julio</td>
-                            <td><span id="jul2023"></span></td>
-                            <td><button id="btnrecibojul2023" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Agosto 2024 -->
-                        <tr>
-                            <td>Agosto</td>
-                            <td><span id="ago2023"></span></td>
-                            <td><button id="btnreciboago2023" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Septiembre 2024 -->
-                        <tr>
-                            <td>Septiembre</td>
-                            <td><span id="sep2023"></span></td>
-                            <td><button id="btnrecibosep2023" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Octubre 2024 -->
-                        <tr>
-                            <td>Octubre</td>
-                            <td><span id="oct2023"></span></td>
-                            <td><button id="btnrecibooct2023" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Noviembre 2024 -->
-                        <tr>
-                            <td>Noviembre</td>
-                            <td><span id="nov2023"></span></td>
-                            <td><button id="btnrecibonov2023" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                        <!-- Diciembre 2024 -->
-                        <tr>
-                            <td>Diciembre</td>
-                            <td><span id="dic2023"></span></td>
-                            <td><button id="btnrecibodic2023" class="buttonrecibos">Descargar recibo</button></td>
-                        </tr>
-                </table>
-            </details>
-        </div>
-    </section>
-
-    <section clas="contenedorformulario" id="divingresos" style="display: none;">
-        <div>
-            <h1 class="titulo">Visitas</h1>
-            <div class="contenedorformulariovisita">
-                <form class="formulario4" id="formulario2">
-                    <div class="contenedor-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="status" viewBox="0 0 16 16">
-                            <path d="M9.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0M6 5.5l-4.535-.442A.531.531 0 0 1 1.531 4H14.47a.531.531 0 0 1 .066 1.058L10 5.5V9l.452 6.42a.535.535 0 0 1-1.053.174L8.243 9.97c-.064-.252-.422-.252-.486 0l-1.156 5.624a.535.535 0 0 1-1.053-.174L6 9z"/>
-                          </svg>
-                            <input class="input" type="text" id="namevisita" placeholder="Nombre de visita o proveedor" oninput="removeSpecialCharacters(this)" required>
-                    </div>
-                    <div class="contenedor-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
-                            <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5"/>
-                            <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z"/>
-                          </svg>     
-                        <select id="tipo" class="sheetID" required>
-                            <option value="">Selecciona el tipo de visita...</option>
-                            <option value="familiar-amigo">Familiar o Amigo</option>								
-                            <option value="proveedor">Proveedor</option>
-                            <option value="paqueteria">Paqueteria</option>
-                        </select>
-                    </div>
-                    <div class="contenedor-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-date-fill" viewBox="0 0 16 16">
-                            <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zm5.402 9.746c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2"/>
-                            <path d="M16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2m-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm-2.89-5.435v5.332H5.77V8.079h-.012c-.29.156-.883.52-1.258.777V8.16a13 13 0 0 1 1.313-.805h.632z"/>
-                          </svg>
-                        <input class="inputfecha" type="date" id="fechavisita" placeholder="Ingresa fecha" required>
-                    </div>
-                    <div>
-                        <button id="btnenviaringreso" type="button" onclick="" class="btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-check-fill" viewBox="0 0 16 16">
-                                <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 1.59 2.498C8 14 8 13 8 12.5a4.5 4.5 0 0 1 5.026-4.47zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z"/>
-                                <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686"/>
-                              </svg>
-                        </button>
-                    </div>  
-                </form>
-            </div>	
-            <div id="confirmacion" style="display: none;">
-                <div class="contenedor">
-                    <p>Por favor confirma la información:</p>
-                    <p></p>
-                    <p></p>
-                    <p class="datos">Nombre:<p1></p1>
-                    <span  class="datosvyp" id="namevisita2"></span>
-                    <p></p>
-                    <p class="datos">Fecha:<p1></p1>
-                    <span class="datosvyp" id="fechavisita2"></span>
-                    <p></p>
-                    <p class="datos">Tipo:<p1></p1>
-                    <span class="datosvyp" id="tipo2"></span>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <div id="datoscorrectosvisitas">
-                        <button id="generarvisitayqr" type="button" onclick="" class="btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-check" viewBox="0 0 16 16">
-                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
-                              </svg>
-                              
-                            </button>
-                    </div>
-                    <div id="btnenborrar">
-                        <button type="button" id="borrardatos" onclick="" class="btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-x-fill" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708"/>
-                              </svg>
-                            </button>
-                    </div>						
-                </div>
-            </div>
-            <div id="divqr" style="display: none;">	
-                <div class="datosdelqr">
-                    
-                    <p class="">Comparte este QR con: </p>
-                    <p> </p>
-                    <span class="titulo" id="namevisita3"></span>
-                    <p> </p>
-                    <span class="titulo" id="tipo3"></span>
-                    <p> </p>
-                    <span class="titulo" id="fechavisita3"></span>
-                    <p> </p>
-                    <span class="titulo" id="domdvisista"></span>
-                </div>
-                <div id="qrElement" class="qrElement">
-                </div>
-                <div class="copiarqr">
-                    <button id="compartirQrButton">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-                        </svg>
-                      </button>
-                      
-                      
-                </div>
-                <div id="nuevoregistro" class="">	
-                    <button id="nuevoregistrovisita" type="submit" class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
-                          </svg>
-                    </button>
-                </div>	
-            </div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>	
-        </div>
-    </section>
-
-    <section id="divamenidades" class="contenedor" style="display: none;">
-        <h1 class="titulo">Amenidades<h1>
-
-        <div class="formulario2">	
-            <details id="divcalendario" class="contenedorformulario">
-                <summary class="dropdown-title">Mostrar Calendario</summary>
-                <ul id="contenedorCalendario" class="conetnedordetails">
-                    <li>
-                    </li>
-                </ul>
-            </details>	
-            
-            <details id="divreservar" class="contenedorformulario">
-                <summary class="dropdown-title">Realizar reservación</summary>
-                <div class="dropdown-content">
-                    <div class="contenedorformularioreserva">
-                        <div class="conetnedordetails">
-                            <div class="contenedor-input">
-                            <label class="titulo">¿Qué deseas reservar?</label>  
-                                <select id="tiporeserva" required onchange="actualizarHoras()">
-                                    <option value="">Tipo de reservación</option>
-                                    <option value="Casa Club">Casa Club</option>
-                                    <option value="Asador">Asador</option>
-                                    <option value="Alberca">Alberca</option>
-                                </select>
-                            </div>
-                            <div>
-                            <label class="titulo" for="fechadereserva">Seleccionar fecha:</label>
-                            <input class="inputfechareserva" type="date" id="fechareserva" placeholder="Ingresa fecha" required>
-                            </div>
-                            <div>
-                            <label class="titulo" for="horaInicio">Hora de inicio:</label>
-                            <input class="input" type="time" id="horaInicio" name="horaInicio" required>
-                            </div>
-                            <div>
-                            <label class="titulo" for="horaFin">Hora de fin:</label>
-                            <input class="input" type="time" id="horaFin" name="horaFin" required>
-                            </div>
-                            <p> </p>
-                            <div class="btnreservar" id="confirmarreserca" >    
-                                <button type="submit" id="btnparaconfirmarreserca" class="btn">
-                                    Enviar solicitud
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        function actualizarHoras() {
-                            var tipoReserva = document.getElementById("tiporeserva").value;
-                            if (tipoReserva === "Casa Club") {
-                                document.getElementById("horaInicio").value = "10:00";
-                                document.getElementById("horaFin").value = "18:00";
-                                document.getElementById("horaInicio").disabled = true;
-                                document.getElementById("horaFin").disabled = true;
-                            } else if (tipoReserva === "Asador") {
-                                document.getElementById("horaInicio").value = "10:00";
-                                document.getElementById("horaFin").value = "18:00";
-                                document.getElementById("horaInicio").disabled = true;
-                                document.getElementById("horaFin").disabled = true;
-                            } else {
-                                document.getElementById("horaInicio").disabled = false;
-                                document.getElementById("horaFin").disabled = false;
-                            }
-                        }
-                    </script>
-                </div>
-            </details>										
-            <details id="misreservsas" class="contenedorformulario">
-                <summary class="dropdown-title">Mis Reservaciones</summary>
-                <div class="conetnedordetails" id="divmisreservas">
-                </div>
-            </details>
-        </div>	
-    </section>
-
-    <section id="divpagos" style="display: none;" class="contenedor">
-        <h1 class="titulo">Realizar pagos</h1>
-
-        <div id="pagomercadopago">
-            <p class="titulo">Paga con tarjeta de debito o crédito</p>
-            <div id="mercado-pago-button"></div>
-            <div style="margin-bottom: 50px;"></div>
-        </div>
-        <p class="titulo">Mediante transferencia interbancaria</p>
-        <p class="titulo">Datos Bancarios</p>
-        <p id="banco">Banco: </p>
-        <p id="titular">Titular: </p>
-        <p id="cuenta">Cuenta: </p>
-        <p id="clabe">CLABE: </p>
-        <p id="monto">Monto: </p>    
-        <p> </p>
-        <p> </p>
-        <div style="margin-bottom: 50px;"></div>
-
-            <div class="upload-container" id="uploadcontainer">
-                <!-- Ícono SVG como botón -->
-                <label for="archivo" class="upload-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cloud-upload-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 0a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 4.095 0 5.555 0 7.318 0 9.366 1.708 11 3.781 11H7.5V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11h4.188C14.502 11 16 9.57 16 7.773c0-1.636-1.242-2.969-2.834-3.194C12.923 1.999 10.69 0 8 0m-.5 14.5V11h1v3.5a.5.5 0 0 1-1 0"/>
-                    </svg>
-                </label>
-            
-                <!-- Input de archivo oculto -->
-                <input class="inputpago" type="file" id="archivo" accept="application/pdf,image/*" style="display: none;">
-            </div>            
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
-        <div id="pagocargado" style="display: none;">
-            <p class="titulo">Datos del Pago</p>
-            <div id="loader">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100">
-                    <defs>
-                        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#013E6A;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#013E6A;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <path fill="url(#grad)" d="M5 12h14M8 16l3-3-3-3" />
-                    <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
-                    </svg>
-            </div>
-            <div>
-                <p>Fecha: <span id="fechaPago"></span></p>
-                <p>Monto: <span id="montoPago"></span></p>
-                <p>Beneficiario:<span id="beneficiarioPago"></span></p>
-                <p>Concepto del pago:<span id="conceptodelpago"></span></p>
-                <p>Clave de rastreo: <span id="clavederastreo"></span></p>
-                <p> </p>
-                <p class="titulo">Seleccion el mes al que quieres que se aplique tu pago:</p>
-            </div>
-            <select class="mespago" id="mespago">
-                <option value="">Seleciona el mes</option>
-                <option value="ene2024">Enero 2024</option>
-                <option value="feb2024">Febrero 2024</option>
-                <option value="mar2024">Marzo 2024</option>
-                <option value="abr2024">Abril 2024</option>
-                <option value="may2024">Mayo 2024</option>
-                <option value="jun2024">Junio 2024</option>
-                <option value="jul2024">Julio 2024</option>
-                <option value="ago2024">Agosto 2024</option>
-                <option value="sep2024">Septiembre 2024</option>
-                <option value="oct2024">Octubre 2024</option>
-                <option value="nov2024">Noviembre 2024</option>
-                <option value="dic2024">Diciembre 2024</option>
-            </select>						
-            <button type="submit" id="enviarpago" class="btn">
-                Enviar Pago
-            </button>
-        </div>
-    </section>
-
-    <section id="divvotaciones" style="display: none;" class="contenedor">
-        <h1 class="titulo">Votaciones</h1>
-        <p></p>
-    </section>
-
-    <section id="informes" style="display: none;">
-        <h1 class="titulo">Descargar informes</h1>
-        <p>Seleciona el informe que deseas obtener</p>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <div class="contenedor-input2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-data-fill" viewBox="0 0 16 16">
-                            <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
-                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zM10 8a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1"/>
-                          </svg>
-                        <select class="select2" id="tipoinforme">
-                            <option value="">Selecciona el informe</option>
-                            <option value="pagos">Pagos</option>
-                            <option value="reservas">Reservaciones</option>
-                            <option value="visitasyproveedores">Visitas y Proveedores</option>
-                            <option value="Propietarios">Propietarios</option>
-                            <option value="Votaciones">Votaciones</option>
-                        </select>
-                    </div>
-                    <div  id="datePickerContainer1">
-                        <label for="fecha-inicio">Fecha inicio:</label>
-                        <div class="contenedor-input2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                            </svg>
-                            <input class="input2" type="date" id="fecha-inicioreporte" name="fecha-inicio">
-                        </div>
-                    </div>
-                    <div id="datePickerContainer2">
-                        <label for="fecha-fin">Fecha fin:</label>
-                        <div class="contenedor-input2" >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
-                                <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
-                            </svg>
-                            <input class="input2" type="date" id="fecha-finreporte" name="fecha-fin">
-                        </div>
-                    </div>
-                    <div>
-                        <button class="btn" id="downloadinforme">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-download-fill" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M8 0a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 4.095 0 5.555 0 7.318 0 9.366 1.708 11 3.781 11H7.5V5.5a.5.5 0 0 1 1 0V11h4.188C14.502 11 16 9.57 16 7.773c0-1.636-1.242-2.969-2.834-3.194C12.923 1.999 10.69 0 8 0m-.354 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V11h-1v3.293l-2.146-2.147a.5.5 0 0 0-.708.708z"/>
-                              </svg>
-                        </button>
-                    </div>					
-                </div>
-            </div>
-        </div>
-    </section>	
-
-    <section id="divlistaresidentes" style="display: none;" class="contenedorresidentes">
-        <div class="row">
-            <h1 class="titulo">Lista de Residentes</h1>
-
-            <button class="add-residente-btn" id="btnagregarunresidente">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-add-fill" viewBox="0 0 16 16">
-                    <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 1 1-1 0v-1h-1a.5.5 0 1 1 0-1h1v-1a.5.5 0 0 1 1 0"/>
-                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
-                    <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/>
-                  </svg>
-            </button>
-        </div>
-
-
-        <div class="tablacompleta" id="tablaresidentes">
-        </div>
-        <div>
-            <details class="calle-boxmorosos" id="calle-morosos">
-                <summary class="calle-title">Morosos</summary>
-                <div class="calle-registros" id="morosos-registros">
-                    <!-- Aquí se mostrarán los registros de los morosos -->
-                </div>
-            </details>  
-        </div>
-        <script>
-                            function buscarDomicilio(registrosId) {
-                                  var input = event.target; // Obtiene el elemento input que desencadenó el evento
-                                  var divId = input.parentElement.querySelector(".calle-registros").id; // Obtiene el ID del div dentro del mismo detalle
-                                  console.log(divId);
-                                  var term = input.value.trim().toLowerCase();
-                                
-                                  var registros = document.querySelectorAll(
-                                    "#" + divId + " table tbody tr td details summary"
-                                  );
-                                  console.log(registros);
-                                  registros.forEach(function (registro) {
-                                    var contenido = registro.innerHTML.toLowerCase();
-                                    if (contenido.includes(term)) {
-                                      // Muestra el registro y todos sus padres hasta el elemento tr
-                                      var parent = registro.parentNode; // <details>
-                                      while (parent && parent.tagName !== "TR") {
-                                        parent = parent.parentNode;
-                                      }
-                                      if (parent) {
-                                        parent.style.display = "table-row";
-                                      }
-                                    } else {
-                                      // Oculta el registro y todos sus padres hasta el elemento tr
-                                      var parent = registro.parentNode; // <details>
-                                      while (parent && parent.tagName !== "TR") {
-                                        parent = parent.parentNode;
-                                      }
-                                      if (parent) {
-                                        parent.style.display = "none";
-                                      }
-                                    }
-                                  });
-                                }
-        </script>
-    </section>
-
-    <section id="contenedoradminvotos" class="contenedorresidentes" style="display: none;">
-
-            <div id="tablapreguntasadmin">
-
-            </div>
-        <button id="btnAgregarPregunta" class="btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-plus-fill" viewBox="0 0 16 16">
-                <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
-                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm4.5 6V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5a.5.5 0 0 1 1 0"/>
-              </svg>
-            </button>
-    </section>
-
-    <section id="divagregarunresidente" style="display: none;" class="hero">
-        <div class="">
-            <div class="contenedorhome">
-                <div class="formulario" id="">
-                    <div class="header">
-                        <h1 style="font-size: 18px;">Agregar Residente</h1> <h2 class="titulo"></h2>
-                    </div>
-
-                    <div class="contenedor-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
-                            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0m2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755"/>
-                          </svg>
-                        <input class="input" type="text" id="new-name" placeholder="Nombre Residente" min="0" oninput="removeSpecialCharacters(this)">
-                    </div>
-                    <div class="contenedor-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-exclamation-fill" viewBox="0 0 16 16">
-                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
-                            <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/>
-                            <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1.5a.5.5 0 1 0 1 0V11a.5.5 0 0 0-.5-.5m0 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
-                          </svg>
-                        <select id="new-calle" required>
-                            <option value="">Selecciona calle</option>
-                        </select>
-                    </div>
-                    <div class="contenedor-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sort-numeric-down" viewBox="0 0 16 16">
-                            <path d="M12.438 1.668V7H11.39V2.684h-.051l-1.211.859v-.969l1.262-.906h1.046z"/>
-                            <path fill-rule="evenodd" d="M11.36 14.098c-1.137 0-1.708-.657-1.762-1.278h1.004c.058.223.343.45.773.45.824 0 1.164-.829 1.133-1.856h-.059c-.148.39-.57.742-1.261.742-.91 0-1.72-.613-1.72-1.758 0-1.148.848-1.835 1.973-1.835 1.09 0 2.063.636 2.063 2.687 0 1.867-.723 2.848-2.145 2.848zm.062-2.735c.504 0 .933-.336.933-.972 0-.633-.398-1.008-.94-1.008-.52 0-.927.375-.927 1 0 .64.418.98.934.98"/>
-                            <path d="M4.5 2.5a.5.5 0 0 0-1 0v9.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L4.5 12.293z"/>
-                          </svg>
-                        <input class="input" type="number" id="new-num" placeholder="Número de casa" min="0">
-                    </div>
-                    <div class="contenedor-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wrench-adjustable" viewBox="0 0 16 16">
-                            <path d="M16 4.5a4.5 4.5 0 0 1-1.703 3.526L13 5l2.959-1.11q.04.3.041.61"/>
-                            <path d="M11.5 9c.653 0 1.273-.139 1.833-.39L12 5.5 11 3l3.826-1.53A4.5 4.5 0 0 0 7.29 6.092l-6.116 5.096a2.583 2.583 0 1 0 3.638 3.638L9.908 8.71A4.5 4.5 0 0 0 11.5 9m-1.292-4.361-.596.893.809-.27a.25.25 0 0 1 .287.377l-.596.893.809-.27.158.475-1.5.5a.25.25 0 0 1-.287-.376l.596-.893-.809.27a.25.25 0 0 1-.287-.377l.596-.893-.809.27-.158-.475 1.5-.5a.25.25 0 0 1 .287.376M3 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
-                          </svg>
-                        <select id="new-rol" required>
-                            <option value="">Selecciona rol</option>
-                            <option value="Inquilino">Inquilino</option>
-                            <option value="Propietario">Propietario</option>
-                            <option value="Administrador">Administrador</option>
-                            <option value="Seguridad">Seguridad</option>
-                        </select>
-                    </div>
-                    <div class="contenedor-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mailbox2-flag" viewBox="0 0 16 16">
-                            <path d="M10.5 8.5V3.707l.854-.853A.5.5 0 0 0 11.5 2.5v-2A.5.5 0 0 0 11 0H9.5a.5.5 0 0 0-.5.5v8z"/>
-                            <path d="M4 3h4v1H6.646A4 4 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3V3a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4m.585 4.157C4.836 7.264 5 7.334 5 7a1 1 0 0 0-2 0c0 .334.164.264.415.157C3.58 7.087 3.782 7 4 7s.42.086.585.157"/>
-                          </svg>
-                        <input class="input" type="email" id="new-username" placeholder="_@_._">
-                    </div>
-                    <div class="contenedor-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
-                            <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
-                          </svg>
-                        <input class="input" type="text" id="new-contrasena" placeholder="Contraseña">
-                    </div>
-                    <div class="contenedor-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone-vibrate-fill" viewBox="0 0 16 16">
-                            <path d="M4 4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm5 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0M1.807 4.734a.5.5 0 1 0-.884-.468A8 8 0 0 0 0 8c0 1.347.334 2.618.923 3.734a.5.5 0 1 0 .884-.468A7 7 0 0 1 1 8c0-1.18.292-2.292.807-3.266m13.27-.468a.5.5 0 0 0-.884.468C14.708 5.708 15 6.819 15 8c0 1.18-.292 2.292-.807 3.266a.5.5 0 0 0 .884.468A8 8 0 0 0 16 8a8 8 0 0 0-.923-3.734M3.34 6.182a.5.5 0 1 0-.93-.364A6 6 0 0 0 2 8c0 .769.145 1.505.41 2.182a.5.5 0 1 0 .93-.364A5 5 0 0 1 3 8c0-.642.12-1.255.34-1.818m10.25-.364a.5.5 0 0 0-.93.364c.22.563.34 1.176.34 1.818s-.12 1.255-.34 1.818a.5.5 0 0 0 .93.364C13.856 9.505 14 8.769 14 8s-.145-1.505-.41-2.182"/>
-                          </svg>
-                        <input class="input" type="number" id="new-cel" placeholder="Celular">
-                    </div>
-
-                    <button class="" id="grabarnweregistro">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database-fill-add" viewBox="0 0 16 16">
-                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0M8 1c-1.573 0-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4s.875 1.755 1.904 2.223C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777C13.125 5.755 14 5.007 14 4s-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1"/>
-                            <path d="M2 7v-.839c.457.432 1.004.751 1.49.972C4.722 7.693 6.318 8 8 8s3.278-.307 4.51-.867c.486-.22 1.033-.54 1.49-.972V7c0 .424-.155.802-.411 1.133a4.51 4.51 0 0 0-4.815 1.843A12 12 0 0 1 8 10c-1.573 0-3.022-.289-4.096-.777C2.875 8.755 2 8.007 2 7m6.257 3.998L8 11c-1.682 0-3.278-.307-4.51-.867-.486-.22-1.033-.54-1.49-.972V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13h.027a4.55 4.55 0 0 1 .23-2.002m-.002 3L8 14c-1.682 0-3.278-.307-4.51-.867-.486-.22-1.033-.54-1.49-.972V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.5 4.5 0 0 1-1.3-1.905"/>
-                          </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <section id="divseguridadcasetaprincial" style="display: none;">
-        <div class="contenedorhome" id="inicio" style="display: block;">
-            <div class="contenedorcamaraybotones">
-              <div class="col-sm-4 shadow p-3">
-                <div class="camaraqr">
-                  <h1 class="titulo">Escanear codigo QR Caseta Principal</h1>
-      
-                  <a id="btn-scan-qr" href="#">
-                    <img
-                      src="FraccifyQR.png"
-                      class="img-fluid text-center"
-                      width="180px"
-                    />
-                  </a>
-                  <canvas hidden="" id="qr-canvas" class="img-fluid"></canvas>
-                </div>
-      
-                <div class="botonescamara">
-                  <button class="btn btn-success btn-sm rounded-3 mb-2" id="encenderCamara">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2z"/>
-                      </svg>
-                  </button>
-                  <button class="btn btn-danger btn-sm rounded-3" id="cerrarCamara">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video-off-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M10.961 12.365a2 2 0 0 0 .522-1.103l3.11 1.382A1 1 0 0 0 16 11.731V4.269a1 1 0 0 0-1.406-.913l-3.111 1.382A2 2 0 0 0 9.5 3H4.272zm-10.114-9A2 2 0 0 0 0 5v6a2 2 0 0 0 2 2h5.728zm9.746 11.925-10-14 .814-.58 10 14z"/>
-                      </svg>
-                  </button>
-                  <div id="cerrarsesion">	
-                    <button type="submit" class="btn" id="btnbtndecerrarsesioncdsp">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-lock-fill" viewBox="0 0 16 16">
-                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
-                            <path d="m8 3.293 4.72 4.72a3 3 0 0 0-2.709 3.248A2 2 0 0 0 9 13v2H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/>
-                            <path d="M13 9a2 2 0 0 0-2 2v1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1v-1a2 2 0 0 0-2-2m0 1a1 1 0 0 1 1 1v1h-2v-1a1 1 0 0 1 1-1"/>
-                          </svg>
-                    </button>
-                  </div> 
-
-                  <div class="tablacompleta" id="visitaspendientesdeldia">
-                  </div>
-      
-                  <details class="calle-box" id="calle-morosos-2">
-                    <summary class="calle-title">Morosos</summary>
-                    <div class="calle-registros" id="morosos-registros-2">
-                        <!-- Aquí se mostrarán los registros de los morosos -->
-                    </div>
-                </details>
-                  </div>   
-      
-                </div>
-              </div>
-        </div>
-    </section>
-
-
-    <section id="contenedorhomeverde" class="contenedorhomeverde" style="display: none;">
-        <div class="datosverde">
-          <h1>Puede pasar</h1>
-          <p>Domicilio: <span id="dom"></span></p>
-          <p>Visita: <span id="nom"></span></p>
-          <p>Fecha: <span id="fecha"></span></p>
-          <p>Tipo: <span id="tipolectura"></span></p>
-          <p>ID: <span id="idUnico"></span></p>  
-        </div>
-        <div id="divbtnqrconverdeQRCPrincial" style="display: none;">	
-            <button type="submit" class="botondelescanerdelqr" id="qrconverdeQRCPrincial">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code-scan" viewBox="0 0 16 16">
-                <path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5M.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5M4 4h1v1H4z"/>
-                <path d="M7 2H2v5h5zM3 3h3v3H3zm2 8H4v1h1z"/>
-                <path d="M7 9H2v5h5zm-4 1h3v3H3zm8-6h1v1h-1z"/>
-                <path d="M9 2h5v5H9zm1 1v3h3V3zM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8zm2 2H9V9h1zm4 2h-1v1h-2v1h3zm-4 2v-1H8v1z"/>
-                <path d="M12 9h2V8h-2z"/>
-                </svg>
-            </button>
-        </div>
-        <div id="divbtnqrqrconverdeQRCPrivada" style="display: none;">	
-            <button type="submit" class="botondelescanerdelqr2" id="qrconverdeQRCPrivada">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code-scan" viewBox="0 0 16 16">
-                    <path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5M.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5M4 4h1v1H4z"/>
-                    <path d="M7 2H2v5h5zM3 3h3v3H3zm2 8H4v1h1z"/>
-                    <path d="M7 9H2v5h5zm-4 1h3v3H3zm8-6h1v1h-1z"/>
-                    <path d="M9 2h5v5H9zm1 1v3h3V3zM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8zm2 2H9V9h1zm4 2h-1v1h-2v1h3zm-4 2v-1H8v1z"/>
-                    <path d="M12 9h2V8h-2z"/>
-                    </svg>
-            </button>
-        </div>   
-    </section> 
-
-    <section id="contenedorhomerojo"   class="contenedorhomerojo" style="display: none;">
-        <div class="datosrojo">
-            <h1>QR invalido</h1>
-            <div id="divbtnqrinvaliodQRCPrincial" style="display: none;">	
-                <button type="submit" class="botondelescanerdelqr" id="qrinvaliodQRCPrincial">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code-scan" viewBox="0 0 16 16">
-                    <path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5M.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5M4 4h1v1H4z"/>
-                    <path d="M7 2H2v5h5zM3 3h3v3H3zm2 8H4v1h1z"/>
-                    <path d="M7 9H2v5h5zm-4 1h3v3H3zm8-6h1v1h-1z"/>
-                    <path d="M9 2h5v5H9zm1 1v3h3V3zM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8zm2 2H9V9h1zm4 2h-1v1h-2v1h3zm-4 2v-1H8v1z"/>
-                    <path d="M12 9h2V8h-2z"/>
-                    </svg>
-                </button>
-            </div>
-            <div id="divbtnqrinvaliodQRCPrivada" style="display: none;">	
-                <button type="submit" class="botondelescanerdelqr2" id="qrinvaliodQRCPrivada">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code-scan" viewBox="0 0 16 16">
-                        <path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5M.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5M4 4h1v1H4z"/>
-                        <path d="M7 2H2v5h5zM3 3h3v3H3zm2 8H4v1h1z"/>
-                        <path d="M7 9H2v5h5zm-4 1h3v3H3zm8-6h1v1h-1z"/>
-                        <path d="M9 2h5v5H9zm1 1v3h3V3zM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8zm2 2H9V9h1zm4 2h-1v1h-2v1h3zm-4 2v-1H8v1z"/>
-                        <path d="M12 9h2V8h-2z"/>
-                        </svg>
-                </button>
-            </div>   
-
-        </div>
-    </section>
+        <div class="formulario">
+            <form id="miFormulario" action="submit_form.php" method="post">
+                <!-- Nombre completo -->
     
-    <section id="qryautilizado"   class="contenedorhomerojo" style="display: none;">
-    <div class="datosrojo">
-        <h1>Código QR ya utilizado para ingresar</h1>
-        <h1>  No se puede volver a usar</h1>   
-        <div>	
-            <div id="divbtnqryautilizadoQRCPrincial" style="display: none;">	
-                <button type="submit" class="botondelescanerdelqr" id="qryautilizadoQRCPrincial">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code-scan" viewBox="0 0 16 16">
-                    <path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5M.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5M4 4h1v1H4z"/>
-                    <path d="M7 2H2v5h5zM3 3h3v3H3zm2 8H4v1h1z"/>
-                    <path d="M7 9H2v5h5zm-4 1h3v3H3zm8-6h1v1h-1z"/>
-                    <path d="M9 2h5v5H9zm1 1v3h3V3zM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8zm2 2H9V9h1zm4 2h-1v1h-2v1h3zm-4 2v-1H8v1z"/>
-                    <path d="M12 9h2V8h-2z"/>
-                    </svg>
-                </button>
-            </div>
-            <div id="divbtnqryautilizadoQRCPrivada" style="display: none;">	
-                <button type="submit" class="botondelescanerdelqr2" id="qryautilizadoQRCPrivada">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code-scan" viewBox="0 0 16 16">
-                        <path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5M.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5M4 4h1v1H4z"/>
-                        <path d="M7 2H2v5h5zM3 3h3v3H3zm2 8H4v1h1z"/>
-                        <path d="M7 9H2v5h5zm-4 1h3v3H3zm8-6h1v1h-1z"/>
-                        <path d="M9 2h5v5H9zm1 1v3h3V3zM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8zm2 2H9V9h1zm4 2h-1v1h-2v1h3zm-4 2v-1H8v1z"/>
-                        <path d="M12 9h2V8h-2z"/>
-                        </svg>
-                </button>
-            </div>   
-    </div>    
-    </div>
+                <!-- Selección de estado de la república -->
+                <label for="estado">Estado de la República:</label>
+                <select id="estado" name="estado" required>
+                    <option value="">Selecciona tu estado</option>
+                    <option value="Aguascalientes">Aguascalientes</option>
+                    <option value="Baja California">Baja California</option>
+                    <option value="Baja California Sur">Baja California Sur</option>
+                    <option value="Campeche">Campeche</option>
+                    <option value="Chiapas">Chiapas</option>
+                    <option value="Chihuahua">Chihuahua</option>
+                    <option value="Ciudad de México">Ciudad de México</option>
+                    <option value="Coahuila">Coahuila</option>
+                    <option value="Colima">Colima</option>
+                    <option value="Durango">Durango</option>
+                    <option value="Estado de México">Estado de México</option>
+                    <option value="Guanajuato">Guanajuato</option>
+                    <option value="Guerrero">Guerrero</option>
+                    <option value="Hidalgo">Hidalgo</option>
+                    <option value="Jalisco">Jalisco</option>
+                    <option value="Michoacán">Michoacán</option>
+                    <option value="Morelos">Morelos</option>
+                    <option value="Nayarit">Nayarit</option>
+                    <option value="Nuevo León">Nuevo León</option>
+                    <option value="Oaxaca">Oaxaca</option>
+                    <option value="Puebla">Puebla</option>
+                    <option value="Querétaro">Querétaro</option>
+                    <option value="Quintana Roo">Quintana Roo</option>
+                    <option value="San Luis Potosí">San Luis Potosí</option>
+                    <option value="Sinaloa">Sinaloa</option>
+                    <option value="Sonora">Sonora</option>
+                    <option value="Tabasco">Tabasco</option>
+                    <option value="Tamaulipas">Tamaulipas</option>
+                    <option value="Tlaxcala">Tlaxcala</option>
+                    <option value="Veracruz">Veracruz</option>
+                    <option value="Yucatán">Yucatán</option>
+                    <option value="Zacatecas">Zacatecas</option>
+                </select>
+    
+                <label for="cargo">Cargo:</label>
+                <select id="cargo" name="cargo" required>
+                    <option value="">Selecciona tu cargo</option>
+                    <option value="residente">Residente</option>
+                    <option value="administrador">Administrador</option>
+                </select>
+    
+                                    
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+            
+            
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" required pattern="\d{10}" title="El número debe tener 10 dígitos" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+            
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="Tu correo electrónico" required>
+            
+                <!-- Botón de envío -->
+                <div class="g-recaptcha" data-sitekey="6LdViEoqAAAAAHszCZyTd8NRNEUNxCDGcvccT5zW"></div>
+                <input class="" type="submit" value="Enviar">
+            </form>
+        </div>
+        <div id="alertContainer" class="alert-container"></div>
+
+
+
     </section>
 
-    <section id="qrconotrafecha"   class="contenedorhomerojo" style="display: none;">
-    <div class="datosrojo">
-        <h1>La fecha del Código QR no corresponde al día de hoy</h1>
-        <div id="divbtnqrconotrafechanewQRCPrincial" style="display: none;">	
-            <button type="submit" class="botondelescanerdelqr" id="qrconotrafechanewQRCPrincial">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code-scan" viewBox="0 0 16 16">
-                <path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5M.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5M4 4h1v1H4z"/>
-                <path d="M7 2H2v5h5zM3 3h3v3H3zm2 8H4v1h1z"/>
-                <path d="M7 9H2v5h5zm-4 1h3v3H3zm8-6h1v1h-1z"/>
-                <path d="M9 2h5v5H9zm1 1v3h3V3zM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8zm2 2H9V9h1zm4 2h-1v1h-2v1h3zm-4 2v-1H8v1z"/>
-                <path d="M12 9h2V8h-2z"/>
-                </svg>
-            </button>
-        </div>
-        <div id="divbtnqrconotrafechanewQRCPrivada" style="display: none;">	
-            <button type="submit" class="botondelescanerdelqr2" id="qrconotrafechanewQRCPrivada">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code-scan" viewBox="0 0 16 16">
-                    <path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5M.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5M4 4h1v1H4z"/>
-                    <path d="M7 2H2v5h5zM3 3h3v3H3zm2 8H4v1h1z"/>
-                    <path d="M7 9H2v5h5zm-4 1h3v3H3zm8-6h1v1h-1z"/>
-                    <path d="M9 2h5v5H9zm1 1v3h3V3zM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8zm2 2H9V9h1zm4 2h-1v1h-2v1h3zm-4 2v-1H8v1z"/>
-                    <path d="M12 9h2V8h-2z"/>
-                    </svg>
-            </button>
-        </div>      
-    </div>
-    </section>
+
+
+    <footer>
+        <p>&copy; 2024 Fraccify. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
-<script>
-    function removeSpecialCharacters(input) {
-    // Reemplaza caracteres especiales y acentos con una expresión regular
-    input.value = input.value.replace(/[^A-Za-z\s]/g, "");
-    }
-    function irAtras() {
-    history.back();  // O puedes usar history.go(-1) si prefieres
-    }
-</script>
-
-<script type="module" src="js/app.js"></script>
-<script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.11.3/cloudinary-core-shrinkwrap.min.js"></script>
-<audio id="audioScaner" src="assets/sonido.mp3"></audio>
-<script src="assets/plugins/qrCode.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://cdn.jsdelivr.net/npm/jsqr@1.3.1/dist/jsQR.js"></script>
+<script src="app.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </html>
